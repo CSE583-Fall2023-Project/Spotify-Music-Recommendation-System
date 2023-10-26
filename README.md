@@ -1,8 +1,9 @@
 <<<<<<< HEAD
-# placeholder
- 
-=======
 <<<<<<< HEAD
+# placeholder
+
+=======
+
 # CSE583 Team Project
 
 ### Team Members:
@@ -16,8 +17,12 @@ Juntong Wu, Denkie Yan, Chesie Yu
 ???
 
 ### Methods
+=======
+Hello World!!!!!
+
 
 ### Conclusion
 
 !!!
+
 
