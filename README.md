@@ -1,6 +1,5 @@
 # placeholder
 
-=======
 
 ## CSE583 Team Project
 
