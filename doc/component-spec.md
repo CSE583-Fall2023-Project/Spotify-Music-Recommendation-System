@@ -1,15 +1,15 @@
 <h1 align="center">🎵 Generating Personalized Music Recommendations and Historical Music Insights 🎵</h1>
 
 <p align="center">
-  <img src="./banner for a music recommendation system on Spotify.png" alt="Music Exploration">
+  <img src="./banner.png" alt="Music Exploration">
 </p>
-<h3 align="center"> Component Specification 💡</h3>
+<h2 align="center"> Component Specification 💡</h2>
 
 <br>
 
 ## 👩‍💻 Software Components
 
-#### Data Manager
+### Data Manager
 
 <details>
 <summary><b>Functionality</b></summary>
@@ -34,7 +34,7 @@
 </table>
 
 
-#### Recommendation Engine
+### Recommendation Engine
 
 <details>
 <summary ><b>Functionality</b></summary>
@@ -55,7 +55,7 @@
 </table>
 
 
-#### Visualization Manager
+### Visualization Manager
 
 <details>
 <summary><b>Functionality</b></summary>
@@ -80,7 +80,7 @@
 
 ## 🧬 Interactions to Accomplish Use Cases
 
-#### Use Case 1: Exploring Historical Music Trends
+### Use Case 1: Exploring Historical Music Trends
 
 <details>
 <summary><b>Process Flow</b></summary>
@@ -98,7 +98,7 @@
 </div>
 </details>
 
-#### Use Case 2: Generating User Profile with Personalized Music Recommendations
+### Use Case 2: Generating User Profile with Personalized Music Recommendations
 
 <details>
 <summary><b>Process Flow</b></summary>
