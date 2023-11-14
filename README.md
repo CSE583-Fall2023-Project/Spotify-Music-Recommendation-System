@@ -2,7 +2,7 @@
 
 Juntong Wu, Denkie Yan, Chesie Yu
 
-\
+<br>
 
 ## User Stories
 
@@ -15,7 +15,7 @@ Mike spends many hours on the road and desires a simple music recommendation too
 ### **Story 3: Tina, Marketing Manager at Spotify**
 Tina aims to expand Spotify's market reach. She needs access to customer data to understand market trends and improve personalized music recommendations based on customer feedback.
 
-\
+<br>
 
 ## Acceptance Criteria
 
@@ -26,7 +26,7 @@ Tina aims to expand Spotify's market reach. She needs access to customer data to
 - The system should provide visualizations of music trends and audio features alongside recommendations.
 - The recommendations should adapt as the user's tastes evolve and as they interact with historical and audio feature explorations.
 
-\
+<br>
 
 ## Use Case
 
@@ -56,7 +56,7 @@ Tina aims to expand Spotify's market reach. She needs access to customer data to
 
 **Frequency of Use:** Users can engage with the system daily or as often as they seek new music.
 
-\
+<br>
 
 ## Business Rules
 
@@ -65,7 +65,7 @@ Tina aims to expand Spotify's market reach. She needs access to customer data to
 - Personalized recommendations should offer a mix of popular and lesser-known music to enrich the user's experience.
 - The system should be capable of illustrating complex data (e.g., audio features, historical trends) in an accessible and user-friendly manner.
 
-\
+<br>
 
 ## Data Source
 
@@ -89,7 +89,7 @@ Tina aims to expand Spotify's market reach. She needs access to customer data to
 
 - **Features:** artist_id, artist_name
 
-\
+<br>
 
 ## Deliverables
 
