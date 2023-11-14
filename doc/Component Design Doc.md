@@ -95,6 +95,7 @@
   </ol>
 </div>
 </details>
+
 #### Use Case 2: Generating User Profile with Personalized Music Recommendations
 
 <details>
