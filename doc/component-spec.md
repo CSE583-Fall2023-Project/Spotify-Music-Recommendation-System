@@ -5,7 +5,7 @@
 </p>
 <h2 align="center"> Component Specification 💡</h2>
 
-<br>
+
 
 ## 👩‍💻 Software Components
 
@@ -76,7 +76,9 @@
   </tr>
 </table>
 
+
 <br> 
+
 
 ## 🧬 Interactions to Accomplish Use Cases
 
@@ -114,7 +116,9 @@
 </div>
 </details>
 
+
 <br> 
+
 
 ## 📝 Preliminary Plan
 

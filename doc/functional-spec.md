@@ -3,7 +3,7 @@
 <p align="center">
   <img src="./banner.png" alt="Music Exploration">
 </p>
-<h3 align="center"> Functional Specification 💽</h3>
+<h2 align="center"> Functional Specification 💽</h2>
 
 
 
