@@ -39,7 +39,6 @@
 <summary ><b>Functionality</b></summary>
 <p>At the heart of the system lies the Recommendation Engine, utilizing collaborative and content-based filtering to curate music suggestions. It takes into account user preferences, listening habits, and social connections to generate relevant song and artist recommendations.</p>
 </details>
-
 <table>
   <tr>
     <th colspan="2" style="text-align:center;background-color:#4CAF50;color:white;">Recommendation Engine Process Flow</th>
@@ -54,9 +53,8 @@
   </tr>
 </table>
 
----
+#### Visualization Manager
 
-### c. Visualization Manager
 <details>
 <summary><b>Functionality</b></summary>
 <p>Tasked with the creation of visual data narratives, this component produces graphical representations that map out music trends, listener behaviors, and audio feature analysis to engage users.</p>
@@ -119,8 +117,6 @@
 <blockquote>
 Our strategic blueprint that encapsulates the development lifecycle, from conception to launch, ensuring a robust and user-centric final product.
 </blockquote>
-
-
 - **Develop the Data Manager**: Establish robust data access and management interfaces.
 - **Build the Recommendation Engine**: Craft and integrate recommender algorithm using co.
 - **Design the Visualization Manager**: Forge tools for creating dynamic and engaging visualizations.
