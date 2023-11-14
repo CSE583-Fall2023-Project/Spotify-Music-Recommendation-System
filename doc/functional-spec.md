@@ -3,7 +3,7 @@
 <p align="center">
   <img src="./banner for a music recommendation system on Spotify.png" alt="Music Exploration">
 </p>
-<h3 align="center"> Functional Specification 💽</h1>
+<h3 align="center"> Functional Specification 💽</h3>
 
 
 
@@ -29,6 +29,8 @@ Tina aims to expand Spotify's market reach. She needs access to customer data to
 </details>
 
 
+<br>
+
 
 ## ✅ Acceptance Criteria
 
@@ -39,6 +41,8 @@ Tina aims to expand Spotify's market reach. She needs access to customer data to
 - <span style="color: green">The system should provide visualizations of music trends and audio features alongside recommendations.</span>
 - <span style="color: green">The recommendations should adapt with the user's feedback.</span>
 
+
+<br>
 
 
 ## 🎭 Use Case
@@ -83,7 +87,7 @@ Tina aims to expand Spotify's market reach. She needs access to customer data to
 
 Users can engage with the system daily or as often as they seek new music.
 
-
+<br>
 
 ## 📜 Business Rules
 
@@ -92,6 +96,8 @@ Users can engage with the system daily or as often as they seek new music.
 - <span style="color: blue">Personalized recommendations should offer a mix of popular and lesser-known music to enrich the user's experience.</span>
 - <span style="color: blue">The system should be capable of illustrating complex data (e.g., audio features, historical trends) in an accessible and user-friendly manner.</span>
 
+
+<br>
 
 
 ## 📊 Data Source
