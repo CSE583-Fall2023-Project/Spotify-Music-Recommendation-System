@@ -15,7 +15,9 @@ Mike spends many hours on the road and desires a simple music recommendation too
 ### **Story 3: Tina, Marketing Manager at Spotify**
 Tina aims to expand Spotify's market reach. She needs access to customer data to understand market trends and improve personalized music recommendations based on customer feedback.
 
+
 <br>
+
 
 ## Acceptance Criteria
 
@@ -26,13 +28,16 @@ Tina aims to expand Spotify's market reach. She needs access to customer data to
 - The system should provide visualizations of music trends and audio features alongside recommendations.
 - The recommendations should adapt as the user's tastes evolve and as they interact with historical and audio feature explorations.
 
+
 <br>
+
 
 ## Use Case
 
 **Use Case Name:** Generating Personalized Music Recommendations and Historical Music Insights  
 **Actors:** User, Music Exploration System  
 **Preconditions:** The user has an active profile within the system and the system has gathered sufficient data on user preferences and historical music trends.
+
 
 ### Basic Flow
 
@@ -44,10 +49,12 @@ Tina aims to expand Spotify's market reach. She needs access to customer data to
 6. The system integrates collaborative filtering data, considering user-friend listening patterns.
 7. The user can filter insights and recommendations by year, genre, artist, audio features, or friends’ selection.
 
+
 ### Postconditions
 
 - The user gains a broader understanding of music evolution and their personal tastes.
 - The system refines its recommendation algorithms based on user engagement with both songs and educational content.
+
 
 ### Exceptions
 
@@ -56,7 +63,9 @@ Tina aims to expand Spotify's market reach. She needs access to customer data to
 
 **Frequency of Use:** Users can engage with the system daily or as often as they seek new music.
 
+
 <br>
+
 
 ## Business Rules
 
@@ -65,7 +74,9 @@ Tina aims to expand Spotify's market reach. She needs access to customer data to
 - Personalized recommendations should offer a mix of popular and lesser-known music to enrich the user's experience.
 - The system should be capable of illustrating complex data (e.g., audio features, historical trends) in an accessible and user-friendly manner.
 
+
 <br>
+
 
 ## Data Source
 
@@ -73,23 +84,29 @@ Tina aims to expand Spotify's market reach. She needs access to customer data to
 
 - **Features:** song_id, song_name, artists_name, artist_id, year, genre, release_date, duration_ms, acousticness, valence, danceability, energy, explicit, instrumentalness, key, liveness, loudness, mode, speechiness, tempo, popularity
 
+
 ### Dummy Data for Users
 
 - **Features:** user_id, user_name, …
+
 
 ### Dummy Data for User-Songs (Collaborative Filtering)
 
 - **Features:** user_id, song_id, listening_cnt
 
+
 ### Dummy Data for User-Friends (Collaborative Filtering)
 
 - **Features:** user_id, friend_id
+
 
 ### Dummy Data for Artists
 
 - **Features:** artist_id, artist_name
 
+
 <br>
+
 
 ## Deliverables
 
