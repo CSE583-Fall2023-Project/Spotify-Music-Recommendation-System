@@ -1,5 +1,9 @@
 # Generating Personalized Music Recommendations and Historical Music Insights
 
+Juntong Wu, Denkie Yan, Chesie Yu
+
+\
+
 ## User Stories
 
 ### **Story 1: Abby, Music Producer**
@@ -11,6 +15,8 @@ Mike spends many hours on the road and desires a simple music recommendation too
 ### **Story 3: Tina, Marketing Manager at Spotify**
 Tina aims to expand Spotify's market reach. She needs access to customer data to understand market trends and improve personalized music recommendations based on customer feedback.
 
+\
+
 ## Acceptance Criteria
 
 - The system allows users to create a profile detailing their music preferences.
@@ -19,6 +25,8 @@ Tina aims to expand Spotify's market reach. She needs access to customer data to
 - Users can explore the audio features of music to understand what shapes their preferences.
 - The system should provide visualizations of music trends and audio features alongside recommendations.
 - The recommendations should adapt as the user's tastes evolve and as they interact with historical and audio feature explorations.
+
+\
 
 ## Use Case
 
@@ -48,12 +56,16 @@ Tina aims to expand Spotify's market reach. She needs access to customer data to
 
 **Frequency of Use:** Users can engage with the system daily or as often as they seek new music.
 
+\
+
 ## Business Rules
 
 - As dummy data is used, real user privacy concerns are non-existent.
 - The system is designed to educate users about musical diversity and the evolution of music.
 - Personalized recommendations should offer a mix of popular and lesser-known music to enrich the user's experience.
 - The system should be capable of illustrating complex data (e.g., audio features, historical trends) in an accessible and user-friendly manner.
+
+\
 
 ## Data Source
 
@@ -76,6 +88,8 @@ Tina aims to expand Spotify's market reach. She needs access to customer data to
 ### Dummy Data for Artists
 
 - **Features:** artist_id, artist_name
+
+\
 
 ## Deliverables
 
