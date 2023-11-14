@@ -117,6 +117,8 @@
 <blockquote>
 Our strategic blueprint that encapsulates the development lifecycle, from conception to launch, ensuring a robust and user-centric final product.
 </blockquote>
+
+
 - **Develop the Data Manager**: Establish robust data access and management interfaces.
 - **Build the Recommendation Engine**: Craft and integrate recommender algorithm using co.
 - **Design the Visualization Manager**: Forge tools for creating dynamic and engaging visualizations.
