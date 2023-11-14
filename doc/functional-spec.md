@@ -1,7 +1,7 @@
 <h1 align="center">🎵 Generating Personalized Music Recommendations and Historical Music Insights 🎵</h1>
 
 <p align="center">
-  <img src="./banner for a music recommendation system on Spotify.png" alt="Music Exploration">
+  <img src="./banner.png" alt="Music Exploration">
 </p>
 <h3 align="center"> Functional Specification 💽</h3>
 
