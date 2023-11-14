@@ -1,7 +1,7 @@
 <h1 align="center">🎵 Generating Personalized Music Recommendations and Historical Music Insights 🎵</h1>
 
 <p align="center">
-  <img src="./banner.png" alt="Music Exploration">
+  <img src="./banner-2048.png" alt="Music Exploration">
 </p>
 <h2 align="center"> Component Specification 💡</h2>
 
