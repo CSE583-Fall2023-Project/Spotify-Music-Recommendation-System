@@ -3,9 +3,9 @@
 <p align="center">
   <img src="./banner for a music recommendation system on Spotify.png" alt="Music Exploration">
 </p>
-<h3 align="center"> Component Specification 💡</h1>
+<h3 align="center"> Component Specification 💡</h3>
 
-
+<br>
 
 ## 👩‍💻 Software Components
 
@@ -33,6 +33,7 @@
   </tr>
 </table>
 
+
 #### Recommendation Engine
 
 <details>
@@ -52,6 +53,7 @@
     <td rowspan="2" style="vertical-align:middle;text-align:center;">A bespoke playlist of songs and artists, customized to echo the user's distinct musical palate.</td>
   </tr>
 </table>
+
 
 #### Visualization Manager
 
@@ -74,7 +76,7 @@
   </tr>
 </table>
 
-
+<br> 
 
 ## 🧬 Interactions to Accomplish Use Cases
 
@@ -112,6 +114,7 @@
 </div>
 </details>
 
+<br> 
 
 ## 📝 Preliminary Plan
 
