@@ -15,6 +15,9 @@ Mike spends many hours on the road and desires a simple music recommendation too
 ### **Story 3: Tina, Marketing Manager at Spotify**
 Tina aims to expand Spotify's market reach. She needs access to customer data to understand market trends and improve personalized music recommendations based on customer feedback.
 
+### **Story 4: Dave, A Professor at UW**  
+Dave is a professor at the University of Washington who loves music. (Just putting a pin in here: I am at Rattlesnake right now and cannot immediately work on this new story. Also a reminder for myself to maybe ask him what functionalities he likes in this project so that the story can be tailored for him to enjoy it more...)   
+
 
 <br>
 
