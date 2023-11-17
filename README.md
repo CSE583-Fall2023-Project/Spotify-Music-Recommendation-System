@@ -72,10 +72,10 @@ Dave is a professor at the University of Washington who loves music.  Tired of r
 
 ## Business Rules
 
-- As dummy data is used, real user privacy concerns are non-existent.
-- The system is designed to educate users about musical diversity and the evolution of music.
-- Personalized recommendations should offer a mix of popular and lesser-known music to enrich the user's experience.
-- The system should be capable of illustrating complex data (e.g., audio features, historical trends) in an accessible and user-friendly manner.
+- The use of dummy data in the system eliminates concerns regarding actual user privacy.   
+- The system is designed to inform users about the broad spectrum and evolution of music genres.   
+- The personalized recommendations should offer a mix of popular hits and niche songs to enrich the user’s experience.  
+- The system should be capable of illustrating complex data (e.g., audio features, historical trends) in an accessible and user-friendly manner.   
 
 
 <br>

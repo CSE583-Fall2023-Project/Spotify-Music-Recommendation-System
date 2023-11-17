@@ -97,9 +97,9 @@ Users can engage with the system daily or as often as they seek new music.
 
 ## 📜 Business Rules
 
-- <span style="color: blue">As dummy data is used, real user privacy concerns are non-existent.</span>
-- <span style="color: blue">The system is designed to educate users about musical diversity and the evolution of music.</span>
-- <span style="color: blue">Personalized recommendations should offer a mix of popular and lesser-known music to enrich the user's experience.</span>
+- <span style="color: blue">The use of dummy data in the system eliminates concerns regarding actual user privacy.</span>
+- <span style="color: blue">The system is designed to inform users about the broad spectrum and evolution of music genres.</span>
+- <span style="color: blue">The personalized recommendations should offer a mix of popular hits and niche songs to enrich the user’s experience.</span>
 - <span style="color: blue">The system should be capable of illustrating complex data (e.g., audio features, historical trends) in an accessible and user-friendly manner.</span>
 
 
