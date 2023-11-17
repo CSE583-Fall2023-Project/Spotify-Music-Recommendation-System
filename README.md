@@ -7,13 +7,10 @@ Juntong Wu, Denkie Yan, Chesie Yu
 ## 🎶 Background  
 
 **Music is dynamic** – the history of music is the history of human culture; each era presents its own story through its distinct styles and genres.  **Music is diverse** – each genre is characterized by its unique blends of composition elements, varying in rhythms, scales, harmonies, and structures.  **Music tells us about ourselves.**  Our music taste is shaped by our surroundings and exposures, by a mix of cultural influences, popular trends, and personal experiences.    
-</p>
-<p> 
+
 In the dynamic and diverse world of music streaming and discovery, our project aims to offer a **unique personalized and enriching experience that caters to the tastes of individual users**.  At the core of this objective is the desire to not only provide music recommendations but to do so in a way that is insightful and resonates with each user’s unique music journey.  
-</p>
-<p> 
+
 The scope of this project emcompasses three major aspects.  First, we hope to **inform the historical music insights**, uncovering the story of music behind the data.  Leveraging the Spotify music dataset, we will discover and illustrate interesting patterns and trends through interactive visualization dashboards with customizable controls.   Second, we want to **provide personalized recommendations** based on user behavioral preferences and potentially social networks, improving listening experience through understanding then predicting the unique tastes of each user.  Ultimately, we aim to create a platform where users can explore the rich history of contemporary music and discover new personal favorites, all within **an engaging interactive user-friendly interface**.  This tool is designed to create a music discovery experience that is not only entertaining but also informative and personalized.  
-</p>
 
 
 <br>
