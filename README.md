@@ -113,7 +113,7 @@ Dave is a professor at the University of Washington who loves music.  Tired of r
 
 ## Deliverables
 
-Interactive user interface that presents historical music insights + provides personalized music recommendations   
+Interactive user interface that presents historical music insights and provides personalized music recommendations         
 
 - **Historical Music Insights:** EDA + Visualization (music evolution, popular songs/genres, genre characteristics, etc.) in an HTML file      
 - **Personalized Music Recommendations:** Predict the top 10 songs and artists based on listening history and user preferences   
