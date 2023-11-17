@@ -12,13 +12,13 @@
 <details>
 <summary><b>Story 1: Abby, Music Producer</b></summary>
 <p>
-Abby, an enthusiastic music producer, seeks a system for exploring music trends from the past century and getting personalized recommendations from Spotify.  Her aim is to enrich her understanding of music genres and styles evolution, which aids her career.
+Abby, an enthusiastic music producer, seeks a system for exploring music trends from the past century and getting personalized recommendations from Spotify.  She aims to enrich her understanding of music genres and styles evolution, which aids her career.
 </p>
 </details>
 <details>
 <summary><b>Story 2: Mike, Truck Driver</b></summary>
 <p>
-Mike is always on the road and needs music to make his long drives more enjoyable.  He is looking for a simple music recommendation tool where he could input his favorite songs and receive a playlist tailored for his driving hours.   
+Mike is always on the road –  he needs music to make his long drives more enjoyable.  Mike is looking for a simple music recommendation tool where he could input his favorite songs and receive a playlist tailored for his driving hours.  
 </p>
 </details>
 <details>
