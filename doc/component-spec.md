@@ -13,7 +13,7 @@
 
 <details>
 <summary><b>Functionality</b></summary>
-<p>This component orchestrates all interactions with datasets including Spotify Dataset, Dummy User Data, User-Songs, and User-Friends data. It executes queries, filters, and aggregates data to meet various requirements.</p>
+<p>This component manages all interactions with datasets including Spotify Dataset, Dummy User Data, User-Songs, and User-Friends data. It executes queries, filters, and aggregates data to meet various requirements.</p>
 </details>
 
 <table>
@@ -38,7 +38,7 @@
 
 <details>
 <summary ><b>Functionality</b></summary>
-<p>At the heart of the system lies the Recommendation Engine, utilizing collaborative and content-based filtering to curate music suggestions. It takes into account user preferences, listening habits, and social connections to generate relevant song and artist recommendations.</p>
+<p>The core of the system is the Recommendation Engine, which utilizes collaborative and content-based filtering to produce music suggestions. It takes into account user preferences, listening habits, and social connections to generate relevant song and artist recommendations.</p>
 </details>
 <table>
   <tr>
@@ -49,8 +49,8 @@
     <td style="background-color:#f2f2f2;text-align:center;"><b>Outputs</b></td>
   </tr>
   <tr>
-    <td>Listening histories, genre preferences, artist selections, and social listening trends, sourced from the Data Manager.</td>
-    <td rowspan="2" style="vertical-align:middle;text-align:center;">A bespoke playlist of songs and artists, customized to echo the user's distinct musical palate.</td>
+    <td>Listening histories, genre preferences, artist selections, and social listening trends from the Data Manager.</td>
+    <td rowspan="2" style="vertical-align:middle;text-align:center;">A personalized playlist of songs and artists, customized to users' music preferences.</td>
   </tr>
 </table>
 
@@ -59,7 +59,7 @@
 
 <details>
 <summary><b>Functionality</b></summary>
-<p>Tasked with the creation of visual data narratives, this component produces graphical representations that map out music trends, listener behaviors, and audio feature analysis to engage users.</p>
+<p>This component focuses on creating visual narratives from data, by transforming data into visualizations that highlights music trends, listening behaviors, and audio feature analysis, to engage and inform the users.</p>
 </details>
 
 <table>
@@ -71,8 +71,8 @@
     <td style="background-color:#f2f2f2;text-align:center;"><b>Outputs</b></td>
   </tr>
   <tr>
-    <td>An amalgam of historical, user-centric, and audio features data, all provided by the Data Manager.</td>
-    <td rowspan="2" style="vertical-align:middle;text-align:center;">A suite of visual aids such as charts, graphs, and timelines that articulate the evolution of music, personalized listening patterns, and song traits.</td>
+    <td>Data encompassing popularity metrics, user behavior, and audio features provided by the Data Manager.</td>
+    <td rowspan="2" style="vertical-align:middle;text-align:center;">A dashboard of visual aids such as charts, graphs, and timelines to illustrate the evolution of music, characteristics of songs, and personalized listening behaviors.</td>
   </tr>
 </table>
 
