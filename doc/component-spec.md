@@ -123,15 +123,14 @@
 ## 📝 Preliminary Plan
 
 <blockquote>
-Our strategic blueprint that encapsulates the development lifecycle, from conception to launch, ensuring a robust and user-centric final product.
+Having defined the business problem and drafted the design specifications tailored to these requirements, the following plan outlines the remaining stages in the development process, with the aim to deliver a robust and user-centered final product.   
 </blockquote>
 
-
-- **Develop the Data Manager**: Establish robust data access and management interfaces.
-- **Build the Recommendation Engine**: Craft and integrate recommender algorithm using co.
-- **Design the Visualization Manager**: Forge tools for creating dynamic and engaging visualizations.
-- **Integrate Components**: Harmonize the interactions between all system elements.
-- **User Interface Development**: Architect a seamless and intuitive user experience.
-- **Testing and Iteration**: Execute exhaustive system trials and refine based on user feedback.
-- **Documentation and Training**: Compose detailed system guides and facilitate user onboarding.
-- **Launch and Monitor**: Unveil the system to the audience, observing and fine-tuning post-launch.
+- **Develop the Data Manager**: Clean and organize the data so that it is accessible and usable.  
+- **Build the Recommendation Engine**: Develop the recommendation system using content/collaborative filtering.
+- **Design the Visualization Manager**: Create interactive visualization dashboards from EDA. 
+- **Integrate Components**: Combine all components together into one system.  
+- **User Interface Development**: Design a user-friendly interface for users to interact with the application.      
+- **Testing and Iteration**: Conduct tests on the code to verify that it meets the defined requirements and make adjustments accordingly.   
+- **Documentation and Training**: Create end-user documentation to help users  understand how to use the tool.    
+- **Launch and Monitor**: Make the tool available to users (deploy the software to production environment); maintain and update the tool if needed.   
