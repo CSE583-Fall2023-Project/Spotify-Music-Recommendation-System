@@ -28,7 +28,7 @@ To expand Spotify’s market reach, Tina needs access to customer insights.  She
 </p>
 </details>
 <details>
-<summary><b>Story 4: Dave, A Professor at UW</b></summary>
+<summary><b>Story 4: Dave, Professor at UW</b></summary>
 <p>
 Dave is a professor at the University of Washington who loves music.  Tired of repeating his current playlist, Dave is looking for fresh and exciting music recommendations.  He seeks a personalized music discovery experience to find new songs that align with his tastes, ultimately boosting his happiness (?).   
 </p>

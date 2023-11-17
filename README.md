@@ -15,7 +15,7 @@ Mike is always on the road –  he needs music to make his long drives more enjo
 ### **Story 3: Tina, Marketing Manager at Spotify**
 To expand Spotify’s market reach, Tina needs access to customer insights.  She would love to understand market trends and improve personalized music recommendations based on customer feedback.    
 
-### **Story 4: Dave, A Professor at UW**  
+### **Story 4: Dave, Professor at UW**  
 Dave is a professor at the University of Washington who loves music.  Tired of repeating his current playlist, Dave is looking for fresh and exciting music recommendations.  He seeks a personalized music discovery experience to find new songs that align with his tastes, ultimately boosting his happiness (?).    
 
 
