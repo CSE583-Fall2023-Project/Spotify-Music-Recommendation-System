@@ -90,7 +90,7 @@ Dave is a professor at the University of Washington who loves music.  Tired of r
 
 ### Dummy Data for Users
 
-- **Features:** user_id, user_name, …
+- **Features:** user_id, first_name, last_name, age, sex, profile_photo    
 
 
 ### Dummy Data for User-Songs (Collaborative Filtering)
@@ -113,6 +113,8 @@ Dave is a professor at the University of Washington who loves music.  Tired of r
 
 ## Deliverables
 
-- **Data Understanding by Visualization and EDA:** HTML file
-- **Predictions:** Top 10 new songs/artists recommended
-- **EDA:** Top songs/artists in users’ and friends’ history, favorite genres, audio features, and word cloud with favorite song names
+Interactive user interface that presents historical music insights + provides personalized music recommendations   
+
+- **Historical Music Insights:** EDA + Visualization (music evolution, popular songs/genres, genre characteristics, etc.) in an HTML file      
+- **Personalized Music Recommendations:** Predict the top 10 songs and artists based on listening history and user preferences   
+- **User Music Profile:** Top songs/artists in users’ and friends’ history, favorite genres, audio features, and word cloud with favorite song names   
