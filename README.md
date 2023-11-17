@@ -7,13 +7,13 @@ Juntong Wu, Denkie Yan, Chesie Yu
 ## User Stories
 
 ### **Story 1: Abby, Music Producer**
-Abby, an enthusiastic music producer, seeks a system for exploring music trends from the past century and getting personalized recommendations from Spotify. She aims to enrich her understanding of music genres and styles evolution, which aids her career.
+Abby, an enthusiastic music producer, seeks a system for exploring music trends from the past century and getting personalized recommendations from Spotify.  Her aim is to enrich her understanding of music genres and styles evolution, which aids her career.  
 
 ### **Story 2: Mike, Truck Driver**
-Mike spends many hours on the road and desires a simple music recommendation tool. He wants to input his favorite songs and receive a playlist tailored for his driving hours.
+Mike is always on the road and needs music to make his long drives more enjoyable.  He is looking for a simple music recommendation tool where he could input his favorite songs and receive a playlist tailored for his driving hours.    
 
 ### **Story 3: Tina, Marketing Manager at Spotify**
-Tina aims to expand Spotify's market reach. She needs access to customer data to understand market trends and improve personalized music recommendations based on customer feedback.
+To expand Spotify’s market reach, Tina needs access to customer insights.  She would love to understand market trends and improve personalized music recommendations based on customer feedback.    
 
 ### **Story 4: Dave, A Professor at UW**  
 Dave is a professor at the University of Washington who loves music.  Tired of repeating his current playlist, Dave is looking for fresh and exciting music recommendations.  He seeks a personalized music discovery experience to find new songs that align with his tastes, ultimately boosting his happiness (?).    

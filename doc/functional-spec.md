@@ -12,19 +12,19 @@
 <details>
 <summary><b>Story 1: Abby, Music Producer</b></summary>
 <p>
-Abby, an enthusiastic music producer, seeks a system for exploring music trends from the past century and getting personalized recommendations from Spotify. She aims to enrich her understanding of music genres and styles evolution, which aids her career.
+Abby, an enthusiastic music producer, seeks a system for exploring music trends from the past century and getting personalized recommendations from Spotify.  Her aim is to enrich her understanding of music genres and styles evolution, which aids her career.
 </p>
 </details>
 <details>
 <summary><b>Story 2: Mike, Truck Driver</b></summary>
 <p>
-Mike spends many hours on the road and desires a simple music recommendation tool. He wants to receive a playlist according to his favorite songs tailored for his driving hours.
+Mike is always on the road and needs music to make his long drives more enjoyable.  He is looking for a simple music recommendation tool where he could input his favorite songs and receive a playlist tailored for his driving hours.   
 </p>
 </details>
 <details>
 <summary><b>Story 3: Tina, Marketing Manager at Spotify</b></summary>
 <p>
-Tina aims to expand Spotify's market reach. She needs access to customer data to understand market trends and improve personalized music recommendations based on customer feedback.
+To expand Spotify’s market reach, Tina needs access to customer insights.  She would love to understand market trends and improve personalized music recommendations based on customer feedback.    
 </p>
 </details>
 <details>
