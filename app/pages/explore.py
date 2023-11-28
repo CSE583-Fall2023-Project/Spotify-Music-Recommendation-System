@@ -101,12 +101,12 @@ layout = html.Div([
                 searchable = True,
                 style = {"width": "50%", "margin": "20px auto"}
             )
-        ]),
+        ], className = "song-selecting-dropdown"),
 
         # Radar Chart
         html.Div([
             dcc.Graph(figure = {}, id = "song-attribute-radar-chart")
-        ])
+        ], className = "song-attribute-radar-chart")
     ], className = "content-panel")
     
 ])
@@ -165,7 +165,10 @@ def update_song_attributes(selected_song):
         )
         return fig
     else:
-        fig = px.line_polar()
+        fig = px.line_polar(
+            r = [0, 0, 0, 0, 0, 0, 0], 
+            theta = attributes
+        )
         fig.update_layout(
             plot_bgcolor = "#121212", 
             paper_bgcolor = "#121212",

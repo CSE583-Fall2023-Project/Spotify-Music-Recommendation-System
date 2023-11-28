@@ -2,15 +2,13 @@
 
 
 
-/*** Base Styles ***/
+/* Base Styles */
 
 html {
     scroll-behavior: smooth;
 }
 
 body {
-    margin: 0; 
-    padding: 0;
     font-family: 'Gill Sans', Arial, sans-serif;
     color: #1db954;
     background-color: #121212;
@@ -27,7 +25,7 @@ a {
 
 
 
-/*** Navigation Bar Properties ***/
+/** Navigation Bar Properties **/
 
 .nav-bar {
     width: 100%;                    /* Span the full width */
@@ -43,9 +41,9 @@ a {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    text-align: right;              /* Align the list items to the right */
+    text-align: right;  /* Align the list items to the right */
     vertical-align: middle;
-    height: 60px;                   /* Full height of the nav bar */
+    height: 60px;               /* Full height of the nav bar */
 }
 
 .nav-bar li {
@@ -57,9 +55,9 @@ a {
     display: block;
     color: #f2f2f2;
     text-align: center;
-    padding: 19px 19px;
+    padding: 14px 16px;
     text-decoration: none;
-    font-size: 19px;
+    font-size: 18px;
 }
 
 .nav-bar li a:hover {
@@ -67,9 +65,7 @@ a {
 }
 
 
-
-/*** Landing Page Properties ***/
-
+/** Landing Page Properties **/
 .landing-page {
     background-image: url('landing-bg.avif');
     background-size: cover;
@@ -115,8 +111,7 @@ a {
     border: none;
     cursor: pointer;
     border-radius: 5px;
-    font-size: 1.5vw;
-    letter-spacing: 1.2;
+    letter-spacing: 1.05;
     z-index: 3;
 }
 
@@ -126,21 +121,22 @@ a {
 
 
 
-/*** Content Panel Properties ***/
-
-/* Overall Panel */
+/** Content Panel Properties **/
 .content-panel {
     width: 100vw;       /* 100% of the viewport width */
     height: 100vh;      /* 100% of the viewport height */
 }
 
-/* Section Headings */
+
+
+/** Visualization Section Properties **/
+
 .section-title {
     color: rgba(242, 242, 242, 0.8);
     text-align: center;
-    padding-top: 7vh;
+    padding-top: 5vh;
     margin-bottom: 0; 
-    font-size: 5.4vh;
+    font-size: 5vh;
     position: relative;
     z-index: 3;
 }
@@ -159,32 +155,9 @@ a {
     border: 1px solid rgba(167, 167, 167, 0.5);
 }
 
-/* Navigation Arrow */
-.scroll-arrow {
-    display: block;
-    text-align: center;
-    margin-bottom: 6vh;
-    font-size: 6vh;
-    font-weight: bold;
-    color: #1db954;
-    text-decoration: none; 
-    transition: color 0.3s; 
-    opacity: 0.7
-}
-
-.scroll-arrow:hover {
-    color: #f2f2f2; /* Change color on hover */
-    opacity: 1;
-}
-
-
-
-/*** Visualization #1: Trend of Musical Attributes Over Time ***/
-
-/* Attribute Checklist */
 .checklist-container {
     width: 20%;
-    height: 55%;
+    height: 60%;
     display: inline-block;
     vertical-align: top;
 }
@@ -197,10 +170,9 @@ a {
     accent-color: #1db954;
 }
 
-/* Visualization */
 .graph-container {
     width: 80%;
-    height: 55%;
+    height: 60%;
     display: inline-block;
 }
 
@@ -226,11 +198,23 @@ a {
     margin: 0 auto; /* Center the slider */
 }
 
-
-
-/*** Visualization #2: Radar Chart for Selected Songs ***/
-
-/* Searchable Dropdown */
-.song-selecting-dropdown {
-    padding-top: 3vh;
+/* Navigation Arrow */
+.scroll-arrow {
+    display: block;
+    text-align: center;
+    margin-bottom: 6vh;
+    font-size: 6vh;
+    font-weight: bold;
+    color: #1db954;
+    text-decoration: none; 
+    transition: color 0.3s; 
+    opacity: 0.7
 }
+
+.scroll-arrow:hover {
+    color: #f2f2f2; /* Change color on hover */
+    opacity: 1;
+}
+
+
+
