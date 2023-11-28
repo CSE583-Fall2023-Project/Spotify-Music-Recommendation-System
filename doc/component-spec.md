@@ -80,7 +80,7 @@
 <br> 
 
 
-## 🧬 Interactions to Accomplish Use Cases
+## 🧬 Use Cases and Interactions  
 
 ### Use Case 1: Exploring Historical Music Trends
 
