@@ -1,10 +1,11 @@
-from dash import dcc, html, register_page
+from dash import dcc, register_page
 from utils.pages.login.callbacks import *
 from utils.page_template import portfolio_wrapper
 
 register_page(__name__, path="/login", title='Login - Spotify Music Recommendation System')
 
 login_page = html.Div([
+    # Login header layout
     html.Div(id="login-header", children=[
         html.Div([
             html.H2('Get your music profile with your next 10 favorite songs!',
@@ -15,7 +16,7 @@ login_page = html.Div([
         ]),
     ], className="login-page"),
 
-    # Login page layout
+    # Login window layout
     html.Div(id="login-window", children=[
         html.Div(style={'height': '100px'}),  # Spacer
         html.Div([
@@ -41,15 +42,15 @@ login_page = html.Div([
                 id="login-link",
                 children=html.Button('Login', id='login-button',
                                      n_clicks=0,
-                                     style={'margin-top': '20px',
-                                            'height': '40px',
-                                            'font-size': '20px',
-                                            'font-weight': '600'}),
+                                     className='login-button'),
                 href="/login"
             ),
             # Placeholder for login output message
-            html.Div(id='login-output', style={'margin-top': '20px'})
-        ], style={'padding-left': '50px', 'padding-top': '20px'}),  # Content styling
+            html.Div(
+                id='login-output',
+                style={'margin-top': '20px'}
+            )
+        ], style={'padding-right': '50px', 'padding-top': '20px'}),  # Content styling
     ], className="login-window")
 ])
 

@@ -47,7 +47,10 @@ def handle_login(n_clicks, first_name, last_name):
         else:
             # Stay on the same page and show an error message
             return ["", dash.no_update, html.Div(
-                "User not found. Please check your name spelling and try again.", style={'color': 'red'})]
+                "User not found. Please check your name spelling and try again.",
+                style={'color': 'white',
+                       'font-family': 'Gill Sans',
+                       'font-weight': 'bold'})]
     raise PreventUpdate
 
 

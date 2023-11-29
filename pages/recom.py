@@ -1,14 +1,9 @@
-"""
-    The following code is under CC-BY-NC-SA 4.0 license (more in root/LICENSE.txt)
-            Free to use and redistribute for any non-commercial purpose
-"""
-
 from dash import dcc, register_page, html
 
 from utils.pages.recom.callbacks import *
 from utils.page_template import portfolio_wrapper
 
-register_page(__name__, path="/reco", title='Spotify Music Recommendation System')
+register_page(__name__, path="/reco", title='Your Playlist - Spotify Music Recommendation System')
 
 user_info_display = \
     html.Div([
