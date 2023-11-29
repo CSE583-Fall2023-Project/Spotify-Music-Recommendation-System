@@ -12,7 +12,7 @@ from dash import dcc, html, register_page
 from utils.pages.explore.callbacks import *
 from utils.page_template import portfolio_wrapper
 
-register_page(__name__, path="/explore", title="Explore")
+register_page(__name__, path="/explore", title='Explore Music - Spotify Music Recommendation System')
 
 # Visualization #1: Trend of Musical Attributes Over Time
 Visualization_1 = \
