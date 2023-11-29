@@ -1,11 +1,15 @@
-# home.py
+"""
+Landing page for the website
+"""
+
+# Import packages
 import dash
-from dash import html
+from dash import html, register_page
 
 from utils.page_template import portfolio_wrapper
 
-
-dash.register_page(__name__, path="/", title='Spotify Music Recommendation System')
+# Register page
+register_page(__name__, path="/", title="Spotify Music Recommendation System")
 
 landing_page = \
     html.Div([

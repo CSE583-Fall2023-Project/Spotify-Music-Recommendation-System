@@ -126,6 +126,53 @@ a {
 
 
 
+/*** About Page Properties ***/
+.about-page {
+    background-image: url("about-bg.avif");
+    background-size: cover;
+    position: relative;
+    width: 100vw;       /* 100% of the viewport width */
+    height: 100vh;      /* 100% of the viewport height */
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+}
+
+/* Semi-Transparent Overlay */
+.about-page::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7); 
+    z-index: 2;
+}
+
+/* About Headings */
+.about-page-title {
+    padding-top: 9vh;
+}
+
+/* About Content */
+.about-page-content {
+    position: relative;
+    color: white; 
+    padding: 20px;
+    max-width: 600px;
+    z-index: 3;
+}
+
+/* Github Icon */
+.github-icon {
+    height: 2em;
+    width: 2em;
+    padding-top: 2vh;
+}
+
+
+
 /*** Content Panel Properties ***/
 
 /* Overall Panel */

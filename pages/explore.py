@@ -1,7 +1,7 @@
 # explore.py
 """
-To launch the app, type command "python app.py" in terminal
-Then navigate to the http link
+
+
 """
 
 # Import packages
@@ -12,8 +12,7 @@ from dash import dcc, html, register_page
 from utils.pages.explore.callbacks import *
 from utils.page_template import portfolio_wrapper
 
-register_page(__name__, path="/explore", title='Spotify Music Recommendation System')
-
+register_page(__name__, path="/explore", title="Explore")
 
 # Visualization #1: Trend of Musical Attributes Over Time
 Visualization_1 = \
