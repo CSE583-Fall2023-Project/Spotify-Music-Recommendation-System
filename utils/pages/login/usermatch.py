@@ -46,11 +46,12 @@ def handle_login(n_clicks, first_name, last_name):
             return ["/reco", user_data, None]
         else:
             # Stay on the same page and show an error message
-            return ["", dash.no_update, html.Div(
-                "User not found. Please check your name spelling and try again.",
-                style={'color': 'white',
-                       'font-family': 'Gill Sans',
-                       'font-weight': 'bold'})]
+            return ["", dash.no_update,
+                    html.Div(
+                        "User not found. Please check your name spelling and try again.",
+                        style={'color': 'white',
+                               'font-family': 'Gill Sans',
+                               'font-weight': 'bold'})]
     raise PreventUpdate
 
 
@@ -66,7 +67,5 @@ def update_user_profile(user_data):
             html.P(f"Age: {user_data['age']}"),
             html.P(f"Sex: {user_data['sex']}"),
             html.Img(src=profile_pic_url, style={'width': '150px', 'height': '150px'})
-        ])
+        ], className='hello-user')
     return PreventUpdate
-
-

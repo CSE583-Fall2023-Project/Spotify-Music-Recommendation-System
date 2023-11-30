@@ -27,7 +27,10 @@ recommended_songs = \
                           'font-family': 'ultraboldFont'
                       }),
             html.P(
-                'Gene expression profiling has been successfully used to classify different types of tumours such as breast, melanoma, lung and other. However, it is difficult to combine the insights for these studies into a more coherent and meaningful analysis that guide the next research step and could result in a quicker diagnosis, development of novel drugs or personalized therapies.',
+                'Gene expression profiling has been successfully used to classify different types of tumours such as '
+                'breast, melanoma, lung and other. However, it is difficult to combine the insights for these studies '
+                'into a more coherent and meaningful analysis that guide the next research step and could result in a '
+                'quicker diagnosis, development of novel drugs or personalized therapies.',
                 style={
                     'text-align': 'justify',
                     'text-justify': 'inter-word',
