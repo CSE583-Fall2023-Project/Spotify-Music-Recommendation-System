@@ -26,17 +26,7 @@ recommended_songs = \
                           'height': 'auto',
                           'font-family': 'ultraboldFont'
                       }),
-            html.P(
-                'Gene expression profiling has been successfully used to classify different types of tumours such as '
-                'breast, melanoma, lung and other. However, it is difficult to combine the insights for these studies '
-                'into a more coherent and meaningful analysis that guide the next research step and could result in a '
-                'quicker diagnosis, development of novel drugs or personalized therapies.',
-                style={
-                    'text-align': 'justify',
-                    'text-justify': 'inter-word',
-                    'font-family': 'roboto-light',
-                }
-            ),
+            html.Div(id="user-playlist-container"),
             html.Div(style={'height': '100px'}),
             html.Div(
                 html.H1("Your music style:",
@@ -50,14 +40,6 @@ recommended_songs = \
             )
         ],
             style={'display': 'grid', 'padding-left': '50px'}),
-        html.Img(src='assets/genomic_analysis/stock-3.png',
-                 # make it in the middle
-                 style={'display': 'grid',
-                        'margin-left': 'auto',
-                        'margin-right': 'auto',
-                        'padding-top': '100px',
-                        'padding-bottom': '20px'}
-                 )
     ],
         style={'border-bottom': 'solid black 1px', 'display': 'grid', 'grid-template-columns': '600px auto',
                'height': '580px',

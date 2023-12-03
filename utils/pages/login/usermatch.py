@@ -63,7 +63,7 @@ def update_user_profile(user_data):
     if user_data:
         profile_pic_url = user_data['profile_pic']
         return html.Div([
-            html.H3(f"Welcome, {user_data['first_name']} {user_data['last_name']}"),
+            html.P(f"Welcome, {user_data['first_name']} {user_data['last_name']}"),
             html.P(f"Age: {user_data['age']}"),
             html.P(f"Sex: {user_data['sex']}"),
             html.Img(src=profile_pic_url, style={'width': '150px', 'height': '150px'})

@@ -14,6 +14,9 @@ session = Session()
 # Determine the range and marks for the slider
 min_year = session.query(func.min(DataByYear.year)).scalar()
 max_year = session.query(func.max(DataByYear.year)).scalar()
+min_year = int(float(min_year))
+max_year = int(float(max_year))
+
 
 # Create decades list
 decades = list(range(min_year + (10 - min_year % 10), max_year + 1, 10))

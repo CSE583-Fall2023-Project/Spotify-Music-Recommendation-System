@@ -29,6 +29,8 @@ app._favicon = "spotify.ico"
 app.layout = html.Div([
     dcc.Location(id="url", refresh=False),
     dcc.Store(id="user-info-store"),
+    dcc.Store(id="playlist-song-store"),
+    dcc.Store(id="playlist-artist-store"),
     dash.page_container,
 ])
 

@@ -2,8 +2,11 @@ import pandas as pd
 from sqlalchemy import create_engine, Column, Integer, String, Float, ForeignKey
 from sqlalchemy.orm import sessionmaker, declarative_base
 
+from utils.pages.recom.model import RecommendationModel
+
+
 # Database setup
-engine = create_engine('sqlite:///music_system.sqlite')
+engine = create_engine('sqlite:///music_reco_sys_db.sqlite')
 Base = declarative_base()
 
 
@@ -65,9 +68,18 @@ class DataByYear(Base):
     popularity = Column(Integer)
 
 
+class UserRecommendation(Base):
+    __tablename__ = 'user_recommendations'
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    user_id = Column(String, ForeignKey('users.user_id'))
+    song_id = Column(String, ForeignKey('spotify_data.song_id'))
+    rank = Column(Integer)
+
+
 Base.metadata.create_all(engine)
 
 
+# Load data into databases
 def initialize_user_database(document_path):
     Session = sessionmaker(bind=engine)
     session = Session()
@@ -97,9 +109,14 @@ def initialize_user_database(document_path):
                 profile_pic=profile_pic_path
             )
             session.add(new_user)
-    session.commit()
-    session.close()
-    print("User database successfully loaded.")
+    try:
+        session.commit()
+        print("Users database successfully loaded.")
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        session.rollback()
+    finally:
+        session.close()
 
 
 def initialize_spotify_database(document_path):
@@ -130,9 +147,14 @@ def initialize_spotify_database(document_path):
             session.add(new_record)
         else:
             pass
-    session.commit()
-    session.close()
-    print("Spotify database successfully loaded.")
+    try:
+        session.commit()
+        print("Spotify database successfully loaded.")
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        session.rollback()
+    finally:
+        session.close()
 
 
 def initialize_year_database(document_path):
@@ -159,9 +181,14 @@ def initialize_year_database(document_path):
             session.add(new_record)
         else:
             pass
-    session.commit()
-    session.close()
-    print("Year database successfully loaded.")
+    try:
+        session.commit()
+        print("Year database successfully loaded.")
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        session.rollback()
+    finally:
+        session.close()
 
 
 def initialize_user_songs_database(document_path):
@@ -183,9 +210,14 @@ def initialize_user_songs_database(document_path):
                 session.add(new_record)
             else:
                 pass
-    session.commit()
-    session.close()
-    print("UserSongs database successfully loaded.")
+    try:
+        session.commit()
+        print("UserSongs database successfully loaded.")
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        session.rollback()
+    finally:
+        session.close()
 
 
 def initialize_user_friends_database(document_path):
@@ -206,9 +238,32 @@ def initialize_user_friends_database(document_path):
             session.add(new_record)
         else:
             pass
-    session.commit()
-    session.close()
-    print("UserFriends database successfully loaded.")
+    try:
+        session.commit()
+        print("UserFriends database successfully loaded.")
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        session.rollback()
+    finally:
+        session.close()
+
+
+def initialize_user_recommendations_database(top_n_playlist):
+    Session = sessionmaker(bind=engine)
+    session = Session()
+
+    for user_id, song_list in top_n_playlist.items():
+        for rank, (song_id, _) in enumerate(song_list, start=1):
+            recommendation = UserRecommendation(user_id=user_id, song_id=song_id, rank=rank)
+            session.add(recommendation)
+    try:
+        session.commit()
+        print("UserRecommendation database successfully loaded.")
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        session.rollback()
+    finally:
+        session.close()
 
 
 if __name__ == "__main__":
@@ -217,8 +272,16 @@ if __name__ == "__main__":
     path3 = "../data/data_by_year.csv"
     path4 = "../data/user_songs.csv"
     path5 = "../data/user_friends.csv"
+
     initialize_user_database(path1)
     initialize_spotify_database(path2)
     initialize_year_database(path3)
     initialize_user_songs_database(path4)
     initialize_user_friends_database(path5)
+
+    model = RecommendationModel(path4, path5)
+    model.train()
+    predictions = model.predict()
+    top_n_playlist = model.get_top_n_songs(predictions, 10)
+    initialize_user_recommendations_database(top_n_playlist)
+
