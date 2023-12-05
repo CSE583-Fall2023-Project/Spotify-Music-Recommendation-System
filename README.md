@@ -87,7 +87,7 @@ Spotify-Music-Recommendation-System (master)
 |     |----- database.py
 |     |----- music_reco_sys_db.sqlite
 |     |----- page_template.py
-
+```
 
 ## Data
 
