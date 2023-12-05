@@ -7,6 +7,7 @@ To launch the app, type command "python app.py" in terminal,
 then navigate to the http link (http://127.0.0.1:5000/).
 """
 
+# Import packages
 import dash
 from dash import Dash, dcc, html
 

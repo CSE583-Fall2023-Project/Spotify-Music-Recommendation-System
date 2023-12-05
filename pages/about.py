@@ -8,16 +8,18 @@ For more information or to view the source code, visit the GitHub repository:
 https://github.com/CSE583-Fall2023-Project/Spotify-Music-Recommendation-System.
 """
 
-import dash
-from dash import dcc, html, register_page
+# Import packages
+from dash import html, register_page
 
 from utils.page_template import portfolio_wrapper
 
 # Register the page
 register_page(__name__, path="/about", title="About - Spotify Music Recommendation System")
 
-repo = "https://github.com/CSE583-Fall2023-Project/Spotify-Music-Recommendation-System"
+# GitHub Repo Link
+REPO = "https://github.com/CSE583-Fall2023-Project/Spotify-Music-Recommendation-System"
 
+# About Page
 about_page = html.Div([
     # About Page
     html.Div(id="about-page", children=[
@@ -39,11 +41,12 @@ about_page = html.Div([
                    "or report issues, please visit our GitHub repository."),
             html.A([
                 html.Img(src="assets/github-logo.png", className="github-icon"),
-            ], href=repo, target="_blank")
+            ], href=REPO, target="_blank")
         ], className="about-page-content"),
     ])
 ], className="about-page")
 
+# Page Layout
 layout = \
     portfolio_wrapper(
         about_page

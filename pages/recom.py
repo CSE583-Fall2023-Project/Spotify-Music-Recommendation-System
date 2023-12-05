@@ -1,62 +1,47 @@
+# recom.py
+
+"""
+Recommendation page for the Spotify Music Exploration/Recommendation System. 
+
+"""
+
 from dash import dcc, register_page, html
 
 from utils.pages.recom.callbacks import *
 from utils.page_template import portfolio_wrapper
 
-register_page(__name__, path="/reco", title='Your Playlist - Spotify Music Recommendation System')
+# Register the page
+register_page(__name__, path="/reco", title="Your Playlist - Spotify Music Recommendation System")
 
+# User Profile
 user_info_display = \
     html.Div([
-        html.Div(id='user-profile-container'),
-    ],
-        style={'border-bottom': 'solid black 1px', 'display': 'grid', 'grid-template-columns': '600px auto',
-               'height': '580px',
-               'grid-auto-flow': 'row'}
+        html.Div(id="user-profile-container"),
+    ], className="user-info-display"
     )
 
-recommended_songs = \
+# Recommended Songs
+recommended_songs = html.Div([
     html.Div([
-        html.Div([
-            html.Div(style={'height': '100px'}),
-            html.Span('Your recommended songs:',
-                      style={
-                          'width': '500px',
-                          'font-size': '40px',
-                          'font-weight': '600',
-                          'height': 'auto',
-                          'font-family': 'ultraboldFont'
-                      }),
-            html.Div(id="user-playlist-container"),
-            html.Div(style={'height': '100px'}),
-            html.Div(
-                html.H1("Your music style:",
-                        style={
-                            'font-family': 'regularFont',
-                            'font-size': '40px'}),
-                style={
-                    'height': '100px',
-                    'display': 'flex',
-                    'align-items': 'flex-end'}
-            )
-        ],
-            style={'display': 'grid', 'padding-left': '50px'}),
-    ],
-        style={'border-bottom': 'solid black 1px', 'display': 'grid', 'grid-template-columns': '600px auto',
-               'height': '580px',
-               'grid-auto-flow': 'row'}
-    )
-# User profile page layout
+        html.Div(className="spacer"),
+        html.Span("Your recommended songs:", 
+                  className="recommended-songs-title"),
+        html.Div(id="user-playlist-container"),
+        html.Div(className="spacer"),
+        html.Div(html.H1("Your music style:", 
+                         className="music-style-title"))
+    ], className="recommended-songs-container"),
+], className="recommended-songs")
+
+# Logout Button
 logout_button = dcc.Link(
-    html.Button("Logout", id="logout-button",
-                style={'margin-top': '20px',
-                       'height': '40px',
-                       'padding': '10px 20px',
-                       'font-size': '20px',
-                       'font-weight': '600',
-                       'display': 'inline-block'}),
+    html.Button("Logout", 
+                id="logout-button", 
+                className="logout-button"), 
     href="/"
 )
 
+# Page Layout
 layout = \
     portfolio_wrapper(
         user_info_display,

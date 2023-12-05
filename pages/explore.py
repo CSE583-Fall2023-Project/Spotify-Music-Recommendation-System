@@ -1,21 +1,25 @@
 # explore.py
+
 """
+Explore page for Spotify Music Exploration/Recommendation System.
 
-
+This page displays interactive visualizations on historical music insights.
+Visualization #1: Line chart illustrating trend of musical attributes over time.
+Visualization #2: Radar chart depicting musical attributes of selected song.
 """
 
 # Import packages
-import plotly.express as px
-import dash
 from dash import dcc, html, register_page
 
 from utils.pages.explore.callbacks import *
 from utils.page_template import portfolio_wrapper
 
-register_page(__name__, path="/explore", title='Explore Music - Spotify Music Recommendation System')
+# Register the page
+register_page(__name__, path="/explore",
+              title="Explore Music - Spotify Music Recommendation System")
 
 # Visualization #1: Trend of Musical Attributes Over Time
-Visualization_1 = \
+Music_Trend = \
     html.Div(id="01-music-trend", children=[
         # Section Title
         html.H2("How Did Music Evolve Over Time?",
@@ -34,7 +38,7 @@ Visualization_1 = \
             )
         ], className="checklist-container"),
 
-        # Line Chart 
+        # Line Chart
         html.Div([
             dcc.Graph(figure={}, id="attribute-trend-line-chart")
         ], className="graph-container"),
@@ -59,7 +63,7 @@ Visualization_1 = \
              )
 
 # Visualization #2: Radar Chart for Selected Song
-Visualization_2 = \
+Music_Attribute = \
     html.Div(id="02-song-attribute", children=[
         # Section Title
         html.H2("What Are the Characters of Individual Songs?",
@@ -86,8 +90,9 @@ Visualization_2 = \
     ], className="content-panel"
              )
 
+# Page Layout
 layout = \
     portfolio_wrapper(
-        Visualization_1,
-        Visualization_2
+        Music_Trend,
+        Music_Attribute
     )

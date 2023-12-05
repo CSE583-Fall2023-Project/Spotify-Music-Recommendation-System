@@ -283,6 +283,7 @@ a {
 }
 
 
+
 /*** Login Window ***/
 .login-window {
     background-image: url('banner-2048.png');
@@ -324,3 +325,55 @@ a {
 }
 
 
+
+/*** User Profile Properties ***/
+
+/* User Profile */
+.user-info-display {
+    border-bottom: solid black 1px;
+    display: grid;
+    grid-template-columns: 600px auto;
+    height: 580px;
+    grid-auto-flow: row;
+}
+
+
+/* Recommended Songs */
+.recommended-songs {
+    border-bottom: solid black 1px;
+    display: grid;
+    grid-template-columns: 600px auto;
+    height: 580px;
+    grid-auto-flow: row;
+}
+
+.recommended-songs-container {
+    display: grid;
+    padding-left: 50px;
+}
+
+.recommended-songs-title {
+    width: 500px;
+    font-size: 40px;
+    font-weight: 600;
+    height: auto;
+    font-family: ultraboldFont;
+}
+
+.music-style-title {
+    font-family: regularFont;
+    font-size: 40px;
+    display: flex;
+    align-items: flex-end;
+    height: 100px;
+}
+
+/* Logout Button */
+.logout-button {
+    margin-top: 20px;
+    height: 40px;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: 600;
+    display: inline-block;
+}
