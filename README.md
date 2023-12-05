@@ -1,7 +1,7 @@
 # Generating Personalized Music Recommendations and Historical Music Insights
 
-Juntong Wu, Denkie Yan, Chesie Yu
-
+Team Member: Juntong Wu, Denkie Yan, Chesie Yu
+[![Github Link](https://github.com/CSE583-Fall2023-Project/Spotify-Music-Recommendation-System/tree/main)]
 <br> 
 
 ## Background
