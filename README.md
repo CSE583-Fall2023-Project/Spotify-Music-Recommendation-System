@@ -17,7 +17,7 @@ The scope of this project emcompasses three major aspects.  First, we hope to **
 ## Organization of the Project 
 
 The project has the following structure:
-
+```
 Spotify-Music-Recommendation-System (master)
 |     .git
 |     .github
