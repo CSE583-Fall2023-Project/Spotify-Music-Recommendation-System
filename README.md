@@ -87,21 +87,30 @@ Spotify-Music-Recommendation-System (master)
 |     |      |      |      playlist.py
 |     |      |      |      profile.py
 |     |----- database.py
-|     |----- music_reco_sys_db.sqlite
+|     |----- music_reco_sys_db.sqlit
 |     |----- page_template.py
 ```
 
 ## Data
 
-Spotify Data Set
-   
+[Spotify Data Set](https://github.com/CSE583-Fall2023-Project/Spotify-Music-Recommendation-System/blob/main/data/spotify_data.csv)   
 
 <br>
 
 ## Execution of Recommondation System
 
-Upload images and explain steps   
+- Install Dash
+- Execute app.py for the Interactive user Interface
 
+![Home Page](http://127.0.0.1:5000/)
+![User Login](http://127.0.0.1:5000/login)
+![Exploration](http://127.0.0.1:5000/explore#01-music-trend=)
+
+- Login with user with First and Last Name 
+![Home Page](https://github.com/CSE583-Fall2023-Project/Spotify-Music-Recommendation-System/blob/main/image/Mainpage.PNG)
+![User Login](https://github.com/CSE583-Fall2023-Project/Spotify-Music-Recommendation-System/blob/main/image/Login.PNG)
+![Characteristic of a Song](https://github.com/CSE583-Fall2023-Project/Spotify-Music-Recommendation-System/blob/main/image/Characters.PNG)
+![Trend of Music](https://github.com/CSE583-Fall2023-Project/Spotify-Music-Recommendation-System/blob/main/image/Trend.PNG)
 
 <br>
 
