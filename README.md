@@ -105,6 +105,7 @@ Spotify-Music-Recommendation-System (master)
 ![Home Page](https://github.com/CSE583-Fall2023-Project/Spotify-Music-Recommendation-System/blob/main/image/Mainpage.PNG)
 
 - Exploration Features:
+
 **Charateristic of a Song**
 ![Characteristic of a Song](https://github.com/CSE583-Fall2023-Project/Spotify-Music-Recommendation-System/blob/main/image/Characters.PNG)
 
@@ -112,10 +113,12 @@ Spotify-Music-Recommendation-System (master)
 ![Trend of Music](https://github.com/CSE583-Fall2023-Project/Spotify-Music-Recommendation-System/blob/main/image/Trend.PNG)
 
 - Personal Playlist:
+
 **User Login Interface**
 ![User Login](https://github.com/CSE583-Fall2023-Project/Spotify-Music-Recommendation-System/blob/main/image/Login.PNG)
 
 **PlayList Recommendation**
+![Playlist Recommendation](https://github.com/CSE583-Fall2023-Project/Spotify-Music-Recommendation-System/blob/main/image/Recommendation%20List.PNG)
 
 <br>
 
