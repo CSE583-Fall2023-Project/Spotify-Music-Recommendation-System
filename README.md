@@ -98,19 +98,24 @@ Spotify-Music-Recommendation-System (master)
 <br>
 
 ## Execution of Recommondation System
+- Installation of Dash
+- Execute "python app.py" for the Interactive user Interface through the link: http://127.0.0.1:5000/
 
-- Install Dash
-- Execute app.py for the Interactive user Interface
-
-![Home Page](http://127.0.0.1:5000/)
-![User Login](http://127.0.0.1:5000/login)
-![Exploration](http://127.0.0.1:5000/explore#01-music-trend=)
-
-- Login with user with First and Last Name 
+- The Home Page of the User Interface:
 ![Home Page](https://github.com/CSE583-Fall2023-Project/Spotify-Music-Recommendation-System/blob/main/image/Mainpage.PNG)
-![User Login](https://github.com/CSE583-Fall2023-Project/Spotify-Music-Recommendation-System/blob/main/image/Login.PNG)
+
+- Exploration Features:
+**Charateristic of a Song**
 ![Characteristic of a Song](https://github.com/CSE583-Fall2023-Project/Spotify-Music-Recommendation-System/blob/main/image/Characters.PNG)
+
+**Music Trend**
 ![Trend of Music](https://github.com/CSE583-Fall2023-Project/Spotify-Music-Recommendation-System/blob/main/image/Trend.PNG)
+
+- Personal Playlist:
+**User Login Interface**
+![User Login](https://github.com/CSE583-Fall2023-Project/Spotify-Music-Recommendation-System/blob/main/image/Login.PNG)
+
+**PlayList Recommendation**
 
 <br>
 
