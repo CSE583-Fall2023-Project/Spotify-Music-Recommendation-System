@@ -21,7 +21,7 @@ register_page(
 user_info_display = \
     html.Div([
         html.Div(id="user-profile-container"),
-        html.Hr(className="section-divider"),
+        html.Hr(className="profile-divider"),
     ], className="user-profile-container")
 
 # Recommended Songs

@@ -65,7 +65,7 @@ def update_user_profile(user_data):
             html.Div([
                 html.P(f"{user_data['first_name']} {user_data['last_name']}", 
                     className="user-name"),
-                html.P(f"{user_data['age']}  {user_data['sex']}", className="user-detail"),
+                html.P(f"Age: {user_data['age']} | Sex: {user_data['sex']}", className="user-detail"),
             ], className="user-detail-container")
         ], className="user-info-container")
     return PreventUpdate
