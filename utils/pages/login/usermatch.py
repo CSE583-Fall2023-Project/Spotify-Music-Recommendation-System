@@ -38,17 +38,15 @@ def check_user(first_name, last_name):
 )
 def handle_login(n_clicks, first_name, last_name):
     if n_clicks:
-        user_exists = check_user(first_name, last_name)[0]
+        user_exists, user_data = check_user(first_name, last_name)
         if user_exists:
-            user_data = check_user(first_name, last_name)[1]
             # Redirect to the profile page and store user data
             print(user_data)
             return ["/reco", user_data, None]
         else:
             # Stay on the same page and show an error message
-            return ["", dash.no_update,
-                    html.Div(
-                        "User not found. Please check your name spelling and try again.")]
+            return ["", dash.no_update, 
+                    html.Div("User not found. Please check your name spelling and try again.")]
     raise PreventUpdate
 
 
@@ -60,9 +58,14 @@ def update_user_profile(user_data):
     if user_data:
         profile_pic_url = user_data['profile_pic']
         return html.Div([
-            html.P(f"Welcome, {user_data['first_name']} {user_data['last_name']}"),
-            html.P(f"Age: {user_data['age']}"),
-            html.P(f"Sex: {user_data['sex']}"),
-            html.Img(src=profile_pic_url, style={'width': '150px', 'height': '150px'})
-        ], className='hello-user')
+            html.Div(
+                html.Img(src=profile_pic_url, className="user-profile-image"),
+                className="user-image-container"
+            ),
+            html.Div([
+                html.P(f"{user_data['first_name']} {user_data['last_name']}", 
+                    className="user-name"),
+                html.P(f"{user_data['age']}  {user_data['sex']}", className="user-detail"),
+            ], className="user-detail-container")
+        ], className="user-info-container")
     return PreventUpdate

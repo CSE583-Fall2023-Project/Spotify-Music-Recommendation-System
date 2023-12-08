@@ -39,9 +39,9 @@ login_page = html.Div([
             # Input fields for first and last name
             html.Div([
                 dcc.Input(id="first-name", type="text", placeholder="First Name",
-                        className="first-name-input"),
+                          className="first-name-input"),
                 dcc.Input(id="last-name", type="text", placeholder="Last Name",
-                        className="last-name-input"),
+                          className="last-name-input"),
             ]),
 
             # Login Button
@@ -52,6 +52,7 @@ login_page = html.Div([
                                     className="login-button"),
                 href="/login"
             ),
+
             # Placeholder for login output message
             html.Div(id="login-output", className="login-output")
         ], className="login-window")
