@@ -284,44 +284,100 @@ a {
 
 
 
-/*** Login Window ***/
-.login-window {
-    background-image: url('banner-2048.png');
+/*** Login Page Properties ***/
+
+/* Login Container */
+.login-window-container {
+    background-image: url('banner-cropped.png');
+    background-position: center;
     background-size: cover;
-    position: relative;
-    width: 100vw;       /* 100% of the viewport width */
-    height: 100vh;      /* 100% of the viewport height */
+    position: absolute;
+    width: 100vw;
+    height: 75vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     z-index: 1;
 }
 
+/* Semi-Transparent Overlay */
+.login-window-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 2;
+}
 
-/*** Login Button ***/
+.login-window {
+    max-width: 320px;
+    height: 50vh;
+    margin: 8% auto;
+    padding: 45px;
+    background: rgba(23, 23, 23, 0.8);
+    border-radius: 10px;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* User Login Heading */
+.login-heading {
+    font-size: 2.4vw;
+    font-weight: bold;
+    color: #f2f2f2;
+    margin-top: 4vh;
+    margin-bottom: 4vh;
+}
+
+/* Input Styles */
+.first-name-input, .last-name-input {
+    background: #f2f2f2;
+    font-family: "Gill Sans", sans-serif;
+    font-size: 2vh;
+    height: 4vh;
+    width: 80%;
+    border: 0;
+    border-radius: 5px;
+    margin-bottom: 3vh; 
+    padding: 6px;
+}
+
+.login-input::placeholder {
+    color: #a7a7a7;
+    font-family: 'Gill Sans', sans-serif;
+}
+
+/* Login Button */
 .login-button {
     display: block;
-    margin: 20px 0 20px auto;
+    width: 80%;
     padding: 10px 20px;
-    background-color: white;
-    color: black;
+    background-color: #f2f2f2;
+    color: #121212;
     border: none;
     cursor: pointer;
     border-radius: 5px;
     font-size: 1.5vw;
-    font-family: Gill Sans;
+    font-family: 'Gill Sans', sans-serif;
     letter-spacing: 1.2;
-    z-index: 3;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     font-weight: 600;
-    transition: all 0.3s ease;
+    margin-bottom: 2vh;
 }
 
 .login-button:hover {
-    background-color: #f2f2f2;
+    background-color: #a7a7a7;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    transform: translateY(-2px);
+}
+
+.login-output {
+    margin-top: 20px;
 }
 
 
@@ -336,7 +392,6 @@ a {
     height: 580px;
     grid-auto-flow: row;
 }
-
 
 /* Recommended Songs */
 .recommended-songs {
