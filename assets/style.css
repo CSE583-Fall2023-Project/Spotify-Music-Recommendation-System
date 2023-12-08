@@ -293,7 +293,7 @@ a {
     background-size: cover;
     position: absolute;
     width: 100vw;
-    height: 75vh;
+    height: 72vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -355,8 +355,8 @@ a {
 .login-button {
     display: block;
     padding: 10px 20px;
-    background-color: #f2f2f2;
-    color: #121212;
+    background-color: #1db954;
+    color: #f2f2f2;
     border: none;
     cursor: pointer;
     border-radius: 5px;
@@ -370,12 +370,15 @@ a {
 }
 
 .login-button:hover {
-    background-color: #a7a7a7;
+    background-color: #1e8843;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .login-output {
-    margin-top: 20px;
+    font-size: 15px;
+    color: #f2f2f2;
+    margin: auto 8%;
+    margin-top: 10px;
 }
 
 

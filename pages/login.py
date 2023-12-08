@@ -4,9 +4,7 @@
 Login Page for the Spotify Music Exploration/Recommendation System. 
 
 Authenticates users by taking their first and last name as input then 
-performing user match to verify the existence of the user in the system's 
-database.  
-
+performing user match to verify the existence of user in the database.  
 Once authenticated, users will proceed to their personalized music profile.
 """
 
@@ -16,7 +14,8 @@ from utils.pages.login.callbacks import *
 from utils.page_template import portfolio_wrapper
 
 # Register the page
-register_page(__name__, path="/login", title="Login - Spotify Music Recommendation System")
+register_page(__name__, path="/login", 
+              title="Login - Spotify Music Recommendation System")
 
 # Login Page
 login_page = html.Div([
