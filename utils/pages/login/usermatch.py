@@ -8,7 +8,7 @@ from utils.database import Users, engine
 # Create a session maker bound to your engine
 Session = sessionmaker(bind=engine)
 
-
+# User authentciation function
 def check_user(first_name, last_name):
     session = Session()
     user = session.query(Users).filter_by(first_name=first_name, last_name=last_name).first()
@@ -48,10 +48,7 @@ def handle_login(n_clicks, first_name, last_name):
             # Stay on the same page and show an error message
             return ["", dash.no_update,
                     html.Div(
-                        "User not found. Please check your name spelling and try again.",
-                        style={'color': 'white',
-                               'font-family': 'Gill Sans',
-                               'font-weight': 'bold'})]
+                        "User not found. Please check your name spelling and try again.")]
     raise PreventUpdate
 
 

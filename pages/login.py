@@ -14,7 +14,7 @@ from utils.pages.login.callbacks import *
 from utils.page_template import portfolio_wrapper
 
 # Register the page
-register_page(__name__, path="/login", 
+register_page(__name__, path="/login",
               title="Login - Spotify Music Recommendation System")
 
 # Login Page
@@ -33,7 +33,7 @@ login_page = html.Div([
     # Login Window
     html.Div([
         html.Div([
-            # Login Section Title
+            # Login Heading
             html.P("User Login", className="login-heading"),
 
             # Input fields for first and last name

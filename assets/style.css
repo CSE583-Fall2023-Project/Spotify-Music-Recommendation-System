@@ -343,7 +343,8 @@ a {
     font-size: 2vh;
     height: 4vh;
     width: 80%;
-    border: 0;
+    border-width: 1px;
+    border-color:#1db954;
     border-radius: 5px;
     padding: 6px;
     margin: auto 8%;
@@ -375,6 +376,8 @@ a {
 }
 
 .login-output {
+    font-family: 'Gill Sans', sans-serif;
+    font-weight: 400;
     font-size: 15px;
     color: #f2f2f2;
     margin: auto 8%;
