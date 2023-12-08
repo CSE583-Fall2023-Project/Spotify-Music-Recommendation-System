@@ -296,6 +296,7 @@ a {
     height: 75vh;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     z-index: 1;
 }
@@ -328,7 +329,7 @@ a {
 
 /* User Login Heading */
 .login-heading {
-    font-size: 2.4vw;
+    font-size: 2.5em;
     font-weight: bold;
     color: #f2f2f2;
     margin-top: 4vh;
@@ -344,19 +345,15 @@ a {
     width: 80%;
     border: 0;
     border-radius: 5px;
-    margin-bottom: 3vh; 
     padding: 6px;
+    margin: auto 8%;
+    margin-bottom: 3vh; 
 }
 
-.login-input::placeholder {
-    color: #a7a7a7;
-    font-family: 'Gill Sans', sans-serif;
-}
 
 /* Login Button */
 .login-button {
     display: block;
-    width: 80%;
     padding: 10px 20px;
     background-color: #f2f2f2;
     color: #121212;
@@ -368,6 +365,7 @@ a {
     letter-spacing: 1.2;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     font-weight: 600;
+    margin-top: 1vh;
     margin-bottom: 2vh;
 }
 

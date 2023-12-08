@@ -3,7 +3,11 @@
 """
 Login Page for the Spotify Music Exploration/Recommendation System. 
 
-Takes user first and last name as input and performs user match to login.
+Authenticates users by taking their first and last name as input then 
+performing user match to verify the existence of the user in the system's 
+database.  
+
+Once authenticated, users will proceed to their personalized music profile.
 """
 
 # Import packages
@@ -39,7 +43,7 @@ login_page = html.Div([
                         className="first-name-input"),
                 dcc.Input(id="last-name", type="text", placeholder="Last Name",
                         className="last-name-input"),
-            ], className="login-input"),
+            ]),
 
             # Login Button
             dcc.Link(
