@@ -87,21 +87,38 @@ Spotify-Music-Recommendation-System (master)
 |     |      |      |      playlist.py
 |     |      |      |      profile.py
 |     |----- database.py
-|     |----- music_reco_sys_db.sqlite
+|     |----- music_reco_sys_db.sqlit
 |     |----- page_template.py
 ```
 
 ## Data
 
-Spotify Data Set
-   
+[Spotify Data Set](https://github.com/CSE583-Fall2023-Project/Spotify-Music-Recommendation-System/blob/main/data/spotify_data.csv)   
 
 <br>
 
 ## Execution of Recommondation System
+- Installation of Dash
+- Execute "python app.py" for the Interactive user Interface through the link: http://127.0.0.1:5000/
 
-Upload images and explain steps   
+- The Home Page of the User Interface:
+![Home Page](https://github.com/CSE583-Fall2023-Project/Spotify-Music-Recommendation-System/blob/main/image/Mainpage.PNG)
 
+- Exploration Features:
+
+**Charateristic of a Song**
+![Characteristic of a Song](https://github.com/CSE583-Fall2023-Project/Spotify-Music-Recommendation-System/blob/main/image/Characters.PNG)
+
+**Music Trend**
+![Trend of Music](https://github.com/CSE583-Fall2023-Project/Spotify-Music-Recommendation-System/blob/main/image/Trend.PNG)
+
+- Personal Playlist:
+
+**User Login Interface**
+![User Login](https://github.com/CSE583-Fall2023-Project/Spotify-Music-Recommendation-System/blob/main/image/Login.PNG)
+
+**PlayList Recommendation**
+![Playlist Recommendation](https://github.com/CSE583-Fall2023-Project/Spotify-Music-Recommendation-System/blob/main/image/Recommendation%20List.PNG)
 
 <br>
 

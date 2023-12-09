@@ -284,13 +284,16 @@ a {
 
 
 
-/*** Login Window ***/
-.login-window {
-    background-image: url('banner-2048.png');
+/*** Login Page Properties ***/
+
+/* Login Container */
+.login-window-container {
+    background-image: url('banner-cropped.png');
+    background-position: center;
     background-size: cover;
-    position: relative;
-    width: 100vw;       /* 100% of the viewport width */
-    height: 100vh;      /* 100% of the viewport height */
+    position: absolute;
+    width: 100vw;
+    height: 72vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -298,30 +301,87 @@ a {
     z-index: 1;
 }
 
+/* Semi-Transparent Overlay */
+.login-window-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 2;
+}
 
-/*** Login Button ***/
+.login-window {
+    max-width: 320px;
+    height: 50vh;
+    margin: 8% auto;
+    padding: 45px;
+    background: rgba(23, 23, 23, 0.8);
+    border-radius: 10px;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* User Login Heading */
+.login-heading {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #f2f2f2;
+    margin-top: 4vh;
+    margin-bottom: 4vh;
+}
+
+/* Input Styles */
+.first-name-input, .last-name-input {
+    background: #f2f2f2;
+    font-family: "Gill Sans", sans-serif;
+    font-size: 2vh;
+    height: 4vh;
+    width: 80%;
+    border-width: 1px;
+    border-color:#1db954;
+    border-radius: 5px;
+    padding: 6px;
+    margin: auto 8%;
+    margin-bottom: 3vh; 
+}
+
+
+/* Login Button */
 .login-button {
     display: block;
-    margin: 20px 0 20px auto;
     padding: 10px 20px;
-    background-color: white;
-    color: black;
+    background-color: #1db954;
+    color: #f2f2f2;
     border: none;
     cursor: pointer;
     border-radius: 5px;
     font-size: 1.5vw;
-    font-family: Gill Sans;
+    font-family: 'Gill Sans', sans-serif;
     letter-spacing: 1.2;
-    z-index: 3;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     font-weight: 600;
-    transition: all 0.3s ease;
+    margin-top: 1vh;
+    margin-bottom: 2vh;
 }
 
 .login-button:hover {
-    background-color: #f2f2f2;
+    background-color: #1e8843;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    transform: translateY(-2px);
+}
+
+.login-output {
+    font-family: 'Gill Sans', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    color: #f2f2f2;
+    margin: auto 8%;
+    margin-top: 10px;
 }
 
 
@@ -329,51 +389,176 @@ a {
 /*** User Profile Properties ***/
 
 /* User Profile */
-.user-info-display {
-    border-bottom: solid black 1px;
-    display: grid;
-    grid-template-columns: 600px auto;
-    height: 580px;
-    grid-auto-flow: row;
+.user-profile-container {
+    margin-top: 7vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; 
+    width: 100vw;
 }
 
+.user-info-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 50vw; 
+    height: auto;
+    margin: 0 auto;
+    margin-bottom: 1vh;
+}
+
+.user-image-container {
+    flex: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-profile-image {
+    max-width: 150px; 
+    max-height: 150px; 
+    padding-left: 5em;
+}
+
+.user-detail-container {
+    flex: 4.5;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.user-name {
+    font-size: 8vh; 
+    font-weight: 640;
+    color: #f2f2f2;
+    margin-bottom: 0.1em;
+    margin-top: 0.2em;
+}
+
+.user-detail {
+    font-size: 2.1vh;
+    letter-spacing: 0.06em;
+    font-weight: 400;
+    color: #a7a7a7
+}
+
+.profile-divider {
+    width: 96%; 
+    border: 1px solid rgba(167, 167, 167, 0.5);
+    margin: 2vh auto;
+}
+
+
+/* User Music Profile */
+.user-music-profile-container {
+    display: flex;
+    justify-content: center; 
+    align-items: flex-start; 
+    width: 100vw; 
+    height: 64vh;
+}
 
 /* Recommended Songs */
-.recommended-songs {
-    border-bottom: solid black 1px;
-    display: grid;
-    grid-template-columns: 600px auto;
-    height: 580px;
-    grid-auto-flow: row;
-}
-
 .recommended-songs-container {
-    display: grid;
-    padding-left: 50px;
+    flex: 1; 
+    display: flex;
+    flex-direction: column; 
+    height: 100%; 
+    padding: 1em; 
+    box-sizing: border-box; 
+    margin-top: 2vh;
 }
 
 .recommended-songs-title {
-    width: 500px;
-    font-size: 40px;
+    font-size: 2em;
     font-weight: 600;
-    height: auto;
-    font-family: ultraboldFont;
+    margin-bottom: 0.5em; 
+}
+
+.user-playlist-container {
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+.song-name {
+    font-size: 1.25em;
+    color: #f2f2f2;
+}
+
+.song-name:hover {
+    color: rgba(29, 185, 84, 0.8);
+    text-decoration: underline;
+}
+
+.song-artist {
+    font-size: 0.9em;
+    color: #a7a7a7;
+    padding-bottom: 0.5em;
+}
+
+ol {
+    counter-reset: list-counter; /* Creates a counter for your list items */
+    list-style-type: none; /* Removes the default list style */
+    padding-left: 0; /* Removes default padding */
+}
+
+ol li {
+    position: relative; /* Positions the pseudo-element relative to the list item */
+    margin-bottom: 10px; /* Adds space between list items */
+    padding-left: 30px; /* Adds space for the list number */
+    counter-increment: list-counter; /* Increments the counter */
+}
+
+ol li::before {
+    content: counter(list-counter) "";
+    position: absolute; /* Positions the number absolutely within the list item */
+    left: 0;            /* Left-aligned numbers */
+    font-size: 1em; 
+    color: rgba(167, 167, 167, 0.8); 
+    padding-top: 0.15em;
+}
+
+
+/* Music Style */
+.music-style-container {
+    flex: 1; 
+    display: flex;
+    flex-direction: column; 
+    height: 100%; 
+    padding: 1em;
+    box-sizing: border-box; 
+    margin-top: 2vh;
 }
 
 .music-style-title {
-    font-family: regularFont;
-    font-size: 40px;
-    display: flex;
-    align-items: flex-end;
-    height: 100px;
+    font-size: 2em;
+    font-weight: 600;
+    text-align: center;
 }
+
 
 /* Logout Button */
 .logout-button {
-    margin-top: 20px;
-    height: 40px;
+    display: block;
     padding: 10px 20px;
-    font-size: 20px;
+    background-color: #f2f2f2;
+    color: #121212;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1.5vw;
+    font-family: 'Gill Sans', sans-serif;
+    letter-spacing: 1.2;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     font-weight: 600;
-    display: inline-block;
+    margin-top: 1vh;
+    margin-bottom: 2vh;
+}
+
+.logout-button:hover {
+    background-color: #a7a7a7;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
