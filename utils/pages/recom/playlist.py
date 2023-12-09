@@ -1,5 +1,4 @@
 from sqlalchemy.orm import sessionmaker
-from sqlalchemy.exc import SQLAlchemyError
 from dash.exceptions import PreventUpdate
 from dash import Output, Input, State, html
 import dash
@@ -9,34 +8,7 @@ from utils.pages.login.usermatch import check_user
 
 # Create a session maker bound to your engine
 Session = sessionmaker(bind=engine)
-
-
-def fetch_user_playlist(user_id, session=None):
-    own_session = False
-    if session is None:
-        session = Session()
-        own_session = True
-    else:
-        session = session
-
-    try:
-        login_user_playlist = session.query(UserRecommendation).filter_by(user_id=user_id).all()
-        print(f"Fetched recommendations: {login_user_playlist}")
-        songs_list, artists_list, urls_list = [], [], []
-        for recommendation in login_user_playlist:
-            print(f"Fetching song for ID: {recommendation.song_id}")  # Debug print
-            song = session.query(SpotifyData).filter_by(song_id=recommendation.song_id).first()
-            if song:
-                songs_list.append(song.song_name)
-                artists_list.append(song.artist_name)
-                urls_list.append(song.song_id)
-        return songs_list, artists_list, urls_list
-
-    except SQLAlchemyError as e:
-        print(f"Error accessing database: {e}")
-    finally:
-        if own_session:
-            session.close()
+session = Session()
 
 
 @dash.callback(
@@ -52,8 +24,18 @@ def get_recommendations(n_clicks, first_name, last_name):
         user_exists, user_data = check_user(first_name, last_name)
         if user_exists:
             uid = user_data['user_id']
-            print(uid)
-            return fetch_user_playlist(uid)
+            login_user_playlist = session.query(UserRecommendation).filter_by(user_id=uid).all()
+            # Get song and artist names from ids
+            songs_list, artists_list, urls_list = [], [], []
+            for recommendation in login_user_playlist:
+                song = session.query(SpotifyData).filter_by(song_id=recommendation.song_id).first()
+                if song:
+                    songs_list.append(song.song_name)
+                    artists_list.append(song.artist_name)
+                    urls_list.append(song.song_id)
+            session.close()
+            return songs_list, artists_list, urls_list
+
     raise PreventUpdate
 
 
