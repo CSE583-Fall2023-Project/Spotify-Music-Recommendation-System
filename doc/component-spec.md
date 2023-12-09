@@ -38,7 +38,7 @@
 
 <details>
 <summary ><b>Functionality</b></summary>
-<p>The core of the system is the Recommendation Engine, which utilizes collaborative and content-based filtering to produce music suggestions. It takes into account user preferences, listening habits, and social connections to generate relevant song and artist recommendations.</p>
+<p>The core of the system is the Recommendation Engine, which utilizes collaborative filtering to produce music suggestions. It takes into account user preferences and social connections to generate relevant song and artist recommendations.</p>
 </details>
 <table>
   <tr>
@@ -49,10 +49,11 @@
     <td style="background-color:#f2f2f2;text-align:center;"><b>Outputs</b></td>
   </tr>
   <tr>
-    <td>Listening histories, genre preferences, artist selections, and social listening trends from the Data Manager.</td>
+    <td>Listening histories of users and friends from the Data Manager.</td>
     <td rowspan="2" style="vertical-align:middle;text-align:center;">A personalized playlist of songs and artists, customized to users' music preferences.</td>
   </tr>
 </table>
+
 
 
 ### Visualization Manager
@@ -75,9 +76,7 @@
     <td rowspan="2" style="vertical-align:middle;text-align:center;">A dashboard of visual aids such as charts, graphs, and timelines to illustrate the evolution of music, characteristics of songs, and personalized listening behaviors.</td>
   </tr>
 </table>
-
-
-<br> 
+ 
 
 
 ## 🧬 Use Cases and Interactions  
@@ -115,9 +114,6 @@
   </ol>
 </div>
 </details>
-
-
-<br> 
 
 
 ## 📝 Preliminary Plan
