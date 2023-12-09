@@ -52,23 +52,8 @@ def get_recommendations(n_clicks, first_name, last_name):
         user_exists, user_data = check_user(first_name, last_name)
         if user_exists:
             uid = user_data['user_id']
-<<<<<<< HEAD
             print(uid)
             return fetch_user_playlist(uid)
-=======
-            login_user_playlist = session.query(UserRecommendation).filter_by(user_id=uid).all()
-            # Get song and artist names from ids
-            songs_list, artists_list, urls_list = [], [], []
-            for recommendation in login_user_playlist:
-                song = session.query(SpotifyData).filter_by(song_id=recommendation.song_id).first()
-                if song:
-                    songs_list.append(song.song_name)
-                    artists_list.append(song.artist_name)
-                    urls_list.append(song.song_id)
-            session.close()
-            return songs_list, artists_list, urls_list
-
->>>>>>> bf0b32a999ab89668554b2f616dbae90e742dfbd
     raise PreventUpdate
 
 
