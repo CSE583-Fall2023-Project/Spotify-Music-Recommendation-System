@@ -20,8 +20,6 @@ The scope of this project emcompasses three major aspects.  First, we hope to <s
 </p>
 
 
-<br>
-
 
 ## 🌟 User Stories
 
@@ -51,20 +49,17 @@ Dave is a professor at the University of Washington who loves music.  Tired of r
 </details>
 
 
-<br>
-
 
 ## ✅ Acceptance Criteria
 
-- <span style="color: green">The system allows users to create a profile detailing their music preferences.</span>
+- <span style="color: green">The system allows users to check out their music profile detailing their music preferences.</span>
 - <span style="color: green">Personalized recommendations should span songs and artists, informed by user history and broader trends.</span>
 - <span style="color: green">The system should offer insights into music evolution from 1921 to 2020.</span>
 - <span style="color: green">Users can explore the audio features of music to understand what shapes their preferences.</span>
-- <span style="color: green">The system should provide visualizations of music trends and audio features alongside recommendations.</span>
-- <span style="color: green">The recommendations should adapt with the user's feedback.</span>
+- <span style="color: green">The system should provide visualizations of music trends and link to Spotify music source alongside recommendations.</span>
 
 
-<br>
+
 
 
 ## 🎭 Use Case
@@ -75,9 +70,8 @@ Dave is a professor at the University of Washington who loves music.  Tired of r
     <p>The user visits the music exploration platform with the intent to browse and understand historical music trends without logging in. The platform presents a timeline feature where the user can navigate through different eras of music, listening to samples, and viewing trend data.</p>
     <ul class="use-case-list">
       <li>User lands on the home page and starts their journey of music exploration without logging in.</li>
-      <li>User selects a time period of interest to explore music trends.</li>
-      <li>The system displays a variety of metrics and data visualization representing the musical landscape of the selected time.</li>
-      <li>User can listen to sample tracks, add songs to their profile, and learn about influential artists and genres.</li>
+      <li>User selects a time period of interest to explore music trends or a specific song to check musical features.</li>
+      <li>The system displays a variety of metrics and data visualization representing the musical landscape of the selected time or song.</li>
     </ul>
   </div>
 </details>
@@ -85,46 +79,42 @@ Dave is a professor at the University of Washington who loves music.  Tired of r
 <details>
 <summary><b>Use Case 2: User Receiving Music Profile with Personalized Music Recommendations </b></summary>
 <div class="use-case-content">
-    <p>The user aims to receive personalized music profile with recommendations tailored to their tastes. The system analyzes the user's listening history, friends' favorite tracks, and artist preferences to generate a custom playlist.</p>
+    <p>The user aims to receive personalized music profile with recommendations tailored to their tastes. The system analyzes the user's listening history and friends' favorite tracks to generate a custom playlist.</p>
     <ul class="use-case-list">
-      <li>The system has gathered sufficient data on user preferences and historical music trends.</li>
+      <li>The system has gathered sufficient data on user preferences.</li>
       <li>User logs in from the home page.</li>
-      <li>The system pulls the user's listening history and stated preferences. </li>
+      <li>The system pulls the user's listening history. </li>
       <li>The system employs an algorithm to find and recommend new music matching the user's preferences.</li>
-      <li>User receives personalized music profile, inclusing a curated playlist which they can save, modify, and rate.</li>
+      <li>User receives personalized music profile, inclusing a curated playlist which they can directly listen to.</li>
       <li>The music profile offers insightful analytics on the user's preferred music features, sheds light on favored genres, and pinpoints the time periods that resonate most with their musical sensibilities. </li>
-      <li>User discovers the current favorites within the user's friend circle through a social listening window. </li>
-      <li>User saves their personalized music profile as pdf in their local devices.</li>
-      <li>The system refines its recommendations based on user feedback and interaction with the playlist.</li>
     </ul>
   </div>
 </details>
 
 **Exemptions:**
 
-- If the user is not in the internal database, the system generates error messages.
-- If the system cannot generate recommendations due to a lack of data, it offers a guided journey through music history to help define their preferences.
+If the user is not in the internal database, the system generates error messages.
 
 **Frequency of Use:**
 
 Users can engage with the system daily or as often as they seek new music.
 
-<br>
+
 
 ## 📜 Business Rules
 
 - <span style="color: blue">The use of dummy data in the system eliminates concerns regarding actual user privacy.</span>
 - <span style="color: blue">The system is designed to inform users about the broad spectrum and evolution of music genres.</span>
-- <span style="color: blue">The personalized recommendations should offer a mix of popular hits and niche songs to enrich the user’s experience.</span>
+- <span style="color: blue">The recommended playlist should allow users to actually listen to the songs by accessing the Spotify music source .</span>
 - <span style="color: blue">The system should be capable of illustrating complex data (e.g., audio features, historical trends) in an accessible and user-friendly manner.</span>
 
 
-<br>
+
 
 
 ## 📊 Data Source
 
-### Spotify Dataset (Content Filtering)
+### Spotify Dataset 
 
 This data set contains 170,653 songs released from 1921 to 2020 from Spotify. For the purpose of research, we have modified the original data [(check it here)](https://www.kaggle.com/datasets/vatsalmavani/spotify-dataset/code) by renaming fields and adding identification and genre information. Typical features include:
 
