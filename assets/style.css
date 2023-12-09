@@ -488,13 +488,32 @@ a {
     color: #f2f2f2;
 }
 
+.song-name:hover {
+    color: rgba(29, 185, 84, 0.8);
+    text-decoration: underline;
+}
+
 .song-artist {
     font-size: 0.9em;
     color: #a7a7a7;
     padding-bottom: 0.5em;
 }
 
+ol {
+    counter-reset: list-counter; /* Creates a counter for your list items */
+    list-style-type: none; /* Removes the default list style */
+    padding-left: 0; /* Removes default padding */
+}
+
+ol li {
+    position: relative; /* Positions the pseudo-element relative to the list item */
+    margin-bottom: 10px; /* Adds space between list items */
+    padding-left: 30px; /* Adds space for the list number */
+    counter-increment: list-counter; /* Increments the counter */
+}
+
 ol li::before {
+    content: counter(list-counter) "";
     position: absolute; /* Positions the number absolutely within the list item */
     left: 0;            /* Left-aligned numbers */
     font-size: 1em; 

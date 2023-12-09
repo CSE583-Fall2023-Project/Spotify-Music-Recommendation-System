@@ -2,7 +2,6 @@ from sqlalchemy.orm import sessionmaker
 from dash.exceptions import PreventUpdate
 from dash import Output, Input, State, html
 import dash
-import json
 
 from utils.database import UserRecommendation, SpotifyData, engine
 from utils.pages.login.usermatch import check_user
@@ -14,7 +13,8 @@ session = Session()
 
 @dash.callback(
     [Output('playlist-song-store', 'data'),
-     Output('playlist-artist-store', 'data')],
+     Output('playlist-artist-store', 'data'),
+     Output('playlist-url-store', 'data')],
     Input('login-button', 'n_clicks'),
     [State('first-name', 'value'),
      State('last-name', 'value')]
@@ -26,14 +26,15 @@ def get_recommendations(n_clicks, first_name, last_name):
             uid = user_data['user_id']
             login_user_playlist = session.query(UserRecommendation).filter_by(user_id=uid).all()
             # Get song and artist names from ids
-            songs_list, artists_list = [], []
+            songs_list, artists_list, urls_list = [], [], []
             for recommendation in login_user_playlist:
                 song = session.query(SpotifyData).filter_by(song_id=recommendation.song_id).first()
                 if song:
                     songs_list.append(song.song_name)
                     artists_list.append(song.artist_name)
+                    urls_list.append(song.song_id)
             session.close()
-            return songs_list, artists_list
+            return songs_list, artists_list, urls_list
 
     raise PreventUpdate
 
@@ -41,17 +42,19 @@ def get_recommendations(n_clicks, first_name, last_name):
 @dash.callback(
     Output('user-playlist-container', 'children'),
     [Input('playlist-song-store', 'data'),
-     Input('playlist-artist-store', 'data')]
+     Input('playlist-artist-store', 'data'),
+     Input('playlist-url-store', 'data')]
 )
-def update_user_playlist(songs_list, artists_list):
-    if songs_list and artists_list:
+def update_user_playlist(songs_list, artists_list, urls_list):
+    if songs_list and artists_list and urls_list:
         list_items = []
-        for song, artist in zip(songs_list, artists_list):
+        base_url = "https://open.spotify.com/track/"
+        for song, artist, url in zip(songs_list, artists_list, urls_list):
+            track_url = base_url + url
             item = html.Li([
-                html.Div(song, className="song-name"),
+                html.A(song, href=track_url, target="_blank", className="song-name"),
                 html.Div(artist, className="song-artist")
             ])
             list_items.append(item)
         return html.Ol(list_items)
     raise PreventUpdate
-
