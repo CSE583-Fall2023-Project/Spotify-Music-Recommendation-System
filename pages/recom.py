@@ -25,15 +25,19 @@ user_info_display = \
     ], className="user-profile-container")
 
 # Recommended Songs
-recommended_songs = html.Div([
+recommended_songs = \
     html.Div([
-        html.Span("Your recommended songs:",
-                  className="recommended-songs-title"),
-        html.Div(id="user-playlist-container"),
-        html.Div(html.H1("Your music style:",
-                         className="music-style-title"))
-    ], className="recommended-songs-container"),
-], className="recommended-songs")
+        html.Div([
+            html.Div(html.H1("Your Music Taste",
+                             className="music-style-title"))
+        ], className="music-style-container"),
+        html.Div([
+            html.Span("Recommended Songs",
+                      className="recommended-songs-title"),
+            html.Div(id="user-playlist-container",
+                     className="user-playlist-container"),
+        ], className="recommended-songs-container")
+    ], className="user-music-profile-container")
 
 # Logout Button
 logout_button = dcc.Link(

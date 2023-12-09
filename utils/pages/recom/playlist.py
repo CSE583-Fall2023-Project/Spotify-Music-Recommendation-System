@@ -48,8 +48,8 @@ def update_user_playlist(songs_list, artists_list):
         list_items = []
         for song, artist in zip(songs_list, artists_list):
             item = html.Li([
-                html.Div(song, style={'font-weight': 'bold'}),
-                html.Div(f" - by {artist}", style={'margin-left': '10px', 'color': '#F5F5DC'})
+                html.Div(song, className="song-name"),
+                html.Div(artist, className="song-artist")
             ])
             list_items.append(item)
         return html.Ol(list_items)

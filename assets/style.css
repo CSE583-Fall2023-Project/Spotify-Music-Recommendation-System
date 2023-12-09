@@ -452,42 +452,94 @@ a {
 }
 
 
-/* Recommended Songs */
-.recommended-songs {
-    border-bottom: solid black 1px;
-    display: grid;
-    grid-template-columns: 600px auto;
-    height: 580px;
-    grid-auto-flow: row;
+/* User Music Profile */
+.user-music-profile-container {
+    display: flex;
+    justify-content: center; 
+    align-items: flex-start; 
+    width: 100vw; 
+    height: 64vh;
 }
 
+/* Recommended Songs */
 .recommended-songs-container {
-    display: grid;
-    padding-left: 50px;
+    flex: 1; 
+    display: flex;
+    flex-direction: column; 
+    height: 100%; 
+    padding: 1em; 
+    box-sizing: border-box; 
+    margin-top: 2vh;
 }
 
 .recommended-songs-title {
-    width: 500px;
-    font-size: 40px;
+    font-size: 2em;
     font-weight: 600;
-    height: auto;
-    font-family: ultraboldFont;
+    margin-bottom: 0.5em; 
+}
+
+.user-playlist-container {
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+.song-name {
+    font-size: 1.25em;
+    color: #f2f2f2;
+}
+
+.song-artist {
+    font-size: 0.9em;
+    color: #a7a7a7;
+    padding-bottom: 0.5em;
+}
+
+ol li::before {
+    position: absolute; /* Positions the number absolutely within the list item */
+    left: 0;            /* Left-aligned numbers */
+    font-size: 1em; 
+    color: rgba(167, 167, 167, 0.8); 
+    padding-top: 0.15em;
+}
+
+
+/* Music Style */
+.music-style-container {
+    flex: 1; 
+    display: flex;
+    flex-direction: column; 
+    height: 100%; 
+    padding: 1em;
+    box-sizing: border-box; 
+    margin-top: 2vh;
 }
 
 .music-style-title {
-    font-family: regularFont;
-    font-size: 40px;
-    display: flex;
-    align-items: flex-end;
-    height: 100px;
+    font-size: 2em;
+    font-weight: 600;
+    text-align: center;
 }
+
 
 /* Logout Button */
 .logout-button {
-    margin-top: 20px;
-    height: 40px;
+    display: block;
     padding: 10px 20px;
-    font-size: 20px;
+    background-color: #f2f2f2;
+    color: #121212;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1.5vw;
+    font-family: 'Gill Sans', sans-serif;
+    letter-spacing: 1.2;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     font-weight: 600;
-    display: inline-block;
+    margin-top: 1vh;
+    margin-bottom: 2vh;
+}
+
+.logout-button:hover {
+    background-color: #a7a7a7;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
