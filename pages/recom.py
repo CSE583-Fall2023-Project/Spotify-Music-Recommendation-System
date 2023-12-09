@@ -28,8 +28,10 @@ user_info_display = \
 recommended_songs = \
     html.Div([
         html.Div([
-            html.Div(html.H1("Your Music Taste",
-                             className="music-style-title"))
+            html.Span("Your Music Taste", className="music-style-title"),
+            html.Div([
+                dcc.Graph(figure={}, id="user-attribute-radar-chart")
+            ], className="user-attribute-radar-chart")
         ], className="music-style-container"),
         html.Div([
             html.Span("Recommended Songs",

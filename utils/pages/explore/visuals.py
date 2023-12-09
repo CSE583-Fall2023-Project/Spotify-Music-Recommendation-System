@@ -1,3 +1,9 @@
+# utils/pages/explore/visuals.py
+
+"""
+
+"""
+
 import pandas as pd
 import plotly.express as px
 from dash import callback, Output, Input
@@ -8,6 +14,7 @@ from plotly.validator_cache import ValidatorCache
 
 from utils.database import SpotifyData, DataByYear, engine
 
+# Create session and connect to database
 Session = sessionmaker(bind=engine)
 session = Session()
 

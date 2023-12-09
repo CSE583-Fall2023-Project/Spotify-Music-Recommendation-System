@@ -58,3 +58,10 @@ def update_user_playlist(songs_list, artists_list, urls_list):
             list_items.append(item)
         return html.Ol(list_items)
     raise PreventUpdate
+
+
+
+@callback(
+    Output("user-attribute-radar-chart", "figure"),
+    Input("song-selecting-dropdown", "data")
+)

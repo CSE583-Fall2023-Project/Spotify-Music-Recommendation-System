@@ -469,7 +469,6 @@ a {
     height: 100%; 
     padding: 1em; 
     box-sizing: border-box; 
-    margin-top: 2vh;
 }
 
 .recommended-songs-title {
@@ -485,6 +484,7 @@ a {
 
 .song-name {
     font-size: 1.25em;
+    letter-spacing: 1.0px;
     color: #f2f2f2;
 }
 
@@ -496,26 +496,25 @@ a {
 .song-artist {
     font-size: 0.9em;
     color: #a7a7a7;
-    padding-bottom: 0.5em;
 }
 
 ol {
-    counter-reset: list-counter; /* Creates a counter for your list items */
-    list-style-type: none; /* Removes the default list style */
-    padding-left: 0; /* Removes default padding */
+    counter-reset: list-counter;
+    list-style-type: none; 
+    padding-left: 0; 
 }
 
 ol li {
-    position: relative; /* Positions the pseudo-element relative to the list item */
-    margin-bottom: 10px; /* Adds space between list items */
-    padding-left: 30px; /* Adds space for the list number */
-    counter-increment: list-counter; /* Increments the counter */
+    position: relative; 
+    margin-bottom: 0.5em; 
+    padding-left: 30px; 
+    counter-increment: list-counter;
 }
 
 ol li::before {
     content: counter(list-counter) "";
-    position: absolute; /* Positions the number absolutely within the list item */
-    left: 0;            /* Left-aligned numbers */
+    position: absolute; 
+    left: 0;                    /* Left-aligned numbers */
     font-size: 1em; 
     color: rgba(167, 167, 167, 0.8); 
     padding-top: 0.15em;
@@ -528,15 +527,14 @@ ol li::before {
     display: flex;
     flex-direction: column; 
     height: 100%; 
-    padding: 1em;
+    padding: 1em; 
     box-sizing: border-box; 
-    margin-top: 2vh;
+    align-items: center;
 }
 
 .music-style-title {
     font-size: 2em;
     font-weight: 600;
-    text-align: center;
 }
 
 
