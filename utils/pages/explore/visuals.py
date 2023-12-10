@@ -25,21 +25,27 @@ attributes = ["acousticness", "danceability", "energy", "instrumentalness",
 
 def get_min_max_years(session=None):
     """Retrieve the minimum and maximum years from DataByYear."""
-    if session is not None:
-        session = session
-    else:
+    own_session = False
+    if session is None:
         session = Session()
+        own_session = True
+
     min_year = session.query(func.min(DataByYear.year)).scalar()
     max_year = session.query(func.max(DataByYear.year)).scalar()
+
+    if own_session:
+        session.close()
+
+    if min_year is None or max_year is None:
+        return None, None  # Or some default values
+
     return int(float(min_year)), int(float(max_year))
 
 
-def get_decades(min_year, max_year, session=None):
+def get_decades(min_year, max_year):
     """Create a list of decades based on the min and max years."""
-    if session is not None:
-        session = session
-    else:
-        session = Session()
+    if min_year is None or max_year is None:
+        return []
     decades = list(range(min_year + (10 - min_year % 10), max_year + 1, 10))
     decades = [min_year] + decades if min_year not in decades else decades
     decades += [max_year] if max_year not in decades else []
@@ -74,39 +80,42 @@ def empty_radar_plot():
     Input(component_id="attribute-checklist", component_property="value"),
     Input(component_id="year-range-slider", component_property="value")
 )
-def update_attribute_trend(selected_attributes, selected_years):
-    with Session() as session:
-        filtered_data_query = session.query(DataByYear).filter(
-            and_(
-                DataByYear.year >= selected_years[0],
-                DataByYear.year <= selected_years[1]
-            )
+def update_attribute_trend(selected_attributes, selected_years, session=None):
+    if session is not None:
+        session = session
+    else:
+        session = Session()
+    filtered_data_query = session.query(DataByYear).filter(
+        and_(
+            DataByYear.year >= selected_years[0],
+            DataByYear.year <= selected_years[1]
         )
-        # Extract the data from the query
-        filtered_data = pd.read_sql(filtered_data_query.statement, session.bind)
-        fig = px.line(filtered_data, x="year", y=selected_attributes)
-        fig.update_layout(
-            plot_bgcolor="#121212",
-            paper_bgcolor="#121212",
-            font=dict(
-                family="Gill Sans, Arial, sans-serif", 
-                color="#f2f2f2"
-            )
+    )
+    # Extract the data from the query
+    filtered_data = pd.read_sql(filtered_data_query.statement, session.bind)
+    fig = px.line(filtered_data, x="year", y=selected_attributes)
+    fig.update_layout(
+        plot_bgcolor="#121212",
+        paper_bgcolor="#121212",
+        font=dict(
+            family="Gill Sans, Arial, sans-serif",
+            color="#f2f2f2"
         )
-        fig.update_xaxes(
-            showgrid=True,
-            gridcolor='rgba(242, 242, 242, 0.5)',
-            tickmode="linear",
-            tick0="1920",
-            dtick=10,
-            tickformat=",d"
-        )
-        fig.update_yaxes(
-            showgrid=True,
-            zeroline=False,
-            gridcolor='rgba(242, 242, 242, 0.5)'
-        )
-        return fig
+    )
+    fig.update_xaxes(
+        showgrid=True,
+        gridcolor='rgba(242, 242, 242, 0.5)',
+        tickmode="linear",
+        tick0="1920",
+        dtick=10,
+        tickformat=",d"
+    )
+    fig.update_yaxes(
+        showgrid=True,
+        zeroline=False,
+        gridcolor='rgba(242, 242, 242, 0.5)'
+    )
+    return fig
 
 
 # Visualization #2

@@ -15,10 +15,14 @@ class TestRecommendation(unittest.TestCase):
 
     def setUp(self):
         self.session = self.Session()
-        self.session.begin_nested()  # Start a new transaction
         self.add_test_data()
 
     def add_test_data(self):
+        # Clear tables first to avoid integrity errors
+        self.session.query(UserRecommendation).delete()
+        self.session.query(SpotifyData).delete()
+        self.session.query(Users).delete()
+
         valid_user = Users(
             user_id="user_id_1",
             first_name="Honorable",
@@ -26,145 +30,11 @@ class TestRecommendation(unittest.TestCase):
         )
         self.session.add(valid_user)
 
-        user_playlist_song1 = UserRecommendation(
-            user_id="user_id_1",
-            song_id="song_id_1",
-            rank=1
-        )
-        self.session.add(user_playlist_song1)
-
-        user_playlist_song2 = UserRecommendation(
-            user_id="user_id_1",
-            song_id="song_id_2",
-            rank=2
-        )
-        self.session.add(user_playlist_song2)
-
-        user_playlist_song3 = UserRecommendation(
-            user_id="user_id_1",
-            song_id="song_id_3",
-            rank=3
-        )
-        self.session.add(user_playlist_song3)
-
-        user_playlist_song4 = UserRecommendation(
-            user_id="user_id_1",
-            song_id="song_id_4",
-            rank=4
-        )
-        self.session.add(user_playlist_song4)
-
-        user_playlist_song5 = UserRecommendation(
-            user_id="user_id_1",
-            song_id="song_id_5",
-            rank=5
-        )
-        self.session.add(user_playlist_song5)
-
-        user_playlist_song6 = UserRecommendation(
-            user_id="user_id_1",
-            song_id="song_id_6",
-            rank=6
-        )
-        self.session.add(user_playlist_song6)
-
-        user_playlist_song7 = UserRecommendation(
-            user_id="user_id_1",
-            song_id="song_id_7",
-            rank=7
-        )
-        self.session.add(user_playlist_song7)
-
-        user_playlist_song8 = UserRecommendation(
-            user_id="user_id_1",
-            song_id="song_id_8",
-            rank=8
-        )
-        self.session.add(user_playlist_song8)
-
-        user_playlist_song9 = UserRecommendation(
-            user_id="user_id_1",
-            song_id="song_id_9",
-            rank=9
-        )
-        self.session.add(user_playlist_song9)
-
-        user_playlist_song10 = UserRecommendation(
-            user_id="user_id_1",
-            song_id="song_id_10",
-            rank=10
-        )
-        self.session.add(user_playlist_song10)
-
-        valid_song1 = SpotifyData(
-            song_id='song_id_1',
-            song_name='Long Live',
-            artist_name='Taylor Swift'
-        )
-        self.session.add(valid_song1)
-
-        valid_song2 = SpotifyData(
-            song_id='song_id_2',
-            song_name='This Love',
-            artist_name='Taylor Swift'
-        )
-        self.session.add(valid_song2)
-
-        valid_song3 = SpotifyData(
-            song_id='song_id_3',
-            song_name='Haunted',
-            artist_name='Taylor Swift'
-        )
-        self.session.add(valid_song3)
-
-        valid_song4 = SpotifyData(
-            song_id='song_id_4',
-            song_name='Sparks Fly',
-            artist_name='Taylor Swift'
-        )
-        self.session.add(valid_song4)
-
-        valid_song5 = SpotifyData(
-            song_id='song_id_5',
-            song_name='Blank Space',
-            artist_name='Taylor Swift'
-        )
-        self.session.add(valid_song5)
-
-        valid_song6 = SpotifyData(
-            song_id='song_id_6',
-            song_name='Ours',
-            artist_name='Taylor Swift'
-        )
-        self.session.add(valid_song6)
-
-        valid_song7 = SpotifyData(
-            song_id='song_id_7',
-            song_name='Last Kiss',
-            artist_name='Taylor Swift'
-        )
-        self.session.add(valid_song7)
-
-        valid_song8 = SpotifyData(
-            song_id='song_id_8',
-            song_name='Cardigan',
-            artist_name='Taylor Swift'
-        )
-        self.session.add(valid_song8)
-
-        valid_song9 = SpotifyData(
-            song_id='song_id_9',
-            song_name='Karma',
-            artist_name='Taylor Swift',
-        )
-        self.session.add(valid_song9)
-
-        valid_song10 = SpotifyData(
-            song_id='song_id_10',
-            song_name='Red',
-            artist_name='Taylor Swift'
-        )
-        self.session.add(valid_song10)
+        # Add UserRecommendations and SpotifyData
+        for i in range(1, 11):
+            song_id = f"song_id_{i}"
+            self.session.add(UserRecommendation(user_id="user_id_1", song_id=song_id, rank=i))
+            self.session.add(SpotifyData(song_id=song_id, song_name=f'Song {i}', artist_name=f'Singer {i}'))
 
         self.session.commit()
 
@@ -174,8 +44,7 @@ class TestRecommendation(unittest.TestCase):
 
     def test_fetch_user_playlist_length(self):
         # Call fetch_user_playlist with a mocked session
-        songs_list, artists_list = fetch_user_playlist('user_id_1', session=self.session)
-
+        songs_list, artists_list, _ = fetch_user_playlist('user_id_1', session=self.session)
         # Assertions
         self.assertEqual(len(songs_list), 10)
         self.assertEqual(len(artists_list), 10)
@@ -183,17 +52,17 @@ class TestRecommendation(unittest.TestCase):
 
     def test_nonexistent_user(self):
         # Test behavior for a non-existent user
-        songs_list, artists_list = fetch_user_playlist('user_id_nonexistent', session=self.session)
+        songs_list, artists_list, _ = fetch_user_playlist('user_id_nonexistent', session=self.session)
         self.assertEqual(songs_list, [])
         self.assertEqual(artists_list, [])
 
     def test_data_integrity(self):
         # Check if the fetched data matches the expected results
-        songs_list, artists_list = fetch_user_playlist('user_id_1', session=self.session)
-        expected_songs = ['Long Live', 'This Love', 'Haunted', 'Sparks Fly', 'Blank Space',
-                          'Ours', 'Last Kiss', 'Cardigan', 'Karma', 'Red']
-        expected_artists = ['Taylor Swift', 'Taylor Swift', 'Taylor Swift', 'Taylor Swift', 'Taylor Swift',
-                            'Taylor Swift', 'Taylor Swift', 'Taylor Swift', 'Taylor Swift', 'Taylor Swift']
+        songs_list, artists_list, _ = fetch_user_playlist('user_id_1', session=self.session)
+        expected_songs = ['Song 1', 'Song 2', 'Song 3', 'Song 4', 'Song 5',
+                          'Song 6', 'Song 7', 'Song 8', 'Song 9', 'Song 10']
+        expected_artists = ['Singer 1', 'Singer 2', 'Singer 3', 'Singer 4', 'Singer 5',
+                            'Singer 6', 'Singer 7', 'Singer 8', 'Singer 9', 'Singer 10']
         # No artist data in the test setup, so artists_list is expected to be empty
         self.assertEqual(songs_list, expected_songs)
         self.assertEqual(artists_list, expected_artists)

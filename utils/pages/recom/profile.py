@@ -6,8 +6,8 @@ from sqlalchemy.orm import sessionmaker
 from plotly.graph_objects import Layout
 from plotly.validator_cache import ValidatorCache
 
-from utils.database import SpotifyData, DataByYear, engine
-
+from utils.database import SpotifyData, UserSongs, DataByYear, engine
+from utils.pages.explore.visuals import empty_radar_plot
 
 # Set up the SQLAlchemy session
 Session = sessionmaker(bind=engine)

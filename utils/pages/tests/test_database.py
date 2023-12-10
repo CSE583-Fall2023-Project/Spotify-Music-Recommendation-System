@@ -15,31 +15,23 @@ class TestDatabase(unittest.TestCase):
 
     def setUp(self):
         self.session = self.Session()
-        self.session.begin_nested()  # Start a new transaction
+        self.add_test_data()
 
-    def tearDown(self):
-        self.session.rollback()  # Rollback the transaction
-        self.session.close()
+    def add_test_data(self):
+        # Clear tables first to avoid integrity errors
+        self.session.query(SpotifyData).delete()
+        self.session.query(Users).delete()
 
-    def test_adding_valid_user_to_database(self):
         valid_user = Users(
-            user_id="2dc0cb6c-d4f7-4a95-a9b2-daede98e819a",
-            first_name="Nichole",
-            last_name="Wolf",
+            user_id="001aa",
+            first_name="Cardi",
+            last_name="B",
             sex="F",
-            age=47,
-            profile_pic="assets/profile_pics/2dc0cb6c-d4f7-4a95-a9b2-daede98e819a.png"
+            age=30,
+            profile_pic="assets/profile_pics/001aa.png"
         )
         self.session.add(valid_user)
-        self.session.commit()
-        user = self.session.query(Users).filter_by(user_id="2dc0cb6c-d4f7-4a95-a9b2-daede98e819a").first()
-        self.assertEqual(user.first_name, "Nichole")
-        self.assertEqual(user.last_name, "Wolf")
-        self.assertEqual(user.sex, "F")
-        self.assertEqual(user.age, 47)
-        self.assertEqual(user.profile_pic, "assets/profile_pics/2dc0cb6c-d4f7-4a95-a9b2-daede98e819a.png")
 
-    def test_adding_valid_song_to_database(self):
         valid_song = SpotifyData(
             song_id='7DjCRhhFo9PPzca1BjMLcf',
             song_name='Long Live',
@@ -58,11 +50,25 @@ class TestDatabase(unittest.TestCase):
         )
         self.session.add(valid_song)
         self.session.commit()
+
+    def tearDown(self):
+        self.session.rollback()  # Rollback the transaction
+        self.session.close()
+
+    def test_adding_valid_user_to_database(self):
+        user = self.session.query(Users).filter_by(user_id="001aa").first()
+        self.assertEqual(user.first_name, "Cardi")
+        self.assertEqual(user.last_name, "B")
+        self.assertEqual(user.sex, "F")
+        self.assertEqual(user.age, 30)
+        self.assertEqual(user.profile_pic, "assets/profile_pics/001aa.png")
+
+    def test_adding_valid_song_to_database(self):
         song = self.session.query(SpotifyData).filter_by(song_id="7DjCRhhFo9PPzca1BjMLcf").first()
         self.assertEqual(song.song_name, "Long Live")
         self.assertEqual(song.artist_id, "349a6f757a")
         self.assertEqual(song.artist_name, "Taylor Swift")
-        self.assertEqual(song.year, "2010")
+        self.assertEqual(song.year, 2010)
         self.assertEqual(song.valence, 0.142)
         self.assertEqual(song.acousticness, 0.036)
         self.assertEqual(song.danceability, 0.418)
