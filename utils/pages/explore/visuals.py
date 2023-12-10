@@ -106,11 +106,7 @@ def update_attribute_trend(selected_attributes, selected_years, session=None):
     )
     fig.update_xaxes(
         showgrid=True,
-        gridcolor='rgba(242, 242, 242, 0.5)',
-        tickmode="linear",
-        tick0="1920",
-        dtick=10,
-        tickformat=",d"
+        gridcolor='rgba(242, 242, 242, 0.5)'
     )
     fig.update_yaxes(
         showgrid=True,
