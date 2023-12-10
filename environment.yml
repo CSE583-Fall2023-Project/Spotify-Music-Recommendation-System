@@ -14,10 +14,11 @@ dependencies:
   - greenlet=2.0.1
   - itsdangerous=2.0.1
   - jinja2=3.1.2
+  - joblib=1.2.0
   - libcxx=14.0.6
   - libffi=3.4.4
-#  - libgfortran=5.0.0
-#  - libgfortran5=11.3.0
+  - libgfortran=5.0.0
+  - libgfortran5=11.3.0
   - libopenblas=0.3.21
   - llvm-openmp=14.0.6
   - markupsafe=2.1.1
@@ -34,11 +35,14 @@ dependencies:
   - python-tzdata=2023.3
   - pytz=2023.3.post1
   - readline=8.2
+  - scikit-learn=1.2.2
+  - scipy=1.11.4
   - setuptools=68.0.0
   - six=1.16.0
   - sqlalchemy=2.0.21
   - sqlite=3.41.2
   - tenacity=8.2.2
+  - threadpoolctl=2.2.0
   - tk=8.6.12
   - typing-extensions=4.7.1
   - typing_extensions=4.7.1
@@ -47,4 +51,7 @@ dependencies:
   - wheel=0.41.2
   - xz=5.4.2
   - zlib=1.2.13
-prefix: /Users/chesie/anaconda3/envs/spotipy
+  - pip:
+      - scikit-surprise==1.1.3
+      - surprise==0.1
+prefix: /Users/jtgoodluck/anaconda3/envs/spotipy
