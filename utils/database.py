@@ -42,7 +42,7 @@ class SpotifyData(Base):
     song_name = Column(String, nullable=False)
     artist_id = Column(String)
     artist_name = Column(String)
-    year = Column(String)
+    year = Column(Integer)
     valence = Column(Float)
     acousticness = Column(Float)
     danceability = Column(Float)
@@ -57,7 +57,7 @@ class SpotifyData(Base):
 class DataByYear(Base):
     __tablename__ = 'data_by_year'
     id = Column(Integer, primary_key=True)
-    year = Column(String)
+    year = Column(Integer)
     valence = Column(Float)
     acousticness = Column(Float)
     danceability = Column(Float)
