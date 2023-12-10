@@ -32,6 +32,7 @@ def get_min_max_years(session=None):
 
     min_year = session.query(func.min(DataByYear.year)).scalar()
     max_year = session.query(func.max(DataByYear.year)).scalar()
+    print(min_year, max_year)
 
     if own_session:
         session.close()
@@ -49,6 +50,7 @@ def get_decades(min_year, max_year):
     decades = list(range(min_year + (10 - min_year % 10), max_year + 1, 10))
     decades = [min_year] + decades if min_year not in decades else decades
     decades += [max_year] if max_year not in decades else []
+    print(decades)
     return decades
 
 

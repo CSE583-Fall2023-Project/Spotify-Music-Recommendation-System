@@ -6,7 +6,7 @@ from utils.pages.recom.model import RecommendationModel
 
 
 # Database setup
-engine = create_engine('sqlite:///music_reco_sys_db.sqlite')
+engine = create_engine('sqlite:///spotipy_db.sqlite')
 Base = declarative_base()
 
 
