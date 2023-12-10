@@ -210,6 +210,7 @@ a {
 .scroll-arrow {
     display: block;
     text-align: center;
+    padding: 20px;
     margin-bottom: 6vh;
     font-size: 6vh;
     font-weight: bold;
@@ -278,8 +279,13 @@ a {
 /*** Visualization #2: Radar Chart for Selected Songs ***/
 
 /* Searchable Dropdown */
-.song-selecting-dropdown {
+.dropdown-container {
     padding-top: 3vh;
+}
+
+.song-selecting-dropdown {
+    width: 25%;
+    margin: 20px auto
 }
 
 
