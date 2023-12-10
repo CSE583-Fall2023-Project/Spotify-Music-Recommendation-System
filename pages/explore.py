@@ -56,8 +56,7 @@ Music_Trend = \
 
         # Navigating Arrow
         html.Div(
-            html.A("⌵", href="#02-song-attribute", className="scroll-arrow"),
-            style={"textAlign": "center", "fontSize": "36px", "padding": "20px", "color": "#a7a7a7"}
+            html.A("⌵", href="#02-song-attribute", className="scroll-arrow")
         )
     ], className="content-panel"
              )
@@ -79,9 +78,9 @@ Music_Attribute = \
                 options=[{"label": song, "value": song} for song in sorted_songs],
                 placeholder="Select a song",
                 searchable=True,
-                style={"width": "50%", "margin": "20px auto"}
+                className="song-selecting-dropdown"
             )
-        ], className="song-selecting-dropdown"),
+        ], className="drop-down-container"),
 
         # Radar Chart
         html.Div([

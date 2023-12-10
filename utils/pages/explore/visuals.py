@@ -84,10 +84,29 @@ def update_attribute_trend(selected_attributes, selected_years):
         )
         # Extract the data from the query
         filtered_data = pd.read_sql(filtered_data_query.statement, session.bind)
+        min_year, max_year = get_min_max_years()
+        decades = get_decades(min_year, max_year)
         fig = px.line(filtered_data, x="year", y=selected_attributes)
-        fig.update_layout(plot_bgcolor="#121212",
-                          paper_bgcolor="#121212",
-                          font=dict(family="Gill Sans, Arial, sans-serif", color="#f2f2f2"))
+        fig.update_layout(
+            plot_bgcolor="#121212",
+            paper_bgcolor="#121212",
+            font=dict(
+                family="Gill Sans, Arial, sans-serif", 
+                color="#f2f2f2"
+            )
+        )
+        fig.update_xaxes(
+            showgrid=True,
+            gridcolor='rgba(242, 242, 242, 0.5)',
+            tickmode="linear",
+            tickvals=decades
+        )
+        fig.update_yaxes(
+            showgrid=True,
+            zeroline=False,
+            gridcolor='rgba(242, 242, 242, 0.5)',
+            range=[0, 1]
+        )
         return fig
 
 

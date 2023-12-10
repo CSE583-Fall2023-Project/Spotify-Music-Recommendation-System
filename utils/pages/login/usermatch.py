@@ -69,3 +69,4 @@ def update_user_profile(user_data):
             ], className="user-detail-container")
         ], className="user-info-container")
     return PreventUpdate
+
