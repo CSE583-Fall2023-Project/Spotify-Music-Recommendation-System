@@ -70,7 +70,7 @@ def update_user_playlist(songs_list, artists_list, urls_list):
         base_url = "https://open.spotify.com/track/"
         for song, artist, url in zip(songs_list, artists_list, urls_list):
             track_url = base_url + url
-            play_button = html.Img(src="../../../assets/Spotify-Play-Button.png", className="play-button")
+            play_button = html.Img(src="../../../assets/Spotify-Play-Button2.png", className="play-button")
             song_link = html.A([play_button, song], href=track_url, target="_blank", className="song-name")
             item = html.Li([
                 song_link,
