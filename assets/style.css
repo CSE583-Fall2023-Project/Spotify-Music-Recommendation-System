@@ -423,8 +423,8 @@ a {
 }
 
 .user-profile-image {
-    max-width: 140px; 
-    max-height: 140px; 
+    max-width: 140px;
+    max-height: 140px;
     padding-left: 4.5em;
 }
 
@@ -470,6 +470,8 @@ a {
     background-size: cover;
     position: relative;
 }
+
+
 
 
 /* Overlay */
@@ -539,8 +541,16 @@ a {
 }
 
 .song-artist {
-    font-size: 0.9em;
+    font-size: 1em;
     color: #a7a7a7;
+    margin-left: 35px;
+}
+
+.play-button {
+    width: 25px;
+    height: 25px;
+    vertical-align: middle;
+    margin-right: 10px;
 }
 
 ol {
