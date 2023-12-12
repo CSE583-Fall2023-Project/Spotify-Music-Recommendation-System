@@ -3,6 +3,7 @@ import numpy as np
 import plotly.express as px
 from dash import callback, Output, Input, State
 from dash.exceptions import PreventUpdate
+from sqlalchemy import func, desc, and_
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.exc import SQLAlchemyError
 
@@ -13,7 +14,9 @@ from utils.pages.explore.visuals import empty_radar_plot
 # Create a session maker bound to your engine
 Session = sessionmaker(bind=engine)
 
-# Define function to fetch user's song data
+
+# Assuming Session and necessary models are imported
+
 def fetch_user_song_data(user_id, session=None):
     own_session = False
     if session is None:
@@ -21,11 +24,18 @@ def fetch_user_song_data(user_id, session=None):
         own_session = True
 
     try:
-        print("Received user ID:", user_id)
-        # Query to fetch user's song data
+        print("Fetching Listening History for User", user_id)
+
+        # Check if the user has any records in UserSongs
+        user_songs_exist = session.query(UserSongs).filter_by(user_id=user_id).first()
+        if not user_songs_exist:
+            print(f"No records found for user ID: {user_id}")
+            return pd.DataFrame()
+
+        # Query to fetch user's top 10 most listened songs and their details
         user_song_data_query = session.query(
-            UserSongs.song_id, 
-            UserSongs.listening_count,
+            UserSongs.song_id,
+            func.sum(UserSongs.listening_count).label('total_listening_count'),
             SpotifyData.valence,
             SpotifyData.acousticness,
             SpotifyData.danceability,
@@ -37,9 +47,13 @@ def fetch_user_song_data(user_id, session=None):
             SpotifyData, UserSongs.song_id == SpotifyData.song_id
         ).filter(
             UserSongs.user_id == user_id
-        )
-        print(f"Fetched songs: {user_song_data_query}")
-        user_song_data = pd.read_sql(user_song_data_query.statement, user_song_data_query.session.bind)
+        ).group_by(
+            UserSongs.song_id
+        ).order_by(
+            desc('total_listening_count')
+        ).limit(10)
+        
+        user_song_data = pd.read_sql(user_song_data_query.statement, session.bind)
         return user_song_data
 
     except SQLAlchemyError as e:
@@ -50,50 +64,56 @@ def fetch_user_song_data(user_id, session=None):
             session.close()
 
 
-# Define callback for updating the radar plot
 @callback(
-    Output("user-attribute-radar-chart", "figure"),
-    Input("login-button", "n_clicks"),
-    [State("first-name", "value"), State("last-name", "value")]
+    [Output('user-song-store', 'data')],
+    Input('login-button', 'n_clicks'),
+    [State('first-name', 'value'),
+     State('last-name', 'value')]
 )
-def update_song_attributes(n_clicks, first_name, last_name):
+def get_user_songs(n_clicks, first_name, last_name):
     if n_clicks:
         user_exists, user_data = check_user(first_name, last_name)
         if user_exists:
-            user_id = user_data["user_id"]
-            print("Received user ID:", user_id)
-            user_song_data = fetch_user_song_data(user_id)
-            print("Fetching User Data...")
-
-            if not user_song_data.empty:
-                attributes = ["acousticness", "danceability", "energy", "instrumentalness", "liveness", "speechiness", "valence"]
-                weights = user_song_data["listening_count"].values
-
-                weighted_averages = {}
-                for attribute in attributes:
-                    values = user_song_data[attribute].values
-                    weighted_average = np.sum(values * weights) / np.sum(weights)
-                    weighted_averages[attribute] = weighted_average
-
-                radar_data = pd.DataFrame({
-                    "Attribute": attributes,
-                    "Value": [weighted_averages[attr] for attr in attributes]
-                })
-
-                fig = px.line_polar(radar_data,
-                                r="Value",
-                                theta="Attribute",
-                                line_close=True)
-                fig.update_traces(fill="toself",
-                                fillcolor="rgba(29, 185, 84, 0.5)",
-                                line=dict(color="#1db954"))
-                fig.update_layout(plot_bgcolor="#121212",
-                                paper_bgcolor="#121212",
-                                font=dict(family="Gill Sans, Arial, sans-serif", color="#1db954", size=14))
-                return fig
-
-            return empty_radar_plot()
-
-        return empty_radar_plot()
-
+            uid = user_data['user_id']
+            print(f"====== WELCOME USER {uid} ======")
+            user_song_data = fetch_user_song_data(uid).to_dict("records")
+            return [user_song_data]
     raise PreventUpdate
+
+
+# Define callback for updating the radar plot
+@callback(
+    Output("user-attribute-radar-chart", "figure"),
+    Input("user-song-store", "data")
+)
+def update_song_attributes(user_song_data):
+    print("Plotting User Music Taste...")
+
+    if user_song_data:
+        user_song_df = pd.DataFrame(user_song_data)
+        attributes = ["acousticness", "danceability", "energy", "instrumentalness", "liveness", "speechiness", "valence"]
+        weights = user_song_df["total_listening_count"].values
+        attribute_values = user_song_df[attributes].values
+        weighted_averages = np.sum(attribute_values * weights[:, np.newaxis], axis=0) / np.sum(weights)
+
+        radar_data = pd.DataFrame({
+            "Attribute": attributes,
+            "Value": weighted_averages
+        })
+
+        fig = px.line_polar(radar_data,
+                        r="Value",
+                        theta="Attribute",
+                        line_close=True)
+        fig.update_traces(fill="toself",
+                        fillcolor="rgba(29, 185, 84, 0.5)",
+                        line=dict(color="#1db954"))
+        fig.update_layout(plot_bgcolor="#121212",
+                        paper_bgcolor="#121212",
+                        font=dict(family="Gill Sans, Arial, sans-serif", color="#1db954", size=14))
+        return fig
+
+    print("Failed to Retrieve User Listening History")
+    return empty_radar_plot()
+
+

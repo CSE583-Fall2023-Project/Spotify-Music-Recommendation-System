@@ -33,6 +33,7 @@ app.layout = html.Div([
     dcc.Store(id="playlist-song-store"),
     dcc.Store(id="playlist-artist-store"),
     dcc.Store(id="playlist-url-store"),
+    dcc.Store(id="user-song-store"),
     dash.page_container,
 ])
 
