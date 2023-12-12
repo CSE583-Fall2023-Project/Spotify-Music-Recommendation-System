@@ -396,11 +396,11 @@ a {
 
 /* User Profile */
 .user-profile-container {
-    margin-top: 9vh;
+    margin-top: 8.5vh;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    justify-content: flex-start; 
     width: 100vw;
 }
 
@@ -409,47 +409,43 @@ a {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    width: 50vw; 
-    height: auto;
-    margin: 0 auto;
     margin-bottom: 2vh;
+    padding-left: 3em
 }
 
 .user-image-container {
-    flex: 3;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
+    padding-right: 3em;
 }
 
 .user-profile-image {
     max-width: 140px;
     max-height: 140px;
-    padding-left: 4.5em;
 }
 
 .user-detail-container {
-    flex: 4.5;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    text-align: left;
-    padding-left: 1em;
+
 }
 
 .user-name {
-    font-size: 7.5vh; 
+    font-size: 3.8em; 
     font-weight: 640;
     color: #f2f2f2;
     margin-bottom: 0.1em;
     margin-top: 0.2em;
+    white-space: nowrap;    /* Prevent from wrapping */
 }
 
 .user-detail {
-    font-size: 2.1vh;
+    font-size: 1.1em;
     letter-spacing: 0.06em;
     font-weight: 400;
-    color: #a7a7a7
+    color: #a7a7a7;
 }
 
 .profile-divider {
@@ -459,20 +455,18 @@ a {
 }
 
 
+
 /* User Music Profile */
 .user-music-profile-container {
     display: flex;
     justify-content: center; 
     align-items: flex-start; 
     width: 100vw; 
-    height: 64vh;
+    height: 66vh;
     background: url('recom-bg.avif'); 
     background-size: cover;
     position: relative;
 }
-
-
-
 
 /* Overlay */
 .user-music-profile-container::before {
@@ -505,6 +499,10 @@ a {
 .music-style-title {
     font-size: 2em;
     font-weight: 600;
+}
+
+.user-attribute-radar-chart {
+    padding-top: 1em;
 }
 
 
