@@ -1,9 +1,6 @@
 # Generating Personalized Music Recommendations and Historical Music Insights
 
-```markdown
-![Python Package using Conda]
-(https://github.com/CSE583-Fall2023-Project/Spotify-Music-Recommendation-System/actions/workflows/python-package-conda.yml/badge.svg)
-```
+[![Python Package using Conda](https://github.com/CSE583-Fall2023-Project/Spotify-Music-Recommendation-System/actions/workflows/python-package-conda.yml/badge.svg)](https://github.com/CSE583-Fall2023-Project/Spotify-Music-Recommendation-System/actions/workflows/python-package-conda.yml)
 
 Team Member: Juntong Wu, Denkie Yan, Chesie Yu
 
