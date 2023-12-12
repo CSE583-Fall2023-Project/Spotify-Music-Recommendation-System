@@ -1,5 +1,10 @@
 # Generating Personalized Music Recommendations and Historical Music Insights
 
+```markdown
+![add badge for workflow]
+(https://github.com/CSE583-Fall2023-Project/Spotify-Music-Recommendation-System/actions/workflows/main.yml/badge.svg)
+```
+
 Team Member: Juntong Wu, Denkie Yan, Chesie Yu
 
 <br>
