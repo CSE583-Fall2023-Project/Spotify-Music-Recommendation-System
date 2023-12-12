@@ -61,8 +61,6 @@ def update_song_attributes(n_clicks, first_name, last_name):
         user_exists, user_data = check_user(first_name, last_name)
         if user_exists:
             user_id = user_data["user_id"]
-            user_id = "19678c5c-9d86-4c9e-a0e4-4fa173a8bb5a"
-
             print("Received user ID:", user_id)
             user_song_data = fetch_user_song_data(user_id)
             print("Fetching User Data...")
