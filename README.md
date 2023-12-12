@@ -2,17 +2,19 @@
 
 Team Member: Juntong Wu, Denkie Yan, Chesie Yu
 
-[Recommendation System](https://github.com/CSE583-Fall2023-Project/Spotify-Music-Recommendation-System/tree/main)
-
-<br> 
+<br>
 
 ## Background
 
-**Music is dynamic** – the history of music is the history of human culture; each era presents its own story through its distinct styles and genres.  **Music is diverse** – each genre is characterized by its unique blends of composition elements, varying in rhythms, scales, harmonies, and structures.  **Music tells us about ourselves.**  Our music taste is shaped by our surroundings and exposures, by a mix of cultural influences, popular trends, and personal experiences.    
-
 In the dynamic and diverse world of music streaming and discovery, our project aims to offer a **unique personalized and enriching experience that caters to the tastes of individual users**.  At the core of this objective is the desire to not only provide music recommendations but to do so in a way that is insightful and resonates with each user’s unique music journey.  
 
-The scope of this project emcompasses three major aspects.  First, we hope to **inform the historical music insights**, uncovering the story of music behind the data.  Leveraging the Spotify music dataset, we will discover and illustrate interesting patterns and trends through interactive visualization dashboards with customizable controls.   Second, we want to **provide personalized recommendations** based on user behavioral preferences and potentially social networks, improving listening experience through understanding then predicting the unique tastes of each user.  Ultimately, we aim to create a platform where users can explore the rich history of contemporary music and discover new personal favorites, all within **an engaging interactive user-friendly interface**.  This tool is designed to create a music discovery experience that is not only entertaining but also informative and personalized.  
+The scope of this project emcompasses **three major aspects**：
+
+**Inform Historical Music Insights**: uncovering the story of music behind the data. Leveraging the Spotify music dataset, we will discover and illustrate interesting patterns and trends through interactive visualization dashboards with customizable controls. 
+
+**Provide Personalized Recommendations**: based on user behavioral preferences and potentially social networks, improving listening experience through understanding then predicting the unique tastes of each user.  
+
+**Create engaging interactive user-friendly interface**: users can explore the rich history of contemporary music and discover new personal favorites through this *prototype app*. This tool is designed to create a music discovery experience that is not only entertaining but also informative and personalized.  
 
 <br>
 
@@ -21,38 +23,23 @@ The scope of this project emcompasses three major aspects.  First, we hope to **
 The project has the following structure:
 ```
 Spotify-Music-Recommendation-System (master)
-|     .git
-|     .github
-|     .idea
-|     .gitignore
-|     README.md
-|     app.py
-|     environment.yml
-|     music_reco_sys_db.sqlite
-|
+|      # All the graphics, stylesheets, and scripts used in the project
 |----- assets
-|     |      Design Specification.md
-|     |      
+|     |
+|      # All spotify datasets   
 |----- data
-|     |      data_by_artist.csv
-|     |      data_by_genres.csv
-|     |      data_by_years.csv
-|     |      data_w_genres.csv
-|     |      spotify_data.csv
-|     |      user_friends.csv
-|     |      user_songs.csv
-|     |      users.csv
 |     |  
+|      # Design Documents
 |----- doc
 |     |      component-spec.md
 |     |      functional-spec.md
 |     |      technology-review.pdf
 |     |      technology-review.pptx
 |     | 
+|      # All images used in this project
 |----- image
-|     |      banner-2048.png
-|     |      project profie.png
-|     | 
+|     |
+|      # Body of displayed page 
 |----- pages
 |     |      about.py
 |     |      explore.py
@@ -60,19 +47,18 @@ Spotify-Music-Recommendation-System (master)
 |     |      login.py
 |     |      recom.py
 |     |
+|      # Preprocess Data 
 |----- preprocess
-|     |      00-explore.ipynb
-|     |      01-eda.ipynb
-|     |      02-viz.ipynb
-|     |      03-reco.ipynb
-|     |      04-dashboard.ipynb
-|     |      05-app.ipynb
-|     |      Collaborative Filtering.ipynb
-|     |      dummy_data.ipynb
-|     |      generate_dummy-user-pics.ipynb
-|     |      spotify-data-preprcessing.ipynb
-|     |      knn_recommender.py
 |     |
+|      # All the functionality tests for this project
+|----- tests
+|     |      _init_.py
+|     |      test_database.py
+|     |      test_login.py
+|     |      test_recom.py
+|     |      test_visual.py
+|     |
+|      # All the functionality and callcacks for pages
 |----- utils
 |     |----- pages
 |     |      |----- explore
@@ -89,30 +75,46 @@ Spotify-Music-Recommendation-System (master)
 |     |----- database.py
 |     |----- music_reco_sys_db.sqlit
 |     |----- page_template.py
+|     |
+|      # Environmental file
+|----- environment.yml
+|     |
+|      # Main file; run this to start the app
+|----- app.py
+|     |
+|      # README file
+|     README.md
+
 ```
 
 ## Data
 
-[Spotify Data Set](https://github.com/CSE583-Fall2023-Project/Spotify-Music-Recommendation-System/blob/main/data/spotify_data.csv)   
+This [**Spotify Dataset**](https://www.kaggle.com/datasets/vatsalmavani/spotify-dataset/code) contains 170,653 songs released from 1921 to 2020 from Spotify. For the purpose of research, we have modified the original data  by renaming fields and adding identification and genre information. [Click here for more infomation](https://github.com/CSE583-Fall2023-Project/Spotify-Music-Recommendation-System/blob/main/doc/functional-spec.md). 
+
+
+Original datasets include data for artists, genres, years, and Spotify data. The newly added dummy datasets include data for User-Songs, User-Friends, and User-Friends. All project data is stored as CSV files in the [data](https://github.com/CSE583-Fall2023-Project/Spotify-Music-Recommendation-System/tree/main/data) file.
 
 <br>
 
-## Execution of Recommondation System
-- Installation of Dash
-- Execute "python app.py" for the Interactive user Interface through the link: http://127.0.0.1:5000/
+## Install and Execute Recommondation System User Interface
+- Installation of package dependency: 
 
-- The Home Page of the User Interface:
+    ```conda env create -f environment.yml```
+
+- In command line, execute ```python app.py``` to start the application. Navigate through http://127.0.0.1:5000/ to access the web page.
+
+<br>
+
+## User Interface Example
+
+**Home Page of the User Interface**
 ![Home Page](https://github.com/CSE583-Fall2023-Project/Spotify-Music-Recommendation-System/blob/main/image/Mainpage.PNG)
-
-- Exploration Features:
 
 **Charateristic of a Song**
 ![Characteristic of a Song](https://github.com/CSE583-Fall2023-Project/Spotify-Music-Recommendation-System/blob/main/image/Characters.PNG)
 
 **Music Trend**
 ![Trend of Music](https://github.com/CSE583-Fall2023-Project/Spotify-Music-Recommendation-System/blob/main/image/Trend.PNG)
-
-- Personal Playlist:
 
 **User Login Interface**
 ![User Login](https://github.com/CSE583-Fall2023-Project/Spotify-Music-Recommendation-System/blob/main/image/Login.PNG)
@@ -122,23 +124,11 @@ Spotify-Music-Recommendation-System (master)
 
 <br>
 
-
-## Deliverables
-
-Interactive user interface that presents historical music insights and provides personalized music recommendations         
-
-- **Historical Music Insights:** EDA + Visualization (music evolution, popular songs/genres, genre characteristics, etc.) in an HTML file      
-- **Personalized Music Recommendations:** Predict the top 10 songs and artists based on listening history and user preferences   
-- **User Music Profile:** Top songs/artists in users’ and friends’ history, favorite genres, audio features, and word cloud with favorite song names   
-
-## Acknowledgements
-
-Thank you!
-
-<br>
-
 ## Contacts
+Juntong Wu -- juntongw@uw.edu
 
-Questions? Comments? 
+Denkie Yan -- denkie@uw.edu
+
+Chesie Yu -- cyu909@uw.edu
 
 <br>
