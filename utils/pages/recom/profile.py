@@ -108,8 +108,8 @@ def update_song_attributes(user_song_data):
         fig.update_traces(fill="toself",
                         fillcolor="rgba(29, 185, 84, 0.5)",
                         line=dict(color="#1db954"))
-        fig.update_layout(plot_bgcolor="#121212",
-                        paper_bgcolor="#121212",
+        fig.update_layout(plot_bgcolor="rgba(0,0,0,0)",
+                        paper_bgcolor="rgba(0,0,0,0)",
                         font=dict(family="Gill Sans, Arial, sans-serif", color="#1db954", size=14))
         return fig
 

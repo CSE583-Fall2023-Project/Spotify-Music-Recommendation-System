@@ -294,7 +294,7 @@ a {
 
 /* Login Container */
 .login-window-container {
-    background-image: url('banner-cropped.png');
+    background-image: url('login-bg.png');
     background-position: center;
     background-size: cover;
     position: absolute;
@@ -396,7 +396,7 @@ a {
 
 /* User Profile */
 .user-profile-container {
-    margin-top: 7vh;
+    margin-top: 9vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -412,7 +412,7 @@ a {
     width: 50vw; 
     height: auto;
     margin: 0 auto;
-    margin-bottom: 1vh;
+    margin-bottom: 2vh;
 }
 
 .user-image-container {
@@ -423,9 +423,9 @@ a {
 }
 
 .user-profile-image {
-    max-width: 150px; 
-    max-height: 150px; 
-    padding-left: 5em;
+    max-width: 140px; 
+    max-height: 140px; 
+    padding-left: 4.5em;
 }
 
 .user-detail-container {
@@ -434,10 +434,11 @@ a {
     flex-direction: column;
     align-items: flex-start;
     text-align: left;
+    padding-left: 1em;
 }
 
 .user-name {
-    font-size: 8vh; 
+    font-size: 7.5vh; 
     font-weight: 640;
     color: #f2f2f2;
     margin-bottom: 0.1em;
@@ -453,7 +454,7 @@ a {
 
 .profile-divider {
     width: 96%; 
-    border: 1px solid rgba(167, 167, 167, 0.5);
+    border: 1px solid rgba(167, 167, 167, 0.6);
     margin: 2vh auto;
 }
 
@@ -465,7 +466,45 @@ a {
     align-items: flex-start; 
     width: 100vw; 
     height: 64vh;
+    background: url('recom-bg.avif'); 
+    background-size: cover;
+    position: relative;
 }
+
+
+/* Overlay */
+.user-music-profile-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1; 
+}
+
+.user-music-profile-container > * {
+    position: relative;
+    z-index: 2; 
+}
+
+/* Music Style */
+.music-style-container {
+    flex: 1; 
+    display: flex;
+    flex-direction: column; 
+    height: 100%; 
+    padding: 2em; 
+    box-sizing: border-box; 
+    align-items: center;
+}
+
+.music-style-title {
+    font-size: 2em;
+    font-weight: 600;
+}
+
 
 /* Recommended Songs */
 .recommended-songs-container {
@@ -473,7 +512,7 @@ a {
     display: flex;
     flex-direction: column; 
     height: 100%; 
-    padding: 1em; 
+    padding: 2em; 
     box-sizing: border-box; 
 }
 
@@ -527,24 +566,15 @@ ol li::before {
 }
 
 
-/* Music Style */
-.music-style-container {
-    flex: 1; 
-    display: flex;
-    flex-direction: column; 
-    height: 100%; 
-    padding: 1em; 
-    box-sizing: border-box; 
-    align-items: center;
-}
-
-.music-style-title {
-    font-size: 2em;
-    font-weight: 600;
-}
-
-
 /* Logout Button */
+.logout-button-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    height: 10vh;
+    margin-top: 2vh;
+}
+
 .logout-button {
     display: block;
     padding: 10px 20px;

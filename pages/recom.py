@@ -43,12 +43,15 @@ recommended_songs = \
     ], className="user-music-profile-container")
 
 # Logout Button
-logout_button = dcc.Link(
-    html.Button("Logout",
-                id="logout-button",
-                className="logout-button"),
-    href="/"
-)
+logout_button = html.Div([
+    dcc.Link(
+        html.Button("Logout",
+                    id="logout-button",
+                    className="logout-button"),
+        href="/"
+    )
+], className="logout-button-container")
+
 
 # Page Layout
 layout = \
