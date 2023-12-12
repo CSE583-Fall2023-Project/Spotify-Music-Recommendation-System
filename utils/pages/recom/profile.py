@@ -6,6 +6,7 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy.exc import SQLAlchemyError
 
 from utils.database import UserSongs, SpotifyData, engine
+from utils.pages.login.usermatch import check_user
 from utils.pages.explore.visuals import empty_radar_plot
 
 # Create a session maker bound to your engine
@@ -19,6 +20,7 @@ def fetch_user_song_data(user_id, session=None):
         own_session = True
 
     try:
+        print("Received user ID:", user_id)
         # Query to fetch user's song data
         user_song_data_query = session.query(
             UserSongs.song_id, 
