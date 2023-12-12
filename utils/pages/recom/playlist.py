@@ -10,6 +10,7 @@ from utils.pages.login.usermatch import check_user
 # Create a session maker bound to your engine
 Session = sessionmaker(bind=engine)
 
+
 # Define function fetch_user_playlist based on user_id
 def fetch_user_playlist(user_id, session=None):
     own_session = False
@@ -39,6 +40,7 @@ def fetch_user_playlist(user_id, session=None):
             session.close()
 
 
+
 @dash.callback(
     [Output('playlist-song-store', 'data'),
      Output('playlist-artist-store', 'data'),
@@ -52,7 +54,6 @@ def get_recommendations(n_clicks, first_name, last_name):
         user_exists, user_data = check_user(first_name, last_name)
         if user_exists:
             uid = user_data['user_id']
-            print(uid)
             return fetch_user_playlist(uid)
     raise PreventUpdate
 

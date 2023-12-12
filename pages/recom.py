@@ -33,6 +33,7 @@ recommended_songs = \
                 dcc.Graph(figure={}, id="user-attribute-radar-chart")
             ], className="user-attribute-radar-chart")
         ], className="music-style-container"),
+
         html.Div([
             html.Span("Recommended Songs",
                       className="recommended-songs-title"),

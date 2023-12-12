@@ -24,7 +24,7 @@ def fetch_user_song_data(user_id, session=None):
         print("Received user ID:", user_id)
         # Query to fetch user's song data
         user_song_data_query = session.query(
-            UserSongs.song_id, 
+            UserSongs.song_id,
             UserSongs.listening_count,
             SpotifyData.valence,
             SpotifyData.acousticness,

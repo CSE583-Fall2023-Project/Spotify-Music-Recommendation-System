@@ -1,4 +1,10 @@
-"""Test the visuals in explore page"""
+"""
+Unit Testing for Visualizations in Spotify Music Exploration/Recommendation System.
+
+This module contains tests for the visualizations presented on the 'Explore' page
+of the web application, ensuring accurate data representation and functionality.
+It covers tests for retrieving data range, song attributes, and attribute trends.
+"""
 import unittest
 from unittest.mock import patch
 from sqlalchemy import create_engine
@@ -9,17 +15,41 @@ from utils.database import Base, SpotifyData, DataByYear
 
 
 class TestVisual(unittest.TestCase):
+    """
+    A TestCase class for testing visualizations on the Explore page.
+
+    This class includes methods for setting up a test database environment,
+    adding test data, and defining various test cases for visual functionalities.
+    """
     @classmethod
     def setUpClass(cls):
+        """
+        Set up an in-memory SQLite database for testing visualization features.
+
+        This method initializes a SQLite in-memory database and prepares
+        table schemas for SpotifyData and DataByYear.
+        """
         cls.engine = create_engine('sqlite:///:memory:')  # Use in-memory database for testing
         Base.metadata.create_all(cls.engine)
         cls.Session = sessionmaker(bind=cls.engine)
 
     def setUp(self):
+        """
+        Prepare the database session and add test data before each test.
+
+        This method initializes a new database session and adds test data
+        for SpotifyData and DataByYear before each test case is run.
+        """
         self.session = self.Session()
         self.add_test_data()
 
     def add_test_data(self):
+        """
+        Add test data for SpotifyData and DataByYear to the database.
+
+        This method clears any existing records and inserts test data for
+        visualizations, including SpotifyData samples and DataByYear records.
+        """
         self.session.query(SpotifyData).delete()
         self.session.query(DataByYear).delete()
 
@@ -82,21 +112,45 @@ class TestVisual(unittest.TestCase):
         self.session.commit()
 
     def tearDown(self):
+        """
+        Rollback the database transaction after each test.
+
+        This method ensures database isolation between tests by rolling back
+        any changes made during the test execution.
+        """
         self.session.rollback()  # Rollback the transaction
         self.session.close()
 
     def test_get_min_max_years(self):
+        """
+        Test the retrieval of minimum and maximum years for visualization.
+
+        This test ensures that get_min_max_years function correctly fetches
+        the range of years from the DataByYear table for visualization purposes.
+        """
         min_year, max_year = get_min_max_years(session=self.session)
         self.assertEqual(min_year, 2000)
         self.assertEqual(max_year, 2020)
 
     @patch('plotly.express.line_polar')
     def test_update_song_attributes(self, mock_px_line_polar):
+        """
+        Test the functionality of update_song_attributes function.
+
+        This test checks if update_song_attributes correctly invokes the
+        Plotly express line_polar function for a valid song.
+        """
         # Test for a valid song
         update_song_attributes("Long Live", session=self.session)
         mock_px_line_polar.assert_called_once()
 
     def test_update_attribute_trend(self):
+        """
+        Test the attribute trend visualization based on the year range.
+
+        This test checks the functionality of update_attribute_trend to ensure
+        it generates the correct figures for valid and invalid year ranges.
+        """
         # Test for a valid range and attributes
         fig = update_attribute_trend(["acousticness", "danceability"], [2020, 2020], session=self.session)
         self.assertIsNotNone(fig)
