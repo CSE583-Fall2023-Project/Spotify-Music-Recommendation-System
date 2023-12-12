@@ -10,7 +10,7 @@ from utils.pages.login.usermatch import check_user
 # Create a session maker bound to your engine
 Session = sessionmaker(bind=engine)
 
-
+# Define function fetch_user_playlist based on user_id
 def fetch_user_playlist(user_id, session=None):
     own_session = False
     if session is None:
