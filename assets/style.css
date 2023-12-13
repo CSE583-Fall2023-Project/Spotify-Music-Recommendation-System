@@ -1,4 +1,17 @@
-/* style.css */
+/* 
+ * style.css
+ *
+ * Purpose: Main stylesheet for Spotify Music Exploration/Recommendation System.
+ * Author: Chesie Yu
+ * Date: Dec. 12, 2023
+ *
+ * This file contains the global styles for the website, including layouts, 
+ * typography, and colors.
+ * Works best for MacBook Pro 15-inch or display with same screen size.
+ * 
+ * Font: Gill Sans, Helvetica, Arial, sans-serif
+ * Color Scheme: #1fb954, #121212, #f2f2f2, #a7a7a7
+ */
 
 
 
@@ -11,13 +24,13 @@ html {
 body {
     margin: 0; 
     padding: 0;
-    font-family: 'Gill Sans', Arial, sans-serif;
+    font-family: "Gill Sans", Helvetica, Arial, sans-serif;
     color: #1db954;
     background-color: #121212;
 }
 
 h1 {
-    font-family: 'Gill Sans', Arial, sans-serif;
+    font-family: "Gill Sans", Helvetica, Arial, sans-serif;
     color: #1db954;
 }
 
@@ -71,11 +84,11 @@ a {
 /*** Landing Page Properties ***/
 
 .landing-page {
-    background-image: url('landing-bg.avif');
+    background-image: url("landing-bg.avif");
     background-size: cover;
     position: relative;
-    width: 100vw;       /* 100% of the viewport width */
-    height: 100vh;      /* 100% of the viewport height */
+    width: 100vw;                   /* 100% of the viewport width */
+    height: 100vh;                  /* 100% of the viewport height */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -85,7 +98,7 @@ a {
 
 /* Semi-Transparent Overlay */
 .landing-page::after {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -127,12 +140,13 @@ a {
 
 
 /*** About Page Properties ***/
+
 .about-page {
     background-image: url("about-bg.avif");
     background-size: cover;
     position: relative;
-    width: 100vw;       /* 100% of the viewport width */
-    height: 100vh;      /* 100% of the viewport height */
+    width: 100vw;
+    height: 100vh;
     display: flex;
     justify-content: center;
     z-index: 1;
@@ -175,7 +189,7 @@ a {
 
 /*** Content Panel Properties ***/
 
-/* Overall Panel */
+/* Content Panel Container */
 .content-panel {
     width: 100vw;       /* 100% of the viewport width */
     height: 100vh;      /* 100% of the viewport height */
@@ -284,6 +298,7 @@ a {
 }
 
 .song-selecting-dropdown {
+    padding-top: 2.1em;
     width: 25%;
     margin: 20px auto
 }
@@ -294,7 +309,7 @@ a {
 
 /* Login Container */
 .login-window-container {
-    background-image: url('login-bg.png');
+    background-image: url("login-bg.png");
     background-position: center;
     background-size: cover;
     position: absolute;
@@ -319,6 +334,7 @@ a {
     z-index: 2;
 }
 
+/* Login Window */
 .login-window {
     max-width: 320px;
     height: 50vh;
@@ -345,7 +361,7 @@ a {
 /* Input Styles */
 .first-name-input, .last-name-input {
     background: #f2f2f2;
-    font-family: "Gill Sans", sans-serif;
+    font-family: "Gill Sans", Helvetica, Arial, sans-serif;
     font-size: 2vh;
     height: 4vh;
     width: 80%;
@@ -357,7 +373,6 @@ a {
     margin-bottom: 3vh; 
 }
 
-
 /* Login Button */
 .login-button {
     display: block;
@@ -368,7 +383,7 @@ a {
     cursor: pointer;
     border-radius: 5px;
     font-size: 1.5vw;
-    font-family: 'Gill Sans', sans-serif;
+    font-family: "Gill Sans", Helvetica, Arial, sans-serif;
     letter-spacing: 1.2;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     font-weight: 600;
@@ -382,7 +397,7 @@ a {
 }
 
 .login-output {
-    font-family: 'Gill Sans', sans-serif;
+    font-family: "Gill Sans", Helvetica, Arial, sans-serif;
     font-weight: 400;
     font-size: 15px;
     color: #f2f2f2;
@@ -413,6 +428,7 @@ a {
     padding-left: 3em
 }
 
+/* User Profile Image */
 .user-image-container {
     display: flex;
     justify-content: flex-end;
@@ -425,6 +441,7 @@ a {
     max-height: 140px;
 }
 
+/* User Profile Details */
 .user-detail-container {
     display: flex;
     flex-direction: column;
@@ -448,6 +465,7 @@ a {
     color: #a7a7a7;
 }
 
+/* Profile Divider */
 .profile-divider {
     width: 96%; 
     border: 1px solid rgba(167, 167, 167, 0.6);
@@ -463,14 +481,14 @@ a {
     align-items: flex-start; 
     width: 100vw; 
     height: 66vh;
-    background: url('recom-bg.avif'); 
+    background: url("recom-bg.avif"); 
     background-size: cover;
     position: relative;
 }
 
-/* Overlay */
+/* Semi-Transparent Overlay */
 .user-music-profile-container::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     right: 0;
@@ -484,6 +502,7 @@ a {
     position: relative;
     z-index: 2; 
 }
+
 
 /* Music Style */
 .music-style-container {
@@ -541,14 +560,14 @@ a {
 .song-artist {
     font-size: 1em;
     color: #a7a7a7;
-    margin-left: 35px;
+    margin-left: 37px;
 }
 
 .play-button {
     width: 25px;
     height: 25px;
     vertical-align: middle;
-    margin-right: 10px;
+    margin-right: 12px;
 }
 
 ol {
@@ -592,7 +611,7 @@ ol li::before {
     cursor: pointer;
     border-radius: 5px;
     font-size: 1.5vw;
-    font-family: 'Gill Sans', sans-serif;
+    font-family: "Gill Sans", Helvetica, Arial, sans-serif;
     letter-spacing: 1.2;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     font-weight: 600;
