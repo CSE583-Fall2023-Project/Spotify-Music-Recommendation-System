@@ -92,7 +92,7 @@ Spotify-Music-Recommendation-System (master)
 This [Spotify Dataset](https://www.kaggle.com/datasets/vatsalmavani/spotify-dataset/code) contains 170,653 songs released from 1921 to 2020 from Spotify. To adapt to our research objectives, we have curated the dataset by renaming certain fields and enriching it with additional identification and genre details. [Click here for more infomation](https://github.com/CSE583-Fall2023-Project/Spotify-Music-Recommendation-System/blob/main/doc/functional-spec.md). 
 
 
-The original Spotify datasets covered a range of features, including songs, artists, genres, years, along with various music attributes. Our project expanded it by creating dummy datasets encompassing Users, User-Songs, and User-Friends. These datasets are avaliable as CSV files in the [data](https://github.com/CSE583-Fall2023-Project/Spotify-Music-Recommendation-System/tree/main/data) folder. To enhance the user experience with visually appealing elements, each user has been assigned a unique, anime-style profile photo generated through the [Diffusion model](https://huggingface.co/docs/diffusers/index).
+The original Spotify datasets covered a range of features, including songs, artists, genres, years, along with various music attributes. Our project expanded it by creating dummy datasets encompassing Users, User-Songs, and User-Friends. These datasets are avaliable as CSV files in the [data](https://github.com/CSE583-Fall2023-Project/Spotify-Music-Recommendation-System/tree/main/app/data) folder. To enhance the user experience with visually appealing elements, each user has been assigned a unique, anime-style profile photo generated through the [Diffusion model](https://huggingface.co/docs/diffusers/index).
 
 <br>
 

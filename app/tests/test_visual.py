@@ -11,9 +11,9 @@ from unittest.mock import patch
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-from app.utils.pages.explore.visuals import get_min_max_years, update_song_attributes,\
+from utils.pages.explore.visuals import get_min_max_years, update_song_attributes,\
                                          update_attribute_trend
-from app.utils.database import Base, SpotifyData, DataByYear
+from utils.database import Base, SpotifyData, DataByYear
 
 
 class TestVisual(unittest.TestCase):
