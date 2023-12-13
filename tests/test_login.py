@@ -11,8 +11,8 @@ from dash import html
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-from utils.pages.login.usermatch import check_user, handle_login, update_user_profile
-from utils.database import Base, Users
+from app.utils.pages.login.usermatch import check_user, handle_login, update_user_profile
+from app.utils.database import Base, Users
 
 
 class TestLogin(unittest.TestCase):
