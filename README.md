@@ -22,7 +22,7 @@ The scope of this project emcompasses **two major aspects**：
 
 The project has the following structure:
 ```
-Spotify-Music-Recommendation-System (main)    
+Spotify-Music-Recommendation-System (main)   
 |      # Main file; run this to start the app
 |----- app.py
 | 		|
@@ -55,7 +55,7 @@ Spotify-Music-Recommendation-System (main)
 |     |      |      |      playlist.py
 |     |      |      |      profile.py
 |     |----- database.py
-|     |----- spotipy_db.sqlit #database
+|     |----- spotipy_db.sqlit 
 |     |----- page_template.py
 |     |
 |      # Data preprocessing workflows
@@ -79,7 +79,7 @@ Spotify-Music-Recommendation-System (main)
 |      # All images used in README and docs
 |----- image
 |     | 
-|      # User guide for the user interfere in this project
+|      # User guide for app operations
 |----- example
 |     |      User Guide for Spotify Music Exploration & Recommendation.pdf
 |     |      userguide.md
