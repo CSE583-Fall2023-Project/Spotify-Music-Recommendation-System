@@ -1,0 +1,625 @@
+/* 
+ * style.css
+ *
+ * Purpose: Main stylesheet for Spotify Music Exploration/Recommendation System.
+ * Author: Chesie Yu
+ * Date: Dec. 12, 2023
+ *
+ * This file contains the global styles for the website, including layouts, 
+ * typography, and colors.
+ * Works best for MacBook Pro 15-inch or display with same screen size.
+ * 
+ * Font: Gill Sans, Helvetica, Arial, sans-serif
+ * Color Scheme: #1fb954, #121212, #f2f2f2, #a7a7a7
+ */
+
+
+
+/*** Base Styles ***/
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0; 
+    padding: 0;
+    font-family: "Gill Sans", Helvetica, Arial, sans-serif;
+    color: #1db954;
+    background-color: #121212;
+}
+
+h1 {
+    font-family: "Gill Sans", Helvetica, Arial, sans-serif;
+    color: #1db954;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+
+/*** Navigation Bar Properties ***/
+
+.nav-bar {
+    width: 100%;                    /* Span the full width */
+    background-color: #121212;    /* Set the color of nav bar */
+    position: absolute;             /* Stay on top of the page */
+    top: 0;                         /* Align to the top of the viewpoint */
+    height: 60px;                   /* Increase the height of the nav bar */
+    z-index: 3;
+}
+
+.nav-bar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    text-align: right;              /* Align the list items to the right */
+    vertical-align: middle;
+    height: 60px;                   /* Full height of the nav bar */
+}
+
+.nav-bar li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.nav-bar li a {
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 19px 19px;
+    text-decoration: none;
+    font-size: 19px;
+}
+
+.nav-bar li a:hover {
+    background-color: #242424;
+}
+
+
+
+/*** Landing Page Properties ***/
+
+.landing-page {
+    background-image: url("bg/landing-bg.avif");
+    background-size: cover;
+    position: relative;
+    width: 100vw;                   /* 100% of the viewport width */
+    height: 100vh;                  /* 100% of the viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+/* Semi-Transparent Overlay */
+.landing-page::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7); 
+    z-index: 2;
+}
+
+/* Landing Headline */
+.landing-headline {
+    color: rgba(242, 242, 242, 0.8);
+    text-align: center;
+    padding: 20px;
+    font-size: 5.5vw;
+    position: relative;
+    z-index: 3;
+}
+
+/* Start Button */
+.start-button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #1db954;
+    color: #f2f2f2;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1.5vw;
+    letter-spacing: 1.2;
+    z-index: 3;
+}
+
+.start-button:hover {
+    background-color: #1e8843;
+}
+
+
+
+/*** About Page Properties ***/
+
+.about-page {
+    background-image: url("bg/about-bg.avif");
+    background-size: cover;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+}
+
+/* Semi-Transparent Overlay */
+.about-page::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7); 
+    z-index: 2;
+}
+
+/* About Headings */
+.about-page-title {
+    padding-top: 9vh;
+}
+
+/* About Content */
+.about-page-content {
+    position: relative;
+    color: white; 
+    padding: 20px;
+    max-width: 600px;
+    z-index: 3;
+}
+
+/* Github Icon */
+.github-icon {
+    height: 2em;
+    width: 2em;
+    padding-top: 2vh;
+}
+
+
+
+/*** Content Panel Properties ***/
+
+/* Content Panel Container */
+.content-panel {
+    width: 100vw;       /* 100% of the viewport width */
+    height: 100vh;      /* 100% of the viewport height */
+}
+
+/* Section Headings */
+.section-title {
+    color: rgba(242, 242, 242, 0.8);
+    text-align: center;
+    padding-top: 7vh;
+    margin-bottom: 0; 
+    font-size: 5.4vh;
+    position: relative;
+    z-index: 3;
+}
+
+.section-subtitle {
+    color: rgba(29, 185, 84, 0.8);
+    text-align: center;
+    font-size: 2.5vh;
+    padding-bottom: 2vh; 
+    position: relative;
+    z-index: 3;
+}
+
+.section-divider {
+    width: 96%; 
+    border: 1px solid rgba(167, 167, 167, 0.5);
+}
+
+/* Navigation Arrow */
+.scroll-arrow {
+    display: block;
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 6vh;
+    font-size: 6vh;
+    font-weight: bold;
+    color: #1db954;
+    text-decoration: none; 
+    transition: color 0.3s; 
+    opacity: 0.7
+}
+
+.scroll-arrow:hover {
+    color: #f2f2f2; /* Change color on hover */
+    opacity: 1;
+}
+
+
+
+/*** Visualization #1: Trend of Musical Attributes Over Time ***/
+
+/* Attribute Checklist */
+.checklist-container {
+    width: 20%;
+    height: 55%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.attribute-checklist {
+    font-size: 1rem;
+    padding-top: 6vh;
+    padding-left: 5vw;
+    line-height: 2;
+    accent-color: #1db954;
+}
+
+/* Visualization */
+.graph-container {
+    width: 80%;
+    height: 55%;
+    display: inline-block;
+}
+
+/* Year Range Slider */
+.year-range-slider .rc-slider-track {
+    background-color: #1db954; /* Color of the filled part of the slider */
+}
+
+.year-range-slider .rc-slider-handle, 
+.year-range-slider .rc-slider-handle:active, 
+.year-range-slider .rc-slider-handle:focus, 
+.year-range-slider .rc-slider-handle:hover {
+    background-color: #1db954; /* Color of the slider handle */
+    border-color: #1db954;
+}
+
+.year-range-slider .rc-slider-rail {
+    background-color: #a7a7a7; /* Color of the unfilled part of the slider */
+}
+
+.year-range-slider {
+    width: 90%; 
+    margin: 0 auto; /* Center the slider */
+}
+
+
+
+/*** Visualization #2: Radar Chart for Selected Songs ***/
+
+/* Searchable Dropdown */
+.dropdown-container {
+    padding-top: 3vh;
+}
+
+.song-selecting-dropdown {
+    padding-top: 2.1em;
+    width: 25%;
+    margin: 20px auto
+}
+
+
+
+/*** Login Page Properties ***/
+
+/* Login Container */
+.login-window-container {
+    background-image: url("bg/login-bg.png");
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    width: 100vw;
+    height: 72vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+/* Semi-Transparent Overlay */
+.login-window-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 2;
+}
+
+/* Login Window */
+.login-window {
+    max-width: 320px;
+    height: 50vh;
+    margin: 8% auto;
+    padding: 45px;
+    background: rgba(23, 23, 23, 0.8);
+    border-radius: 10px;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* User Login Heading */
+.login-heading {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #f2f2f2;
+    margin-top: 4vh;
+    margin-bottom: 4vh;
+}
+
+/* Input Styles */
+.first-name-input, .last-name-input {
+    background: #f2f2f2;
+    font-family: "Gill Sans", Helvetica, Arial, sans-serif;
+    font-size: 2vh;
+    height: 4vh;
+    width: 80%;
+    border-width: 1px;
+    border-color:#1db954;
+    border-radius: 5px;
+    padding: 6px;
+    margin: auto 8%;
+    margin-bottom: 3vh; 
+}
+
+/* Login Button */
+.login-button {
+    display: block;
+    padding: 10px 20px;
+    background-color: #1db954;
+    color: #f2f2f2;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1.5vw;
+    font-family: "Gill Sans", Helvetica, Arial, sans-serif;
+    letter-spacing: 1.2;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    font-weight: 600;
+    margin-top: 1vh;
+    margin-bottom: 2vh;
+}
+
+.login-button:hover {
+    background-color: #1e8843;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.login-output {
+    font-family: "Gill Sans", Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    color: #f2f2f2;
+    margin: auto 8%;
+    margin-top: 10px;
+}
+
+
+
+/*** User Profile Properties ***/
+
+/* User Profile */
+.user-profile-container {
+    margin-top: 8.5vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+}
+
+.user-info-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2vh;
+    padding-left: 3em
+}
+
+/* User Profile Image */
+.user-image-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 3em;
+}
+
+.user-profile-image {
+    max-width: 140px;
+    max-height: 140px;
+}
+
+/* User Profile Details */
+.user-detail-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+}
+
+.user-name {
+    font-size: 3.8em; 
+    font-weight: 640;
+    color: #f2f2f2;
+    margin-bottom: 0.1em;
+    margin-top: 0.2em;
+    white-space: nowrap;    /* Prevent from wrapping */
+}
+
+.user-detail {
+    font-size: 1.1em;
+    letter-spacing: 0.06em;
+    font-weight: 400;
+    color: #a7a7a7;
+}
+
+/* Profile Divider */
+.profile-divider {
+    width: 96%; 
+    border: 1px solid rgba(167, 167, 167, 0.6);
+    margin: 2vh auto;
+}
+
+
+
+/* User Music Profile */
+.user-music-profile-container {
+    display: flex;
+    justify-content: center; 
+    align-items: flex-start; 
+    width: 100vw; 
+    height: 66vh;
+    background: url("bg/recom-bg.avif"); 
+    background-size: cover;
+    position: relative;
+}
+
+/* Semi-Transparent Overlay */
+.user-music-profile-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1; 
+}
+
+.user-music-profile-container > * {
+    position: relative;
+    z-index: 2; 
+}
+
+
+/* Music Style */
+.music-style-container {
+    flex: 1; 
+    display: flex;
+    flex-direction: column; 
+    height: 100%; 
+    padding: 2em; 
+    box-sizing: border-box; 
+    align-items: center;
+}
+
+.music-style-title {
+    font-size: 2em;
+    font-weight: 600;
+}
+
+.user-attribute-radar-chart {
+    padding-top: 1em;
+}
+
+
+/* Recommended Songs */
+.recommended-songs-container {
+    flex: 1; 
+    display: flex;
+    flex-direction: column; 
+    height: 100%; 
+    padding: 2em; 
+    box-sizing: border-box; 
+}
+
+.recommended-songs-title {
+    font-size: 2em;
+    font-weight: 600;
+    margin-bottom: 0.5em; 
+}
+
+.user-playlist-container {
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+.song-name {
+    font-size: 1.25em;
+    letter-spacing: 1.0px;
+    color: #f2f2f2;
+}
+
+.song-name:hover {
+    color: rgba(29, 185, 84, 0.8);
+    text-decoration: underline;
+}
+
+.song-artist {
+    font-size: 1em;
+    color: #a7a7a7;
+    margin-left: 37px;
+}
+
+.play-button {
+    width: 25px;
+    height: 25px;
+    vertical-align: middle;
+    margin-right: 12px;
+}
+
+ol {
+    counter-reset: list-counter;
+    list-style-type: none; 
+    padding-left: 0; 
+}
+
+ol li {
+    position: relative; 
+    margin-bottom: 0.5em; 
+    padding-left: 30px; 
+    counter-increment: list-counter;
+}
+
+ol li::before {
+    content: counter(list-counter) "";
+    position: absolute; 
+    left: 0;                    /* Left-aligned numbers */
+    font-size: 1em; 
+    color: rgba(167, 167, 167, 0.8); 
+    padding-top: 0.15em;
+}
+
+
+/* Logout Button */
+.logout-button-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    height: 10vh;
+    margin-top: 2vh;
+}
+
+.logout-button {
+    display: block;
+    padding: 10px 20px;
+    background-color: #f2f2f2;
+    color: #121212;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1.5vw;
+    font-family: "Gill Sans", Helvetica, Arial, sans-serif;
+    letter-spacing: 1.2;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    font-weight: 600;
+    margin-top: 1vh;
+    margin-bottom: 2vh;
+}
+
+.logout-button:hover {
+    background-color: #a7a7a7;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
