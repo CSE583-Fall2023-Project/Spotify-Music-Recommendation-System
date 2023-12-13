@@ -22,15 +22,27 @@ The scope of this project emcompasses **two major aspects**：
 
 The project has the following structure:
 ```
-Spotify-Music-Recommendation-System (main)    
-|      # Main file; run this to start the app
-|----- app.py
-| 		|
+Spotify-Music-Recommendation-System (main)
 |      # All the graphics, stylesheets, and scripts used in the project
 |----- assets
 |     |
 |      # All datasets used; in .csv format 
 |----- data
+|     |  
+|      # Design Documents
+|----- doc
+|     |      component-spec.md
+|     |      functional-spec.md
+|     |      technology-review.pdf
+|     |      technology-review.pptx
+|     | 
+|      # User Guide for the user interfere in this project
+|----- example
+|     |      User Guide for Spotify Music Exploration & Recommendation.pdf
+|     |      userguide.md
+|     | 
+|      # All images used in this project
+|----- image
 |     |
 |      # Body of displayed page 
 |----- pages
@@ -39,6 +51,17 @@ Spotify-Music-Recommendation-System (main)
 |     |      home.py
 |     |      login.py
 |     |      recom.py
+|     |
+|      # Preprocess Data 
+|----- preprocess
+|     |
+|      # All the functionality tests for this project
+|----- tests
+|     |      _init_.py
+|     |      test_database.py
+|     |      test_login.py
+|     |      test_recom.py
+|     |      test_visual.py
 |     |
 |      # All the functionality and callcacks for pages
 |----- utils
@@ -55,32 +78,14 @@ Spotify-Music-Recommendation-System (main)
 |     |      |      |      playlist.py
 |     |      |      |      profile.py
 |     |----- database.py
-|     |----- spotipy_db.sqlit #database
+|     |----- music_reco_sys_db.sqlit
 |     |----- page_template.py
 |     |
-|      # Preprocess Data 
-|----- preprocess
-|     |
-|      # All the functionality tests for this project
-|----- tests
-|     |      _init_.py
-|     |      test_database.py
-|     |      test_login.py
-|     |      test_recom.py
-|     |      test_visual.py
-|     |
-|      # Design Documents
-|----- doc
-|     |      component-spec.md
-|     |      functional-spec.md
-|     |      technology-review.pdf
-|     |      technology-review.pptx
-|     | 
-|      # All images used in README and docs
-|----- image
-|     |  
 |      # Environmental file
 |----- environment.yml
+|     |
+|      # Main file; run this to start the app
+|----- app.py
 ```
 
 ## Data
