@@ -66,7 +66,7 @@ def handle_login(n_clicks, first_name, last_name, session=None):
     redirects user to personalized reco page.
 
     Arguments:
-        n_clicks (int): 
+        n_clicks (int): Number of clicks on the login button.
         first_name (str): User's first name.
         last_name (str): User's last name.
         session: SQLAlchemy session (optional).
