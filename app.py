@@ -24,7 +24,7 @@ app = Dash(
 )
 
 # Set browser tab icon
-app._favicon = "icon/spotify.ico"
+app._favicon = "spotify.ico"
 
 # Define app layout
 app.layout = html.Div([
