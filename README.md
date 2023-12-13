@@ -22,11 +22,11 @@ The scope of this project emcompasses **two major aspects**：
 
 The project has the following structure:
 ```
-Spotify-Music-Recommendation-System (master)
+Spotify-Music-Recommendation-System (main)
 |      # All the graphics, stylesheets, and scripts used in the project
 |----- assets
 |     |
-|      # All spotify datasets   
+|      # All datasets used; in .csv format 
 |----- data
 |     |  
 |      # Design Documents
@@ -36,7 +36,7 @@ Spotify-Music-Recommendation-System (master)
 |     |      technology-review.pdf
 |     |      technology-review.pptx
 |     | 
-|      # All images used in this project
+|      # All images used in README and docs
 |----- image
 |     |
 |      # Body of displayed page 
@@ -81,10 +81,6 @@ Spotify-Music-Recommendation-System (master)
 |     |
 |      # Main file; run this to start the app
 |----- app.py
-|     |
-|      # README file
-|     README.md
-
 ```
 
 ## Data
