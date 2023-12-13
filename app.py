@@ -1,7 +1,6 @@
-# app.py
-
 """
 Main app file for Spotify Music Exploration/Recommendation System.
+Launches Dash app configured with layout, callbacks, and external stylesheet.
 
 To launch the app, type command "python app.py" in terminal,
 then navigate to the http link (http://127.0.0.1:5000/).
