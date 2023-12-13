@@ -4,6 +4,8 @@
 
 Contributors: Juntong Wu, Chesie Yu, Denkie Yan
 
+[Link to our final presentation](https://www.canva.com/design/DAF2eED5cgQ/ySGwMrIu2bjPHh-ctJuP1Q/edit)
+
 <br>
 
 ## 🎶 Background
