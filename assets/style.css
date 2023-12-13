@@ -84,7 +84,7 @@ a {
 /*** Landing Page Properties ***/
 
 .landing-page {
-    background-image: url("landing-bg.avif");
+    background-image: url("bg/landing-bg.avif");
     background-size: cover;
     position: relative;
     width: 100vw;                   /* 100% of the viewport width */
@@ -142,7 +142,7 @@ a {
 /*** About Page Properties ***/
 
 .about-page {
-    background-image: url("about-bg.avif");
+    background-image: url("bg/about-bg.avif");
     background-size: cover;
     position: relative;
     width: 100vw;
@@ -309,7 +309,7 @@ a {
 
 /* Login Container */
 .login-window-container {
-    background-image: url("login-bg.png");
+    background-image: url("bg/login-bg.png");
     background-position: center;
     background-size: cover;
     position: absolute;
@@ -481,7 +481,7 @@ a {
     align-items: flex-start; 
     width: 100vw; 
     height: 66vh;
-    background: url("recom-bg.avif"); 
+    background: url("bg/recom-bg.avif"); 
     background-size: cover;
     position: relative;
 }

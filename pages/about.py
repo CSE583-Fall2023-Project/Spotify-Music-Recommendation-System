@@ -40,7 +40,7 @@ about_page = html.Div([
             html.P("To learn more about how this system works, contribute to its development, "
                    "or report issues, please visit our GitHub repository."),
             html.A([
-                html.Img(src="assets/github-logo.png", className="github-icon"),
+                html.Img(src="assets/icon/github-logo.png", className="github-icon"),
             ], href=REPO, target="_blank")
         ], className="about-page-content"),
     ])

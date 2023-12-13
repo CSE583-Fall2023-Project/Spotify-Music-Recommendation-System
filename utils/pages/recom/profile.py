@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import pandas as pd
 import numpy as np
 import plotly.express as px
@@ -7,6 +8,8 @@ from sqlalchemy import func, desc
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.exc import SQLAlchemyError
 
+import sys
+sys.path.append("/Users/chesie/documents/cse583/project/Spotify-Music-Recommendation-System")
 from utils.database import UserSongs, SpotifyData, engine
 from utils.pages.login.usermatch import check_user
 from utils.pages.explore.visuals import empty_radar_plot
