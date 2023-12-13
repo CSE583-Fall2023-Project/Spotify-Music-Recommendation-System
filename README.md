@@ -22,22 +22,15 @@ The scope of this project emcompasses **two major aspects**：
 
 The project has the following structure:
 ```
-Spotify-Music-Recommendation-System (main)
+Spotify-Music-Recommendation-System (main)    
+|      # Main file; run this to start the app
+|----- app.py
+| 		|
 |      # All the graphics, stylesheets, and scripts used in the project
 |----- assets
 |     |
 |      # All datasets used; in .csv format 
 |----- data
-|     |  
-|      # Design Documents
-|----- doc
-|     |      component-spec.md
-|     |      functional-spec.md
-|     |      technology-review.pdf
-|     |      technology-review.pptx
-|     | 
-|      # All images used in README and docs
-|----- image
 |     |
 |      # Body of displayed page 
 |----- pages
@@ -46,17 +39,6 @@ Spotify-Music-Recommendation-System (main)
 |     |      home.py
 |     |      login.py
 |     |      recom.py
-|     |
-|      # Preprocess Data 
-|----- preprocess
-|     |
-|      # All the functionality tests for this project
-|----- tests
-|     |      _init_.py
-|     |      test_database.py
-|     |      test_login.py
-|     |      test_recom.py
-|     |      test_visual.py
 |     |
 |      # All the functionality and callcacks for pages
 |----- utils
@@ -73,14 +55,32 @@ Spotify-Music-Recommendation-System (main)
 |     |      |      |      playlist.py
 |     |      |      |      profile.py
 |     |----- database.py
-|     |----- music_reco_sys_db.sqlit
+|     |----- spotipy_db.sqlit #database
 |     |----- page_template.py
 |     |
+|      # Preprocess Data 
+|----- preprocess
+|     |
+|      # All the functionality tests for this project
+|----- tests
+|     |      _init_.py
+|     |      test_database.py
+|     |      test_login.py
+|     |      test_recom.py
+|     |      test_visual.py
+|     |
+|      # Design Documents
+|----- doc
+|     |      component-spec.md
+|     |      functional-spec.md
+|     |      technology-review.pdf
+|     |      technology-review.pptx
+|     | 
+|      # All images used in README and docs
+|----- image
+|     |  
 |      # Environmental file
 |----- environment.yml
-|     |
-|      # Main file; run this to start the app
-|----- app.py
 ```
 
 ## Data
