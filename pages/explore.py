@@ -1,5 +1,3 @@
-# explore.py
-
 """
 Explore page for Spotify Music Exploration/Recommendation System.
 
@@ -15,17 +13,24 @@ from utils.pages.explore.callbacks import *
 from utils.page_template import portfolio_wrapper
 
 # Register the page
-register_page(__name__, path="/explore",
-              title="Explore Music - Spotify Music Recommendation System")
+register_page(
+    __name__,
+    path="/explore",
+    title="Explore Music - Spotify Music Recommendation System"
+)
 
 # Visualization #1: Trend of Musical Attributes Over Time
-Music_Trend = \
+music_trend_viz = \
     html.Div(id="01-music-trend", children=[
         # Section Title
-        html.H2("How Did Music Evolve Over Time?",
-                className="section-title"),
-        html.H3("Trend of Musical Attributes Over Years",
-                className="section-subtitle"),
+        html.H2(
+            "How Did Music Evolve Over Time?",
+            className="section-title"
+        ),
+        html.H3(
+            "Trend of Musical Attributes Over Years",
+            className="section-subtitle"
+        ),
         html.Hr(className="section-divider"),
 
         # Checklist
@@ -61,14 +66,19 @@ Music_Trend = \
     ], className="content-panel"
              )
 
+
 # Visualization #2: Radar Chart for Selected Song
-Music_Attribute = \
+music_attribute_viz = \
     html.Div(id="02-song-attribute", children=[
         # Section Title
-        html.H2("What Are the Characters of Individual Songs?",
-                className="section-title"),
-        html.H3("Musical attributes for Selected Song",
-                className="section-subtitle"),
+        html.H2(
+            "What Are the Characters of Individual Songs?",
+            className="section-title"
+        ),
+        html.H3(
+            "Musical attributes for Selected Song",
+            className="section-subtitle"
+        ),
         html.Hr(className="section-divider"),
 
         # Searchable Dropdown
@@ -89,9 +99,10 @@ Music_Attribute = \
     ], className="content-panel"
              )
 
+
 # Page Layout
 layout = \
     portfolio_wrapper(
-        Music_Trend,
-        Music_Attribute
+        music_trend_viz,
+        music_attribute_viz
     )
