@@ -5,6 +5,7 @@ This module provides unit tests for the recommendation system, ensuring that
 users receive accurate playlist recommendations based on their listening history.
 Tests include verifying playlist lengths, user existence, and data integrity.
 """
+
 import unittest
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
@@ -66,7 +67,11 @@ class TestRecommendation(unittest.TestCase):
         for i in range(1, 11):
             song_id = f"song_id_{i}"
             self.session.add(UserRecommendation(user_id="user_id_1", song_id=song_id, rank=i))
-            self.session.add(SpotifyData(song_id=song_id, song_name=f'Song {i}', artist_name=f'Singer {i}'))
+            self.session.add(SpotifyData(
+                song_id=song_id,
+                song_name=f'Song {i}',
+                artist_name=f'Singer {i}'
+            ))
 
         self.session.commit()
 
@@ -102,7 +107,10 @@ class TestRecommendation(unittest.TestCase):
         that does not exist in the database.
         """
         # Test behavior for a non-existent user
-        songs_list, artists_list, _ = fetch_user_playlist('user_id_nonexistent', session=self.session)
+        songs_list, artists_list, _ = fetch_user_playlist(
+            'user_id_nonexistent',
+            session=self.session
+        )
         self.assertEqual(songs_list, [])
         self.assertEqual(artists_list, [])
 

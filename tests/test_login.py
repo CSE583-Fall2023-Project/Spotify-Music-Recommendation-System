@@ -5,6 +5,7 @@ This module provides unit tests for the user login functionality, ensuring that
 users can log in with valid credentials and receive accurate responses for invalid
 attempts. It also tests the user profile update feature post-login.
 """
+
 import unittest
 from dash import html
 from sqlalchemy import create_engine

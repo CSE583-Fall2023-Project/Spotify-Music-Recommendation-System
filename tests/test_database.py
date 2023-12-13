@@ -116,7 +116,8 @@ class TestDatabase(unittest.TestCase):
         This test verifies that a SpotifyData record can be inserted and
         correctly fetched from the database.
         """
-        song = self.session.query(SpotifyData).filter_by(song_id="7DjCRhhFo9PPzca1BjMLcf").first()
+        song = self.session.query(SpotifyData).\
+            filter_by(song_id="7DjCRhhFo9PPzca1BjMLcf").first()
         self.assertEqual(song.song_name, "Long Live")
         self.assertEqual(song.artist_id, "349a6f757a")
         self.assertEqual(song.artist_name, "Taylor Swift")

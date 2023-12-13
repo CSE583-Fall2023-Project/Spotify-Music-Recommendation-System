@@ -5,6 +5,7 @@ This module contains tests for the visualizations presented on the 'Explore' pag
 of the web application, ensuring accurate data representation and functionality.
 It covers tests for retrieving data range, song attributes, and attribute trends.
 """
+
 import unittest
 from unittest.mock import patch
 from sqlalchemy import create_engine
