@@ -2,7 +2,7 @@
 
 [![Python Package using Conda](https://github.com/CSE583-Fall2023-Project/Spotify-Music-Recommendation-System/actions/workflows/python-package-conda.yml/badge.svg)](https://github.com/CSE583-Fall2023-Project/Spotify-Music-Recommendation-System/actions/workflows/python-package-conda.yml)
 
-Contributors: Juntong Wu,  Chesie Yu, Denkie Yan
+Contributors: Juntong Wu, Chesie Yu, Denkie Yan
 
 <br>
 
