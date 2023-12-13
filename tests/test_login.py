@@ -31,7 +31,7 @@ class TestLogin(unittest.TestCase):
         This method is called once before running the first test. It creates
         a new SQLite in-memory database and sets up the necessary table schemas.
         """
-        cls.engine = create_engine('sqlite:///:memory:')  # Use in-memory database for testing
+        cls.engine = create_engine("sqlite:///:memory:")  # Use in-memory database for testing
         Base.metadata.create_all(cls.engine)
         cls.Session = sessionmaker(bind=cls.engine)
 
@@ -86,7 +86,7 @@ class TestLogin(unittest.TestCase):
         user_exists, user_data = check_user("Donald", "Duck", session=self.session)
         self.assertTrue(user_exists)
         self.assertIsNotNone(user_data)
-        self.assertEqual(user_data['user_id'], "id1")
+        self.assertEqual(user_data["user_id"], "id1")
 
     def test_check_user_invalid(self):
         """
@@ -106,7 +106,12 @@ class TestLogin(unittest.TestCase):
         This test checks if the handle_login function successfully logs in a
         user with valid credentials.
         """
-        login_successful = handle_login(n_clicks=1, first_name="Donald", last_name="Duck", session=self.session)
+        login_successful = handle_login(
+            n_clicks=1,
+            first_name="Donald",
+            last_name="Duck",
+            session=self.session
+        )
         self.assertTrue(login_successful)
 
     def test_handle_login_invalid_user(self):
@@ -117,7 +122,12 @@ class TestLogin(unittest.TestCase):
         when invalid user credentials are provided, including returning an error
         message and a failed login indication.
         """
-        login_response = handle_login(n_clicks=1, first_name="Mickey", last_name="Mouse", session=self.session)
+        login_response = handle_login(
+            n_clicks=1,
+            first_name="Mickey",
+            last_name="Mouse",
+            session=self.session
+        )
 
         # Check if login_response is a list and contains expected elements for an invalid login
         self.assertIsInstance(login_response, list)
@@ -135,12 +145,12 @@ class TestLogin(unittest.TestCase):
         HTML structure based on the user data provided.
         """
         user_data = {
-            'user_id': 'id1',
-            'first_name': 'Donald',
-            'last_name': 'Duck',
-            'age': 20,
-            'sex': 'M',
-            'profile_pic': 'path/to/profile_pic.png'
+            "user_id": "id1",
+            "first_name": "Donald",
+            "last_name": "Duck",
+            "age": 20,
+            "sex": "M",
+            "profile_pic": "path/to/profile_pic.png"
         }
 
         output = update_user_profile(user_data)
@@ -148,10 +158,10 @@ class TestLogin(unittest.TestCase):
         # Check that the output is as expected
         self.assertIsInstance(output, html.Div)
         self.assertEqual(len(output.children), 2)  # Assuming 2 children: image and details
-        self.assertIn('user-profile-image', output.children[0].children.className)
-        self.assertIn(user_data['first_name'], output.children[1].children[0].children)
-        self.assertIn(str(user_data['age']), output.children[1].children[1].children)
+        self.assertIn("user-profile-image", output.children[0].children.className)
+        self.assertIn(user_data["first_name"], output.children[1].children[0].children)
+        self.assertIn(str(user_data["age"]), output.children[1].children[1].children)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

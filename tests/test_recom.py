@@ -30,7 +30,7 @@ class TestRecommendation(unittest.TestCase):
         This method initializes a SQLite in-memory database and prepares
         table schemas for Users, UserRecommendation, and SpotifyData.
         """
-        cls.engine = create_engine('sqlite:///:memory:')  # Use in-memory database for testing
+        cls.engine = create_engine("sqlite:///:memory:")  # Use in-memory database for testing
         Base.metadata.create_all(cls.engine)
         cls.Session = sessionmaker(bind=cls.engine)
 
@@ -66,11 +66,15 @@ class TestRecommendation(unittest.TestCase):
         # Add UserRecommendations and SpotifyData
         for i in range(1, 11):
             song_id = f"song_id_{i}"
-            self.session.add(UserRecommendation(user_id="user_id_1", song_id=song_id, rank=i))
+            self.session.add(UserRecommendation(
+                user_id="user_id_1",
+                song_id=song_id,
+                rank=i
+            ))
             self.session.add(SpotifyData(
                 song_id=song_id,
-                song_name=f'Song {i}',
-                artist_name=f'Singer {i}'
+                song_name=f"Song {i}",
+                artist_name=f"Singer {i}"
             ))
 
         self.session.commit()
@@ -93,7 +97,10 @@ class TestRecommendation(unittest.TestCase):
        of the correct length for a valid user.
        """
         # Call fetch_user_playlist with a mocked session
-        songs_list, artists_list, _ = fetch_user_playlist('user_id_1', session=self.session)
+        songs_list, artists_list, _ = fetch_user_playlist(
+            "user_id_1", 
+            session=self.session
+        )
         # Assertions
         self.assertEqual(len(songs_list), 10)
         self.assertEqual(len(artists_list), 10)
@@ -108,7 +115,7 @@ class TestRecommendation(unittest.TestCase):
         """
         # Test behavior for a non-existent user
         songs_list, artists_list, _ = fetch_user_playlist(
-            'user_id_nonexistent',
+            "user_id_nonexistent",
             session=self.session
         )
         self.assertEqual(songs_list, [])
@@ -122,15 +129,15 @@ class TestRecommendation(unittest.TestCase):
         correct song and artist names that match the test data for a valid user.
         """
         # Check if the fetched data matches the expected results
-        songs_list, artists_list, _ = fetch_user_playlist('user_id_1', session=self.session)
-        expected_songs = ['Song 1', 'Song 2', 'Song 3', 'Song 4', 'Song 5',
-                          'Song 6', 'Song 7', 'Song 8', 'Song 9', 'Song 10']
-        expected_artists = ['Singer 1', 'Singer 2', 'Singer 3', 'Singer 4', 'Singer 5',
-                            'Singer 6', 'Singer 7', 'Singer 8', 'Singer 9', 'Singer 10']
+        songs_list, artists_list, _ = fetch_user_playlist("user_id_1", session=self.session)
+        expected_songs = ["Song 1", "Song 2", "Song 3", "Song 4", "Song 5",
+                          "Song 6", "Song 7", "Song 8", "Song 9", "Song 10"]
+        expected_artists = ["Singer 1", "Singer 2", "Singer 3", "Singer 4", "Singer 5",
+                            "Singer 6", "Singer 7", "Singer 8", "Singer 9", "Singer 10"]
         # No artist data in the test setup, so artists_list is expected to be empty
         self.assertEqual(songs_list, expected_songs)
         self.assertEqual(artists_list, expected_artists)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

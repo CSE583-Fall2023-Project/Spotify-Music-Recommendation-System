@@ -1,7 +1,7 @@
 """
 Unit Testing for Visualizations in Spotify Music Exploration/Recommendation System.
 
-This module contains tests for the visualizations presented on the 'Explore' page
+This module contains tests for the visualizations presented on the Explore page
 of the web application, ensuring accurate data representation and functionality.
 It covers tests for retrieving data range, song attributes, and attribute trends.
 """
@@ -11,7 +11,8 @@ from unittest.mock import patch
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-from utils.pages.explore.visuals import get_min_max_years, update_song_attributes, update_attribute_trend
+from utils.pages.explore.visuals import get_min_max_years, update_song_attributes,\
+                                         update_attribute_trend
 from utils.database import Base, SpotifyData, DataByYear
 
 
@@ -30,7 +31,7 @@ class TestVisual(unittest.TestCase):
         This method initializes a SQLite in-memory database and prepares
         table schemas for SpotifyData and DataByYear.
         """
-        cls.engine = create_engine('sqlite:///:memory:')  # Use in-memory database for testing
+        cls.engine = create_engine("sqlite:///:memory:")  # Use in-memory database for testing
         Base.metadata.create_all(cls.engine)
         cls.Session = sessionmaker(bind=cls.engine)
 
@@ -56,10 +57,10 @@ class TestVisual(unittest.TestCase):
 
         # Add test data for SpotifyData and DataByYear
         spotify_data_sample = SpotifyData(
-            song_id='7DjCRhhFo9PPzca1BjMLcf',
-            song_name='Long Live',
-            artist_id='349a6f757a',
-            artist_name='Taylor Swift',
+            song_id="7DjCRhhFo9PPzca1BjMLcf",
+            song_name="Long Live",
+            artist_id="349a6f757a",
+            artist_name="Taylor Swift",
             year=2010,
             valence=0.142,
             acousticness=0.036,
@@ -133,7 +134,7 @@ class TestVisual(unittest.TestCase):
         self.assertEqual(min_year, 2000)
         self.assertEqual(max_year, 2020)
 
-    @patch('plotly.express.line_polar')
+    @patch("plotly.express.line_polar")
     def test_update_song_attributes(self, mock_px_line_polar):
         """
         Test the functionality of update_song_attributes function.
@@ -153,15 +154,23 @@ class TestVisual(unittest.TestCase):
         it generates the correct figures for valid and invalid year ranges.
         """
         # Test for a valid range and attributes
-        fig = update_attribute_trend(["acousticness", "danceability"], [2020, 2020], session=self.session)
+        fig = update_attribute_trend(
+            ["acousticness", "danceability"],
+            [2020, 2020],
+            session=self.session
+        )
         self.assertIsNotNone(fig)
         self.assertTrue(len(fig.data) > 0)
 
         # Test for an invalid range (where no data is present)
-        empty_fig = update_attribute_trend(["acousticness", "danceability"], [1900, 1900], session=self.session)
+        empty_fig = update_attribute_trend(
+            ["acousticness", "danceability"],
+            [1900, 1900],
+            session=self.session
+        )
         self.assertIsNotNone(empty_fig)
         self.assertTrue(len(empty_fig.data) == 0)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()
