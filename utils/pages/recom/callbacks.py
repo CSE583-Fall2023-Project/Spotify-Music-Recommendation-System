@@ -1,8 +1,6 @@
 """
-    The following code is under CC-BY-NC-SA 4.0 license (more in root/LICENSE.txt)
-            Free to use and redistribute for any non-commercial purpose
+Provides utility and callback functions for the Recom page.
 """
 
 from utils.pages.recom.playlist import *
 from utils.pages.recom.profile import *
-

@@ -30,7 +30,7 @@ class TestDatabase(unittest.TestCase):
         a new SQLite in-memory database and sets up the necessary table schemas.
         """
         # Use in-memory database for testing
-        cls.engine = create_engine('sqlite:///:memory:')
+        cls.engine = create_engine("sqlite:///:memory:")
         Base.metadata.create_all(cls.engine)
         cls.Session = sessionmaker(bind=cls.engine)
 
@@ -67,11 +67,11 @@ class TestDatabase(unittest.TestCase):
         self.session.add(valid_user)
 
         valid_song = SpotifyData(
-            song_id='7DjCRhhFo9PPzca1BjMLcf',
-            song_name='Long Live',
-            artist_id='349a6f757a',
-            artist_name='Taylor Swift',
-            year='2010',
+            song_id="7DjCRhhFo9PPzca1BjMLcf",
+            song_name="Long Live",
+            artist_id="349a6f757a",
+            artist_name="Taylor Swift",
+            year="2010",
             valence=0.142,
             acousticness=0.036,
             danceability=0.418,
@@ -79,7 +79,7 @@ class TestDatabase(unittest.TestCase):
             instrumentalness=7.59e-05,
             liveness=0.114,
             speechiness=0.0347,
-            genre='dance pop, pop, pop dance, post-teen pop',
+            genre="dance pop, pop, pop dance, post-teen pop",
             popularity=53
         )
         self.session.add(valid_song)
@@ -116,7 +116,8 @@ class TestDatabase(unittest.TestCase):
         This test verifies that a SpotifyData record can be inserted and
         correctly fetched from the database.
         """
-        song = self.session.query(SpotifyData).filter_by(song_id="7DjCRhhFo9PPzca1BjMLcf").first()
+        song = self.session.query(SpotifyData).\
+            filter_by(song_id="7DjCRhhFo9PPzca1BjMLcf").first()
         self.assertEqual(song.song_name, "Long Live")
         self.assertEqual(song.artist_id, "349a6f757a")
         self.assertEqual(song.artist_name, "Taylor Swift")
@@ -132,5 +133,5 @@ class TestDatabase(unittest.TestCase):
         self.assertEqual(song.popularity, 53)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

@@ -1,5 +1,3 @@
-# home.py
-
 """
 Landing page for Spotify Music Exploration/Recommendation System.
 
@@ -21,13 +19,17 @@ landing_page = \
         # Landing Page
         html.Div([
             # Headline
-            html.H1("Spotify Music Exploration + Recommendation System",
-                    className="landing-headline"),
+            html.H1(
+                "Spotify Music Exploration + Recommendation System",
+                className="landing-headline"
+            ),
 
             # Button
-            html.A("Start Your Journey",
-                   href="/explore",
-                   className="start-button"),
+            html.A(
+                "Start Your Journey",
+                href="/explore",
+                className="start-button"
+            ),
         ], className="landing-page"),
     ])
 

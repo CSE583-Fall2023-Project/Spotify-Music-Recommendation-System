@@ -1,16 +1,18 @@
-# utils/pages/explore/visuals.py
+"""
+Defines utility functions and Dash callbacks for the Explore page.
 
+This module contains four utility functions get_min_max_year, get_decades,
+get_sorted_songs, and empty_radar_plot, and two callback functions
+update_attribute_trend and update_song_attributes that will be automatically
+called to update component properties.
 """
 
-"""
-
+# Import packages
 import pandas as pd
 import plotly.express as px
 from dash import callback, Output, Input
 from sqlalchemy import func, desc, and_
 from sqlalchemy.orm import sessionmaker
-from plotly.graph_objects import Layout
-from plotly.validator_cache import ValidatorCache
 
 from utils.database import SpotifyData, DataByYear, engine
 
@@ -24,7 +26,14 @@ attributes = ["acousticness", "danceability", "energy", "instrumentalness",
 
 
 def get_min_max_years(session=None):
-    """Retrieve the minimum and maximum years from DataByYear."""
+    """
+    Retrieves the minimum and maximum years from DataByYear.
+
+    Arguments:
+        session: SQLAlchemy session (optional).
+    
+    Returns a tuple of minimum and maximum year.
+    """
     own_session = False
     if session is None:
         session = Session()
@@ -43,7 +52,15 @@ def get_min_max_years(session=None):
 
 
 def get_decades(min_year, max_year):
-    """Create a list of decades based on the min and max years."""
+    """
+    Creates a list of decades based on the min and max years.
+    
+    Arguments:
+        min_year: Minimum year in the data.
+        max_year: Maximum year in the data.
+
+    Returns a list of decades within the year range along with min and max year.
+    """
     if min_year is None or max_year is None:
         return []
     decades = list(range(min_year + (10 - min_year % 10), max_year + 1, 10))
@@ -53,7 +70,14 @@ def get_decades(min_year, max_year):
 
 
 def get_sorted_songs(session=None):
-    """Retrieve sorted song names based on popularity."""
+    """
+    Retrieves sorted song names based on popularity.
+
+    Arguments:
+        session: SQLAlchemy session (optional).
+
+    Returns a list of song names sorted by popularity.
+    """
     if session is not None:
         session = session
     else:
@@ -64,12 +88,15 @@ def get_sorted_songs(session=None):
 
 
 def empty_radar_plot():
-    """Create an empty radar plot."""
+    """
+    Creates an empty radar plot.
+    Returns a plotly figure of an empty placeholder radar plot for song attributes.
+    """
     fig = px.line_polar(r=[0, 0, 0, 0, 0, 0, 0], theta=attributes)
     fig.update_layout(
         plot_bgcolor="#121212",
         paper_bgcolor="#121212",
-        font=dict(family="Gill Sans, Arial, sans-serif", color="#1db954", size=14)
+        font={"family": "Gill Sans, Arial, sans-serif", "color": "#1db954", "size": 14}
     )
     return fig
 
@@ -81,6 +108,17 @@ def empty_radar_plot():
     Input(component_id="year-range-slider", component_property="value")
 )
 def update_attribute_trend(selected_attributes, selected_years, session=None):
+    """
+    Updates the attribute trend line chart based on user inputs.
+
+    Arguments:
+        selected_attributes: Selected music attributes from checklist.
+        selected_years: Selected year range from slider.
+        session: SQLAlchemy session (optional).
+    
+    Returns a plotly figure with updated line chart in response to change in
+    input attributes or years.
+    """
     if session is not None:
         session = session
     else:
@@ -97,29 +135,36 @@ def update_attribute_trend(selected_attributes, selected_years, session=None):
     fig.update_layout(
         plot_bgcolor="#121212",
         paper_bgcolor="#121212",
-        font=dict(
-            family="Gill Sans, Arial, sans-serif",
-            color="#f2f2f2"
-        )
+        font={"family": "Gill Sans, Arial, sans-serif", "color": "#f2f2f2"}
     )
     fig.update_xaxes(
         showgrid=True,
-        gridcolor='rgba(242, 242, 242, 0.5)'
+        gridcolor="rgba(242, 242, 242, 0.5)"
     )
     fig.update_yaxes(
         showgrid=True,
         zeroline=False,
-        gridcolor='rgba(242, 242, 242, 0.5)'
+        gridcolor="rgba(242, 242, 242, 0.5)"
     )
     return fig
 
 
-# Visualization #2
+# Callbacks for Visualization #2
 @callback(
     Output("song-attribute-radar-chart", "figure"),
     Input("song-selecting-dropdown", "value")
 )
 def update_song_attributes(selected_song, session=None):
+    """
+    Updates the song attribute radar chart based on user inputs.
+
+    Arguments:
+        selected_song: Selected song from the dropdown.
+        session: SQLAlchemy session (optional).
+    
+    Returns a plotly figure with updated radar chart in response to change in
+    input song.
+    """
     if session is not None:
         session = session
     else:
@@ -131,18 +176,26 @@ def update_song_attributes(selected_song, session=None):
         song_data_df = pd.read_sql(song_data_query.statement, song_data_query.session.bind)
         if not song_data_df.empty:
             song_data = song_data_df.iloc[0]
-            radar_data = pd.DataFrame({"Attribute": attributes,
-                                       "Value": [song_data[attr] for attr in attributes]})
-            fig = px.line_polar(radar_data,
-                                r="Value",
-                                theta="Attribute",
-                                line_close=True)
-            fig.update_traces(fill="toself",
-                              fillcolor="rgba(29, 185, 84, 0.5)",
-                              line=dict(color="#1db954"))
-            fig.update_layout(plot_bgcolor="#121212",
-                              paper_bgcolor="#121212",
-                              font=dict(family="Gill Sans, Arial, sans-serif", color="#1db954", size=14))
+            radar_data = pd.DataFrame({
+                "Attribute": attributes,
+                "Value": [song_data[attr] for attr in attributes]
+            })
+            fig = px.line_polar(
+                radar_data,
+                r="Value",
+                theta="Attribute",
+                line_close=True
+            )
+            fig.update_traces(
+                fill="toself",
+                fillcolor="rgba(29, 185, 84, 0.5)",
+                line={"color": "#1db954"}
+            )
+            fig.update_layout(
+                plot_bgcolor="#121212",
+                paper_bgcolor="#121212",
+                font={"family": "Gill Sans, Arial, sans-serif", "color": "#1db954", "size": 14}
+            )
             return fig
         return empty_radar_plot()
     return empty_radar_plot()

@@ -1,5 +1,3 @@
-# login.py
-
 """
 Login Page for the Spotify Music Exploration/Recommendation System. 
 
@@ -14,18 +12,25 @@ from utils.pages.login.callbacks import *
 from utils.page_template import portfolio_wrapper
 
 # Register the page
-register_page(__name__, path="/login",
-              title="Login - Spotify Music Recommendation System")
+register_page(
+    __name__,
+    path="/login",
+    title="Login - Spotify Music Recommendation System"
+)
 
 # Login Page
 login_page = html.Div([
     # Login Header
     html.Div(id="login-header", children=[
         html.Div([
-            html.H2("Get your music profile with your next 10 favorite songs!",
-                    className="section-title"),
-            html.H3("Type in your name and it will magically happen!",
-                    className="section-subtitle"),
+            html.H2(
+                "Get your music profile with your next 10 favorite songs!",
+                className="section-title"
+            ),
+            html.H3(
+                "Type in your name and it will magically happen!",
+                className="section-subtitle"
+            ),
             html.Hr(className="section-divider"),
         ]),
     ], className="login-page"),
@@ -38,18 +43,28 @@ login_page = html.Div([
 
             # Input fields for first and last name
             html.Div([
-                dcc.Input(id="first-name", type="text", placeholder="First Name",
-                          className="first-name-input"),
-                dcc.Input(id="last-name", type="text", placeholder="Last Name",
-                          className="last-name-input"),
+                dcc.Input(
+                    id="first-name",
+                    type="text",
+                    placeholder="First Name",
+                    className="first-name-input"
+                ),
+                dcc.Input(
+                    id="last-name",
+                    type="text",
+                    placeholder="Last Name",
+                    className="last-name-input"
+                ),
             ]),
 
             # Login Button
             dcc.Link(
                 id="login-link",
-                children=html.Button("Login", id="login-button",
-                                    n_clicks=0,
-                                    className="login-button"),
+                children=html.Button(
+                    "Login", 
+                    id="login-button",
+                    n_clicks=0,
+                    className="login-button"),
                 href="/login"
             ),
 
