@@ -25,7 +25,7 @@ The project has the following structure:
 Spotify-Music-Recommendation-System (main)   
 |      # Main file; run this to start the app
 |----- app.py
-| 		|
+|     |
 |      # All the graphics, stylesheets, and scripts used in the project
 |----- assets
 |     |
