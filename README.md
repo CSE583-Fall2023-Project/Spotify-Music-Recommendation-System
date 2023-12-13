@@ -2,21 +2,19 @@
 
 [![Python Package using Conda](https://github.com/CSE583-Fall2023-Project/Spotify-Music-Recommendation-System/actions/workflows/python-package-conda.yml/badge.svg)](https://github.com/CSE583-Fall2023-Project/Spotify-Music-Recommendation-System/actions/workflows/python-package-conda.yml)
 
-Team Member: Juntong Wu, Denkie Yan, Chesie Yu
+Contributors: Juntong Wu,  Chesie Yu, Denkie Yan
 
 <br>
 
 ## 🎶 Background
 
-In the dynamic and diverse world of music streaming and discovery, our project aims to offer a **unique personalized and enriching experience that caters to the tastes of individual users**.  At the core of this objective is the desire to not only provide music recommendations but to do so in a way that is insightful and resonates with each user’s unique music journey.  
+In the dynamic and diverse world of music, our project aims to offer a personalized and enriching experience that caters to the tastes of individual users.  Despite currently in its prototype phase and utilizing synthesized user data, the goal of this project goes beyond music recommendation. It preludes a fully-fledged application that resonates with the unique music journeys of real-world users.  
 
-The scope of this project emcompasses **three major aspects**：
+The scope of this project emcompasses **two major aspects**：
 
-**Inform Historical Music Insights**: uncovering the story of music behind the data. Leveraging the Spotify music dataset, we will discover and illustrate interesting patterns and trends through interactive visualization dashboards with customizable controls. 
+- **Inform historical music insights through interactive dashboard**
 
-**Provide Personalized Recommendations**: based on user behavioral preferences and potentially social networks, improving listening experience through understanding then predicting the unique tastes of each user.  
-
-**Create engaging interactive user-friendly interface**: users can explore the rich history of contemporary music and discover new personal favorites through this *prototype app*. This tool is designed to create a music discovery experience that is not only entertaining but also informative and personalized.  
+- **Provide personalized recommendations based on user preferences and social networks**  
 
 <br>
 
@@ -91,10 +89,10 @@ Spotify-Music-Recommendation-System (master)
 
 ## Data
 
-This [**Spotify Dataset**](https://www.kaggle.com/datasets/vatsalmavani/spotify-dataset/code) contains 170,653 songs released from 1921 to 2020 from Spotify. For the purpose of research, we have modified the original data  by renaming fields and adding identification and genre information. [Click here for more infomation](https://github.com/CSE583-Fall2023-Project/Spotify-Music-Recommendation-System/blob/main/doc/functional-spec.md). 
+This [Spotify Dataset](https://www.kaggle.com/datasets/vatsalmavani/spotify-dataset/code) contains 170,653 songs released from 1921 to 2020 from Spotify. To adapt to our research objectives, we have curated the dataset by renaming certain fields and enriching it with additional identification and genre details. [Click here for more infomation](https://github.com/CSE583-Fall2023-Project/Spotify-Music-Recommendation-System/blob/main/doc/functional-spec.md). 
 
 
-Original datasets include data for artists, genres, years, and Spotify data. The newly added dummy datasets include data for User-Songs, User-Friends, and User-Friends. All project data is stored as CSV files in the [data](https://github.com/CSE583-Fall2023-Project/Spotify-Music-Recommendation-System/tree/main/data) file.
+The original Spotify datasets covered a range of features, including songs, artists, genres, years, along with various music attributes. Our project expanded it by creating dummy datasets encompassing Users, User-Songs, and User-Friends. These datasets are avaliable as CSV files in the [data](https://github.com/CSE583-Fall2023-Project/Spotify-Music-Recommendation-System/tree/main/data) folder. To enhance the user experience with visually appealing elements, each user has been assigned a unique, anime-style profile photo generated through the [Diffusion model](https://huggingface.co/docs/diffusers/index).
 
 <br>
 
@@ -129,8 +127,8 @@ Original datasets include data for artists, genres, years, and Spotify data. The
 ## Contacts
 Juntong Wu -- juntongw@uw.edu
 
-Denkie Yan -- denkie@uw.edu
-
 Chesie Yu -- cyu909@uw.edu
+
+Denkie Yan -- denkie@uw.edu
 
 <br>
