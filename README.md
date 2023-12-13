@@ -38,6 +38,11 @@ Spotify-Music-Recommendation-System (master)
 |     |      technology-review.pdf
 |     |      technology-review.pptx
 |     | 
+|      # User Guide for the user interfere in this project
+|----- example
+|     |      User Guide for Spotify Music Exploration & Recommendation.pdf
+|     |      userguide.md
+|     | 
 |      # All images used in this project
 |----- image
 |     |
