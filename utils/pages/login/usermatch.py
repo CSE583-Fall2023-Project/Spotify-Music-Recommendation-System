@@ -102,7 +102,7 @@ def update_user_profile(user_data, session=None):
         user_data (dict): A dictionary containing user data.
         session: SQLAlchemy session (optional).
     
-    Returns a Dash component with updated user profile container
+    Returns a Dash component with updated user profile container.
     """
     if session is None:
         session = Session()
