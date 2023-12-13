@@ -1,7 +1,8 @@
 """
 Database setup for the Spotify Music Exploration/Recommendation System.
 
-This module sets up a relational database and defines data models for users and songs.
+This module sets up a relational database and defines data models for users,
+songs, relationships, and recommended playlists using SQLAlchemy.
 It includes functions for extracting data from CSVs into corresponding tables.
 The populated database can be accessed through the "spotipy_db.sqlite" file,
 the central data store of the application.
