@@ -10,8 +10,8 @@ import unittest
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-from utils.pages.recom.playlist import fetch_user_playlist
-from utils.database import Base, Users, UserRecommendation, SpotifyData
+from app.utils.pages.recom.playlist import fetch_user_playlist
+from app.utils.database import Base, Users, UserRecommendation, SpotifyData
 
 
 class TestRecommendation(unittest.TestCase):

@@ -10,7 +10,7 @@ import unittest
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-from utils.database import Base, Users, SpotifyData
+from app.utils.database import Base, Users, SpotifyData
 
 
 class TestDatabase(unittest.TestCase):
