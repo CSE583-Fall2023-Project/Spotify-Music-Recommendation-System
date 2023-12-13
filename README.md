@@ -2,7 +2,7 @@
 
 [![Python Package using Conda](https://github.com/CSE583-Fall2023-Project/Spotify-Music-Recommendation-System/actions/workflows/python-package-conda.yml/badge.svg)](https://github.com/CSE583-Fall2023-Project/Spotify-Music-Recommendation-System/actions/workflows/python-package-conda.yml)
 
-Contributors: Juntong Wu,  Chesie Yu, Denkie Yan
+**Contributors: Juntong Wu, Chesie Yu, Denkie Yan**
 
 <br>
 
@@ -22,69 +22,77 @@ The scope of this project emcompasses **two major aspects**：
 
 The project has the following structure:
 ```
-Spotify-Music-Recommendation-System (master)
-|      # All the graphics, stylesheets, and scripts used in the project
-|----- assets
-|     |
-|      # All spotify datasets   
-|----- data
-|     |  
-|      # Design Documents
-|----- doc
-|     |      component-spec.md
-|     |      functional-spec.md
-|     |      technology-review.pdf
-|     |      technology-review.pptx
-|     | 
-|      # All images used in this project
-|----- image
-|     |
-|      # Body of displayed page 
-|----- pages
-|     |      about.py
-|     |      explore.py
-|     |      home.py
-|     |      login.py
-|     |      recom.py
-|     |
-|      # Preprocess Data 
-|----- preprocess
-|     |
-|      # All the functionality tests for this project
-|----- tests
-|     |      _init_.py
-|     |      test_database.py
-|     |      test_login.py
-|     |      test_recom.py
-|     |      test_visual.py
-|     |
-|      # All the functionality and callcacks for pages
-|----- utils
-|     |----- pages
-|     |      |----- explore
-|     |      |      |      callbacks.py
-|     |      |      |      visuals.py
-|     |      |----- login
-|     |      |      |      callbacks.py
-|     |      |      |      usermatch.py
-|     |      |----- recom
-|     |      |      |      callbacks.py
-|     |      |      |      model.py
-|     |      |      |      playlist.py
-|     |      |      |      profile.py
-|     |----- database.py
-|     |----- music_reco_sys_db.sqlit
-|     |----- page_template.py
-|     |
-|      # Environmental file
-|----- environment.yml
-|     |
-|      # Main file; run this to start the app
-|----- app.py
-|     |
-|      # README file
-|     README.md
-
+Spotify-Music-Recommendation-System (main)
+|   
+|   # App-related directories and files
+|--- app
+|    |   # All the graphics, stylesheets, and scripts used in the project
+|    |--- assets
+|    |
+|    |   # All datasets used; in .csv format
+|    |--- data
+|    |
+|    |   # Body of displayed page
+|    |--- pages
+|    |    |   about.py
+|    |    |   explore.py
+|    |    |   home.py
+|    |    |   login.py
+|    |    |   recom.py
+|    |
+|    |   # All the functionality tests for this project
+|    |--- tests
+|    |    |   _init_.py
+|    |    |   test_database.py
+|    |    |   test_login.py
+|    |    |   test_recom.py
+|    |    |   test_visual.py
+|    |
+|    |   # All the functionality and callbacks for pages
+|    |--- utils
+|    |    |--- pages
+|    |    |    |--- explore
+|    |    |    |    |   callbacks.py
+|    |    |    |    |   visuals.py
+|    |    |    |--- login
+|    |    |    |    |   callbacks.py
+|    |    |    |    |   usermatch.py
+|    |    |    |--- recom
+|    |    |    |    |   callbacks.py
+|    |    |    |    |   model.py
+|    |    |    |    |   playlist.py
+|    |    |    |    |   profile.py
+|    |    |    database.py
+|    |    |    spotipy_db.sqlite
+|    |    |    page_template.py
+|    |
+|    |   # Main file; run this to start the app
+|    |--- app.py
+|    |
+|    |   # Script to execute specific functions
+|    |--- play.py
+|    |
+|    |   # SQLite database file
+|    |--- spotipy_db.sqlite
+|
+|   # Design documents
+|--- doc
+|    |   component-spec.md
+|    |   functional-spec.md
+|    |   technology-review.pdf
+|    |   project-presentation.pdf
+|
+|   # Images used in docs and readme
+|--- image
+|
+|   # Code for data preprocessing
+|--- preprocess
+|
+|   # Environmental file
+|--- environment.yml
+|
+|   # README file
+|--- README.md
 ```
 
 ## Data
