@@ -36,16 +36,12 @@ Spotify-Music-Recommendation-System (main)
 |     |      technology-review.pdf
 |     |      technology-review.pptx
 |     | 
-<<<<<<< HEAD
 |      # User Guide for the user interfere in this project
 |----- example
 |     |      User Guide for Spotify Music Exploration & Recommendation.pdf
 |     |      userguide.md
 |     | 
 |      # All images used in this project
-=======
-|      # All images used in README and docs
->>>>>>> 2ae42d776052417e00ebe1e6a9d65ec02c50a8f9
 |----- image
 |     |
 |      # Body of displayed page 
