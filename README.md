@@ -57,7 +57,7 @@ Spotify-Music-Recommendation-System (main)
 |     |      |      |      playlist.py
 |     |      |      |      profile.py
 |     |----- database.py
-|     |----- spotipy_db.sqlit 
+|     |----- spotipy_db.sqlite 
 |     |----- page_template.py
 |     |
 |      # Data preprocessing workflows
