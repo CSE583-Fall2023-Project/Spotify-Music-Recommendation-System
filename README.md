@@ -4,7 +4,7 @@
 
 Contributors: Juntong Wu, Chesie Yu, Denkie Yan
 
-[Link to our final presentation](https://www.canva.com/design/DAF2eED5cgQ/ySGwMrIu2bjPHh-ctJuP1Q/edit)
+[Link to our final presentation](https://www.canva.com/design/DAF2eED5cgQ/Uky87RYJRucaIZsR0NtEwQ/view?utm_content=DAF2eED5cgQ&utm_campaign=designshare&utm_medium=link&utm_source=editor)
 
 <br>
 

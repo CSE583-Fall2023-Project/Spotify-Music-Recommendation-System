@@ -88,7 +88,8 @@
 <div class="use-case-content">
   <p>The process flow is designed to guide the user through a seamless and educational journey in music discovery:</p>
   <ol class="use-case-list">
-    <li><span class="step">User Access:</span> Upon accessing the platform, the user is introduced to a dashboard highlighting various music exploration features.</li>
+    <li><span class="step">Entry Point:</span> User arrives at the landing page of the web app.</li>
+    <li><span class="step">User Access:</span> As user navigates to the Explore Page through navigation bar or CTA button, user sees a dashboard highlighting various music exploration features at the Explore Page.</li>
     <li><span class="step">Trend Selection:</span> The user selects a time period or genre to explore historical music trends.</li>
     <li><span class="step">Data Retrieval:</span> The Data Manager queries the database for relevant historical data.</li>
     <li><span class="step">Trend Analysis:</span> The retrieved data is processed to highlight key trends and significant musical milestones.</li>
