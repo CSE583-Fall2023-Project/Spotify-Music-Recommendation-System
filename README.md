@@ -41,7 +41,7 @@ Spotify-Music-Recommendation-System (main)
 |     |      home.py
 |     |      login.py
 |     |      recom.py
-|     |![Alt text](image.png)
+|     |
 |      # All the functionality and callcacks for pages
 |----- utils
 |     |----- pages
