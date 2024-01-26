@@ -91,11 +91,11 @@ class TestRecommendation(unittest.TestCase):
 
     def test_fetch_user_playlist_length(self):
         """
-       Test fetching the playlist length for a valid user.
+        Test fetching the playlist length for a valid user.
 
-       This test verifies that fetch_user_playlist function returns a playlist
-       of the correct length for a valid user.
-       """
+        This test verifies that fetch_user_playlist function returns a playlist
+        of the correct length for a valid user.
+        """
         # Call fetch_user_playlist with a mocked session
         songs_list, artists_list, _ = fetch_user_playlist(
             "user_id_1", 

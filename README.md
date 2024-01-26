@@ -41,7 +41,7 @@ Spotify-Music-Recommendation-System (main)
 |     |      home.py
 |     |      login.py
 |     |      recom.py
-|     |
+|     |![Alt text](image.png)
 |      # All the functionality and callcacks for pages
 |----- utils
 |     |----- pages
@@ -122,7 +122,7 @@ The original Spotify datasets covered a range of features, including songs, arti
 **User Login Interface**
 ![User Login](https://github.com/CSE583-Fall2023-Project/Spotify-Music-Recommendation-System/blob/main/image/04-login.png)
 
-**PlayList Recommendation**
+**Playlist Recommendation**
 ![Playlist Recommendation](https://github.com/CSE583-Fall2023-Project/Spotify-Music-Recommendation-System/blob/main/image/05-recom.png)
 
 <br>

@@ -87,11 +87,11 @@ class TestDatabase(unittest.TestCase):
 
     def tearDown(self):
         """
-       Rollback the database transaction after each test.
+        Rollback the database transaction after each test.
 
-       This method is called after each test function execution to ensure
-       database isolation between tests by rolling back the current transaction.
-       """
+        This method is called after each test function execution to ensure
+        database isolation between tests by rolling back the current transaction.
+        """
         self.session.rollback()  # Rollback the transaction
         self.session.close()
 
